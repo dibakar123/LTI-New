@@ -1,0 +1,41 @@
+What is JDBC
+------
+JDBC is an API  which is used to make communication with java & database.
+
+How many types of JDBC Drivers ? 
+1>JDBC ODBC DRIVER
+2>NATIVE DRIVER
+3>JDBC NETWORK PROTOCOL DRIVER
+4>JDBC THIN DRIVER.
+
+
+Steps for JDBC:
+1>Load the driver using Class.forName(),DriverManager.registerDriver()
+2>Create connection object
+	Connection con=DriverManager.GetConnection("jdbc url","user id","Password");
+3>Create SQL statement using Statement,PreparedStatement,CollableStatement
+4>Execute sql statement using execute(),executeUpdate(),executeQuery().
+5>Close connection.
+
+Difference between Statement/PreparedStatement/CallableStatment 
+
+Statement interface is used to execute normal sql query,Here we cant pass parameter at runtime.
+PreparedStatement extends Statement interface with supports dynamic or parameterised sql query. Here we can pass parameter runtime.
+It is more prefarable single query occures multiple times by varring its parameters.
+CallablleStatement is used to execute store procedure present im database server. It support In,Out,InOut parameters.
+
+Difference between  executeUpdate() / executeQuery() 
+
+executeUpdate()				                executeQuery()
+It is used to insert/update/delete                       It is used for select query
+Its return int that indicates how many row effected      It retuns ResultSet
+
+
+What is ResultSet ? 
+Result is a cussor in jdbc which points to set of records.
+We can move it by calling next() which return boolean.
+
+Control a transaction from JDBC 
+By default each transtaction in jdbc is autoCommited.
+To control transcation programitically, need to : con.setAutoCommit(false).
+Now programitically we call con.commit(),con.rollback() to save or undo transactions. 

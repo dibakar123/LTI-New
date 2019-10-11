@@ -1,0 +1,141 @@
+Collection framework
+-------------------
+Collection is framwork which deals with manupulation of set object.
+it provides classes,interface,algo to handel set of objects.
+
+Difference between  List/Set , ArrayList/Vector    HashSet/HashTable   
+
+List				Set
+Allow dublicate			Not allow duplicate
+Keeps oerderd			Dose not maintain order
+Allow multiple null value	Allow single null values
+
+
+ArrayList                   		Vector
+ArrayList is non Synchronized   	Vector is Synchronized   
+Non threadsafe                 		ThreadSafe
+Processing fast                 	Processing slow
+Increase 50% Size if field up   	Increase double if field up
+
+
+Hashset			Hasetable
+non Synchronized   	Synchronized   
+non Threadsafe		Threadsafe
+
+
+
+LinkedList class
+Java LinkedList class uses a doubly linked list to store the elements. 
+It provides a linked-list data structure.
+It can contain duplicate elements.
+Java LinkedList class maintains insertion order.
+It is non synchronized.
+Data manipulation is fast because no shifting needs to occur.
+It can be used as a list, stack or queue.
+
+
+LinkedList<String> ll=new LinkedList<String>();  
+           ll.add("Ravi");  
+           ll.add("Vijay");  
+           ll.add("Ajay");  
+
+System.out.println(ll);  
+ll.remove("Vijay");  
+System.out.println(ll);  
+ll.remove(0);  
+System.out.println(ll); 
+LinkedList<String> ll2=new LinkedList<String>();  
+              ll2.add("Ravi");  
+              ll2.add("Hanumat");  
+ll.addAll(ll2);  
+System.out.println(ll);   
+ll.removeAll(ll2);  
+System.out.println(ll);   
+ll.removeFirst();  
+System.out.println(ll);  
+ll.removeLast();  
+System.out.println(ll);  
+
+HashSet
+*********************
+Java HashSet class is used to create a collection that uses a hash table for storage. 
+It inherits the AbstractSet class and implements Set interface.
+	public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Serializable
+
+*****
+HashSet stores the elements by using a mechanism called hashing.
+contains unique elements only.
+allows null value.
+non synchronized.
+doesn't maintain the insertion order. Here, elements are inserted on the basis of their hashcode.
+HashSet is the best approach for search operations.
+
+HashSet<String> set=new HashSet();
+		   set.add("One");  
+		   set.add("Two");  
+		   set.add("Three"); 
+		   set.add("Four");
+		   set.add("One");
+Iterator<String> i=set.iterator();
+while(i.hasNext())
+	   System.out.println(i.next());
+}
+
+
+HashMap class
+------------------
+Java HashMap class implements the map interface by using a hash table. 
+It inherits AbstractMap class and implements Map interface.
+
+	public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>, Cloneable, Serializable  
+*****
+contains values based on the key.
+contains only unique keys.
+may have one null key and multiple null values.
+non synchronized.
+maintains no order.
+
+  
+Hashtable class
+Java Hashtable class implements a hashtable, which maps keys to values. 
+It inherits Dictionary class and implements the Map interface.
+	public class Hashtable<K,V> extends Dictionary<K,V> implements Map<K,V>, Cloneable, Serializable 
+*****
+A Hashtable is an array of a list. Each list is known as a bucket. The position of the bucket is identified by calling the hashcode() method. A Hashtable contains values based on the key.
+It contains unique elements.
+It doesn't allow null key or value.
+It is synchronized, so threadsafe.
+
+Hashtable<Integer,String> map=new Hashtable<Integer,String>();        
+     map.put(100,"Amit");    
+     map.put(102,"Ravi");   
+     map.put(101,"Vijay");    
+     map.put(103,"Rahul");    
+System.out.println("Before remove: "+ map);    
+     map.remove(102);  
+System.out.println("After remove: "+ map); 
+
+System.out.println(map.getOrDefault(101, "Not Found"));  
+System.out.println(map.getOrDefault(105, "Not Found"));   
+ 
+map.putIfAbsent(104,"Gaurav");  
+System.out.println("Updated Map: "+map);  
+
+for(Map.Entry m:hm.entrySet()){  
+   System.out.println(m.getKey()+" "+m.getValue());  
+  }  
+
+
+Difference between Comparator and Comparable 
+-----------------
+Comparble interface can be used to provide single way of sorting list of objects where as Compartor interface is used to provide different ways of sorting.
+For Comparble, the class needs to implement it and override compareto() method.
+But compartor,we dont need to make any change in the class amd we create sperate class by implemting this interface and override method compare().
+Comparble from java.lang and Compartpr from java.util   packages.
+
+Thread-safe element in Collection framework 
+---------
+Hashtable and Vector  are thread safe elements. 
+
+
+

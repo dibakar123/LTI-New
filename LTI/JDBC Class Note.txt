@@ -1,0 +1,232 @@
+Loading the Driver :  For MYSQL
+--------------------
+For Oracle
+Class.forName(“oracle.jdbc.driver.OracleDriver”);
+OR
+DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver())
+
+For MYSQL
+Class.forName("com.mysql.jdbc.Driver");  
+
+Create the connection
+-------------------------
+Connection con = DriverManager.getConnection(url,user,password)
+
+Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/newdb","root","root");
+
+Create a statement
+------------------------
+Statement st = con.createStatement();
+
+Execute the query
+-----------------
+Query for updating / inserting table in a database :executeUpdate(sql query) 
+Query for retrieving data :executeQuery() method of Statement interface 
+
+Close the connections
+--------------------------
+con.close();
+
+-------------------  Backend job : In MySQL
+1. create a new database : newdb
+create database newdb;
+use newdb;
+
+2. connect with "newdb", make a table : Emp
+    eid  - int - Pk
+    ename - varchar - 30
+    salary - int
+create table emp ( eid int not null primary key, ename varchar(30), salary int);
+select * from emp;
+
+-----  Lab1:
+WAP to insert data into table : Emp [ Using Statement]
+
+
+"insert into emp values (" + eid +",'"+ename+"',"+salary+")"
+
+----
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+
+public class InsertDataIntoEmp {
+
+	public static void main(String[] args) {
+		Scanner  sc = new Scanner(System.in);
+		System.out.println("Employee Id:");
+		int eid = Integer.parseInt(sc.nextLine().trim());
+		System.out.println("Enter Name:");
+		String ename=sc.nextLine().trim();
+		System.out.println("Enter Salary:");
+		int salary = Integer.parseInt(sc.nextLine().trim());
+		Connection con=null;
+		try {
+		Class.forName("com.mysql.jdbc.Driver");
+		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/newdb","root","");
+		String sql="insert into emp values (" + eid +",'"+ename+"',"+salary+")";
+		Statement smt = con.createStatement();
+		int result = smt.executeUpdate(sql);
+		if(result>0)
+		  System.out.println("Record is added");
+		else
+			System.out.println("Sorry! Record is not added");
+		} 
+		catch (Exception e) {
+				System.out.println(e);
+		}  
+		finally{
+			if(con!=null)
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+		}
+
+	}
+
+}
+
+
+
+------Lab-2
+View all data from table : Emp
+
+"select * from emp"
+--------------------
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+public class ViewDataFromEmp {
+	public static void main(String[] args) {
+		Connection con=null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/newdb","root","");
+			String sql="select * from emp";
+			Statement smt = con.createStatement();
+			ResultSet rs = smt.executeQuery(sql);
+		
+			System.out.printf("%-15s %-15s %-15s\n","Empid","Name","Salary");
+			while( rs.next()){
+				int eid=rs.getInt(1);
+				String name=rs.getString("ename");
+				int sal = rs.getInt(3);
+				System.out.printf("%-15s %-15s %-15s\n",eid,name,sal);
+			}
+            rs.close();
+		} 
+		catch (Exception e) {
+			System.out.println(e);
+	    }  
+		finally{
+			if(con!=null)
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+		}
+
+	}
+
+}
+
+
+-----  Lab3:
+WAP to insert data into table : Emp [ Using PreparedStatement]
+------------------------
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+
+public class InsertDataIntoEmp1 {
+
+	public static void main(String[] args) {
+		Scanner  sc = new Scanner(System.in);
+		System.out.println("Employee Id:");
+		int eid = Integer.parseInt(sc.nextLine().trim());
+		System.out.println("Enter Name:");
+		String ename=sc.nextLine().trim();
+		System.out.println("Enter Salary:");
+		int salary = Integer.parseInt(sc.nextLine().trim());
+		Connection con=null;
+		try {
+		Class.forName("com.mysql.jdbc.Driver");
+		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/newdb","root","");
+		PreparedStatement smt = con.prepareStatement("insert into emp values (?,?,?)");
+		smt.setInt(1, eid);
+		smt.setString(2, ename);
+		smt.setInt(3,salary);
+		int result = smt.executeUpdate();
+		if(result>0)
+		  System.out.println("Record is added");
+		else
+			System.out.println("Sorry! Record is not added");
+		} 
+		catch (Exception e) {
+				System.out.println(e);
+		}  
+		finally{
+			if(con!=null)
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+		}
+
+	}
+
+}
+
+
+Lab-4
+==========
+To create a stored procedure :
+create or replace procedure "INSERTR"  
+(id IN NUMBER,  
+name IN VARCHAR2)  
+is  
+begin  
+insert into user420 values(id,name);  
+end;  
+/     
+
+
+
+To execute a stored procedure using JDBC:
+
+import java.sql.*;  
+public class Proc {  
+public static void main(String[] args) throws Exception{  
+  
+Class.forName("oracle.jdbc.driver.OracleDriver");  
+Connection con=DriverManager.getConnection(  
+"jdbc:oracle:thin:@localhost:1521:xe",
+"system",
+"oracle");  
+  
+CallableStatement stmt=con.prepareCall(
+"{call insertR(?,?)}");  
+stmt.setInt(1,1011);  
+stmt.setString(2,"Amit");  
+stmt.execute();  
+  
+System.out.println("success");  
+}  }  
+
+

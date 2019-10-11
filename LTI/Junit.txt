@@ -1,0 +1,95 @@
+Unit Testing
+-----
+Unit Testing is used to verify a small chunk of code by creating a path, function or a method. 
+It is used to identify defects early in software development cycle.
+It finds bugs early in the code, which makes our code more reliable.
+It is useful for developers, who work in a test-driven environment.
+
+JUnit Test
+==================
+JUnit is an open source Unit Testing Framework for JAVA. 
+It is useful for Java Developers to write and run repeatable tests. 
+Erich Gamma and Kent Beck initially develop it. 
+As the name implies, it is used for Unit Testing of a small chunk of code.
+
+
+How to define a test in JUnit?
+--------------------
+A JUnit test is a method contained in a class which is only used for testing. This is called a Test class. 
+To define that a certain method is a test method, annotate it with the @Test annotation.
+
+This method executes the code under test. 
+Use an assert method, provided by JUnit or another assert framework, to check an expected result versus the actual result. 
+These method calls are typically called asserts or assert statements.
+
+Lab:
+
+  public boolean isPrime ( int n) {
+	   boolean flag=true;
+	   if(n<=1) 
+		   return false;
+	   for(int i=2; i<=n/2; i++) {
+		   if(n%i==0) {
+			   flag=false;
+			   break;
+		   }
+	   }
+	   return flag;
+   }
+
+Junit code:
+
+For Boolean Test:
+   @Test
+    public void testisPrime() {
+    	Calculator calculator = new Calculator();
+    	assertTrue(calculator.isPrime(13));
+    	assertFalse(calculator.isPrime(12));
+    }
+
+
+For equal test:
+
+public int add ( int a, int b ) {
+          return a+b;
+}
+
+design junit test for this unit/module :
+
+Use annotation :  @Test
+
+@Test
+public void test() {
+     Utility utility = new Utility();
+     int result = utility.add(12,23);
+     assertEquals(35, result);
+  }
+
+}
+
+
+Assert class
+----------------
+The org.junit.Assert class provides methods to assert the program logic.
+
+Methods of Assert class
+The common methods of Assert class are as follows:
+
+void assertEquals(<Datatype> expected, <Datatype> actual): 
+      checks that two primitives/objects are equal. 
+      It is overloaded.
+
+void assertTrue(boolean condition): 
+      checks that a condition is true.
+
+void assertFalse(boolean condition): 
+       checks that a condition is false.
+
+void assertNull(Object obj): 
+      checks that object is null.
+
+void assertNotNull(Object obj): 
+      checks that object is not null.
+
+
+
