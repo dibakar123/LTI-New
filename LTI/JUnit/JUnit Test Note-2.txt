@@ -1,0 +1,219 @@
+JUnit Test
+==================
+
+1. open source
+2. unit testing framework
+3. it is for java lang.
+
+using maven, need to add dependency:
+
+  <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+    </dependency>
+
+Unit means a module or method , basically it is used to test a module:
+a. whether it is satisfied inputs
+b. satisfy output
+
+you have a method :
+
+public int add ( int a, int b ) {
+          return a+b;
+}
+
+design junit test for this unit/module :
+
+Use annotation :  @Test
+
+@Test
+public void test() {
+     Utility utility = new Utility();
+     int result = utility.add(12,23);
+     assertEquals(35, result);
+  }
+
+}
+
+
+
+Assert class
+----------------
+The org.junit.Assert class provides methods to assert the program logic.
+
+Methods of Assert class
+The common methods of Assert class are as follows:
+
+void assertEquals(<Datatype> expected, <Datatype> actual): 
+      checks that two primitives/objects are equal. 
+      It is overloaded.
+
+void assertTrue(boolean condition): 
+      checks that a condition is true.
+
+void assertFalse(boolean condition): 
+       checks that a condition is false.
+
+void assertNull(Object obj): 
+      checks that object is null.
+
+void assertNotNull(Object obj): 
+      checks that object is not null.
+
+
+------design a method to find max among an integer array
+
+public int max ( int a[ ] ) {
+      int max=0;
+      for(int i=0; i<a.length; i++) {
+    	  if(a[i]>max)
+    		  max=a[i];
+      }
+     return max;
+}
+
+
+-----generate testcase to test module : max()
+
+@Test
+public void test() {
+  Utility utility = new Utility();
+  int a = utility.max(new int[]{-12,-11,-23,-14,-35});
+  assertEquals(-11, a);
+		
+ }
+
+
+//fails , so modify actuaql code:
+public int max ( int a[ ] ) {
+      int max=a[0];
+      for(int i=0; i<a.length; i++) {
+    	  if(a[i]>max)
+    		  max=a[i];
+      }
+     return max;
+}
+
+Annotation based junit :
+----------------------------------------
+
+public class TestCase2 {
+	Utility utility ;
+	
+	@Before
+	public void init() {
+		 utility = new Utility();
+	}
+	
+	@Test
+	public void test() {
+		  int a = utility.max(new int[]{-12,-11,-23,-14,-35});
+		  assertEquals(-11, a);
+	}
+	@After
+	public void destroy() {
+		utility = null;
+	}
+
+}
+
+========================Module
+Input format:
+The first line contains a single integer that denotes the given number, N.
+
+Output format:
+The output is an integer in which the digits of N are arranged in incremental order from right to left.
+
+Sample input 1:
+231
+Sample output 1:
+321
+
+// n=231  output = 321
+public int righttoleft(int n) {
+String s=n+"";
+char a[] =s.toCharArray();
+Arrays.sort(a);
+String x="";
+for(int i=a.length-1;i>=0;i--) 
+      x=x+a[i];
+
+return Integer.parseInt(x);
+}
+
+
+
+--------------input :   1 2 1 2 1 2 2 
+output : 1 2 
+
+public int [ ] distinct( int a[ ] ) {
+
+ TreeSet<Integer> tset = new TreeSet<Integer>();
+  for(int i=0; i<a.length;i++)
+	tset.add(a[i]);
+		
+  int b[ ] = new int[tset.size()];
+  int i=0;
+  for(int t:tset) 
+        b[i++]=t;
+        
+   return b;
+
+} 
+
+
+@Test
+public void distinctTest(){
+     int [ ] b =  utility.distinct( new int [ ] { 1, 2, 1, 2 ,1 ,2 ,2} );
+     assertArrayEquals(new int[ ] {1,2}, b);
+}
+
+
+
+Junit with boolean test
+=================
+design a function 
+public boolean isPrime(int n )  {..... }
+
+make junit test for this method:
+
+test input		output
+1		false
+12		false
+13		true
+-12		false
+-1		false
+113		true
+
+  public boolean isPrime ( int n) {
+	   boolean flag=true;
+	   if(n<=1) 
+		   return false;
+	   for(int i=2; i<=n/2; i++) {
+		   if(n%i==0) {
+			   flag=false;
+			   break;
+		   }
+	   }
+	   return flag;
+   }
+
+
+
+   @Test
+    public void testisPrime() {
+    	Calculator calculator = new Calculator();
+    	assertTrue(calculator.isPrime(13));
+    	assertFalse(calculator.isPrime(12));
+    	assertTrue(calculator.isPrime(1));
+    	assertFalse(calculator.isPrime(-12));
+    	assertFalse(calculator.isPrime(-1));
+    	assertFalse(calculator.isPrime(0));
+    }
+
+
+
+
+
+

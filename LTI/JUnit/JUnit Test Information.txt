@@ -1,0 +1,159 @@
+unit testing
+----------------
+
+using java , we can use JUnit testing ....
+
+package com.pack;
+
+public class Calculator {
+   public int multiply ( int a, int b) {
+	   return a*b;
+   }
+}
+
+Testcase 
+
+public class TestSuite {
+    @Test
+	public void testMultiply() {
+    	Calculator calculator = new Calculator();
+	assertEquals(240, calculator.multiply(12,20));
+	assertEquals(0, calculator.multiply(12,0));
+	assertEquals(0, calculator.multiply(0,12));
+	assertEquals(-1, calculator.multiply(0,0));
+	}
+	
+}
+
+design a method to find max among 3 numbers  a b c 
+design junit test case for it
+
+Test input
+12  10    2        12
+ 2   12    3	        12
+ 2     3   12        12
+12   12   12        12
+0      0      0         0
+ 12   12    0         12
+
+  public int findMax( int a, int b , int c) {
+	   int max;
+	   if(a>b && a>c)
+		   max=a;
+	   else if(b>c)
+		   max=b;
+	   else
+		   max=c;
+	   return max;
+   }
+
+
+
+Assert class
+The org.junit.Assert class provides methods to assert the program logic.
+
+Methods of Assert class
+The common methods of Assert class are as follows:
+
+void assertEquals(boolean expected,boolean actual): 
+      checks that two primitives/objects are equal. It is overloaded.
+void assertTrue(boolean condition): 
+      checks that a condition is true.
+void assertFalse(boolean condition): 
+       checks that a condition is false.
+void assertNull(Object obj): 
+      checks that object is null.
+void assertNotNull(Object obj): 
+      checks that object is not null.
+
+Junit with boolean test
+=================
+design a function 
+public boolean isPrime(int n )  {..... }
+
+make junit test for this method:
+
+test input		output
+1		false
+12		false
+13		true
+-12		false
+-1		false
+113		true
+
+  public boolean isPrime ( int n) {
+	   boolean flag=true;
+	   if(n<=1) 
+		   return false;
+	   for(int i=2; i<=n/2; i++) {
+		   if(n%i==0) {
+			   flag=false;
+			   break;
+		   }
+	   }
+	   return flag;
+   }
+
+
+
+   @Test
+    public void testisPrime() {
+    	Calculator calculator = new Calculator();
+    	assertTrue(calculator.isPrime(13));
+    	assertFalse(calculator.isPrime(12));
+    	assertTrue(calculator.isPrime(1));
+    	assertFalse(calculator.isPrime(-12));
+    	assertFalse(calculator.isPrime(-1));
+    	assertFalse(calculator.isPrime(0));
+    }
+
+
+Test Runner :
+
+to execute test cases , need to create a class : TestRunner under com.runner package
+
+public class TestRunner {
+
+public static void main(String[] args) {
+
+      Result result = JUnitCore.runClasses(NewSuite.class);				
+      for (Failure failure : result.getFailures()) {					          System.out.println(failure.toString());					       }			       
+      System.out.println("Result=="+result.wasSuccessful());	
+    }
+
+}
+
+=================
+design method 
+public String makeLogin(String uid, String pwd) { ... }
+if uid="ram" and pwd="siya"     return "welcome"  else return "sorry"
+
+design test case using junit
+input			output
+uid="ram" , pwd="siya"	welcome
+uid="rama" and pwd="siya"	sorry
+
+public String makeLogin(String uid, String pwd) { 
+ if(uid.equalsIgnoreCase("ram") && pwd.equalsIgnoreCase("siya"))
+	return "welcome";
+ else
+	return "sorry";
+   }
+
+public class TestSuite {
+	@Test
+	public void testMakeLogin() {
+		Calculator calculator = new Calculator();
+		assertEquals("welcome", calculator.makeLogin("ram", "siya"));
+		assertEquals("sorry", calculator.makeLogin("rama", "siyaa"));
+		assertEquals("welcome", calculator.makeLogin("rama", "siyaa"));
+	}
+}
+
+
+
+
+
+
+
+
