@@ -1,0 +1,76 @@
+Generics in Java
+------------------
+
+The Java Generics programming is introduced in J2SE 5 to deal with type-safe objects. 
+It makes the code stable by detecting the bugs at compile time.
+
+Before generics, we can store any type of objects in the collection, i.e., non-generic. 
+Now generics force java programmer to store a specific type of objects.
+
+Advantage :
+Type-safety: We can hold only a single type of objects in generics. 
+Type casting is not required: There is no need to typecast the object.
+Compile-Time Checking: It is checked at compile time so problem will not occur at runtime. 
+
+Case Study:
+Without Generics, store any type of objects.
+
+List list = new ArrayList();    
+list.add(10);  
+list.add("10");  
+
+With Generics, it is required to specify the type of object we need to store.  
+
+List<Integer> list = new ArrayList<Integer>();    
+list.add(10);  
+list.add("10");// compile-time error  
+Integer s = list.get(0);   
+
+
+Generic class
+----------------------
+A class that can refer to any type is known as a generic class. 
+Here, using the T type parameter to create the generic class of specific type.
+
+class MyGen<T>{  
+T obj;  
+void add(T obj){this.obj=obj;}  
+T get(){return obj;}  
+}  
+
+To Use,
+class TestGenerics3{  
+public static void main(String args[]){  
+MyGen<Integer> m=new MyGen<Integer>();  
+m.add(2);  
+//m.add("abc");//Compile time error  
+System.out.println(m.get());  
+}}  
+
+
+Generic Method
+----------
+Like the generic class, we can create a generic method that can accept any type of arguments.
+
+public class Sample{  
+  
+   public static < E > void printArray(E[] elements) {  
+        for ( E element : elements){          
+            System.out.println(element );  
+         }  
+         System.out.println();  
+    }  
+    public static void main( String args[] ) {  
+        Integer[] ints = { 10, 20, 30, 40, 50 };  
+        Character[] chars = { 'J', 'A', 'V', 'A', 'T','P','O','I','N','T' };  
+  
+        printArray( ints  );   
+        printArray( chars );   
+    }   
+}  
+
+ 
+
+
+ 
+
