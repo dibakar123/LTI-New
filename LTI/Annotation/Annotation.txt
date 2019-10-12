@@ -1,0 +1,87 @@
+Annotations in Java
+---------------------------
+Annotations are used to provide supplement information about a program.
+Annotations help to associate metadata (information) to the program elements i.e. instance variables, constructors, methods, classes, etc.
+
+Annotations start with ‘@’.
+Annotations do not change action of a compiled program.
+
+There are 3 categories of Annotations:-
+------------
+Marker Annotations:
+The only purpose is to mark a declaration. These annotations contain no members and do not consist any data. Thus, its presence as an annotation is sufficient. Since, marker interface contains no members, simply determining whether it is present or absent is sufficient. 
+@Override is an example of Marker Annotation.
+Example: - @TestAnnotation()
+
+Single value Annotations:
+These annotations contain only one member and allow a shorthand form of specifying the value of the member. 
+However in order to use this shorthand, the name of the member must be value.
+Example: - @TestAnnotation(“testing”);
+
+Full Annotations:
+These annotations consist of multiple data members/ name, value, pairs.
+Example:- @TestAnnotation(owner=”dibakar”, value=”Class Test”)
+
+Predefined/ Standard Annotations
+-----------------------
+Java defines seven built-in annotations.
+Three are included in java.lang: @Deprecated, @Override and @SuppressWarnings
+
+@Deprecated Annotation
+It is a marker annotation. It indicates that a declaration is obsolete and has been replaced by a newer form.
+
+	class A{  
+		void m(){System.out.println("hello m");}  
+		  
+		//@Deprecated  
+		void n(){System.out.println("hello n");}  
+		}  
+		  
+	public class Test3 {
+		public static void main(String args[]){  
+		  
+		A a=new A();  
+		a.n();  
+		}}  
+
+@Override Annotation
+It is a marker annotation that can be used only on methods. A method annotated with @Override must override a method from a superclass.
+
+class Animal{  
+void eat(){System.out.println("eating something");}  
+}  
+  
+class Dog extends Animal{  
+@Override  
+void eat(){System.out.println("eating foods");}//should be eatSomething  
+}  
+  
+class TestAnnotation1{  
+public static void main(String args[]){  
+Animal a=new Dog();  
+a.eatSomething();  
+}}  
+
+@SuppressWarnings
+It is used to inform the compiler to suppress specified compiler warnings. The warnings to suppress are specified by name, in string form. Java groups warnings under two categories. They are : deprecation and unchecked.. 
+
+package pack1;
+import java.util.*;  
+class Test1{  
+
+//@SuppressWarnings("unchecked")
+public static void main(String args[]){  
+//@SuppressWarnings("rawtypes")
+ArrayList list=new ArrayList();  
+list.add("sonoo");  
+list.add("vimal");  
+list.add("ratan");  
+  
+for(Object obj:list)  
+System.out.println(obj);  
+  
+}}  
+
+
+
+Four are imported from java.lang.annotation: @Retention, @Documented, @Target, and @Inherited.
