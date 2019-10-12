@@ -1,0 +1,99 @@
+
+
+Find out the employee's information whose empnumber is given. If not present , then shows 'Not found'
+
+Find out the department's total number of employees as well as total salary whose deptnumber is to be given.
+If not present , then shows 'Not found'
+
+
+Take max and min salary range , find all employees within this. 
+Display in this format:
+Empno	Name	Salary	Deptno
+
+if there are no employee,
+show "Sorry"
+
+Design a table as :
+BOOK {  bookid int not null primary key, bookname varchar(100), author varchar(100) , price int }
+WAP to take Book's information and store in this table.
+
+---------------------------------------------------------
+
+Create a class named as Customer, which contains following private variable/ attributes,   
+ 
+Member Field name	Type
+id			Long
+name			String
+gender			Character (M/F)
+email			String
+contactNumber		String
+createdOn		Date (time in 24 hrs clock) dd/MM/yyyy HH:mm:ss
+
+Mark all the attributes as private
+Create / Generate appropriate Getters & Setters.
+Add a default constructor and a parameterized constructor to take in all attributes.
+
+Design a method in this class:
+public static List<Customer> findCustomerNameFromList(List<Customer> customers, String subString)	
+In this method, given part of customer name, search the customer list based on name and return the customer list with matching names.
+
+Sample Input and Output:   
+Enter the number of customer:
+5
+Enter the customer 1 detail:
+12,John Smith,M,johnsmith@a.com,+85-7489-8596478596,12/12/2016 12:30:00
+Enter the customer 2 detail:
+15,Tedmond,M,tedmond@a.com,+45-9857-5266987485,14/01/2017 04:30:00
+Enter the customer 3 detail:
+11,Dalton,M,dalton@a.com,+48-8967-7485947558,12/02/2017 20:00:00
+Enter the customer 4 detail:
+5,Raymond,M,raymond@a.com,+88-8745-8554712569,28/01/2017 10:30:00
+Enter the customer 5 detail:
+9,Ruford,M,ruford@a.com,+88-4859-7714589633,01/04/2017 17:45:00
+
+	 
+Enter the substring to search from customer list:
+mon
+
+Id	Name		Gender	Email		Contact no		Created on
+15	Tedmond		M	tedmond@a.com	+45-9857-5266987485	14/01/2017 04:30:00
+5	Raymond		M	raymond@a.com	+88-8745-8554712569	28/01/2017 10:30:00
+
+
+---------------------------------------------------------------
+
+Create a custom checked Exception “InvalidEmailException” with custom error message. "InvalidEmailException: Invalid Email for the user".
+
+Create a Member Class with the following attributes:
+Member Field name	Type
+id			Long
+firstName		String
+lastName		String
+email			String
+contactNumber		String
+
+Read member details from Input (Console). One line would consist details relating one member in comma separated format. 
+Create member objects for each line and add it to an arraylist.
+
+A valid email has an @ and ends with “.com / .org”. During the parse, if an email id is invalid, Raise the custom exception and dont add  the entity into the list.
+
+At end, Sort the list of members based on firstname and display them.
+
+INPUT / OUTPUT:
+
+Enter the number of Members:
+5
+
+1,joe,root,joe.root@a.com,1234567890
+2,ben,stokes,ben.stokes!a.com,2345678901
+InvalidEmailException: Invalid Email for ben
+3,virat,kohli,virat.kohli@a.com,3456789012
+4,ravi,varma,ravi.varma@a.in,4357689010
+InvalidEmailException: Invalid Email for ravi
+5,mahe,bagu,mahi.bali@a.com,1234798012
+
+The member details are:
+1	joe 	root	joe.root@a.com		1234567890
+5	mahe	bagu	mahi.bali@a.com		1234798012
+3	virat	kohli	virat.kohli@a.com	3456789012
+
