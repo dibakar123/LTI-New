@@ -1,0 +1,85 @@
+**What is the thread?
+---------------
+A thread is a path of execution with in a process.
+A process can contain multiple threads.
+A threads makes lighter,increses efficieny of code,increses utilization of resouses maximum and provides sharing resources.
+
+What is the difference between Process and Thread?
+---------------------------------------
+A process is a self contained execution environment and it can be seen as a program or application whereas Thread is a single task of execution within the process. 
+Thread can be called lightweight process. 
+Thread requires less resources to create and exists in the process, thread shares the process resources.
+
+A daemon thread runs in background and doesn’t prevent JVM from terminating.Daemon threads are low priority threads which always run in background and user threads are high priority threads which always run in foreground. 
+
+**How can we create a Thread in Java?
+-----------
+There are two ways to create Thread in Java – 
+1. by implementing Runnable interface .
+class MyThread implements Runnable { ...}
+
+2. by extend Thread Class. 
+class MyThread extends Thread {....}
+
+***Thread Life Cycle in Java
+--------------------
+New : When we create a new Thread object using new operator, thread state is New Thread. 
+
+Runnable :  call start() on Thread object, it’s state is changed to Runnable. The control is given to Thread scheduler to finish it’s execution. 
+
+Running : When thread is executing, it’s state is changed to Running. Thread scheduler picks one of the thread from the runnable thread pool and change it’s state to Running. 
+
+Blocked/Waiting : A thread can be waiting for other thread to finish.
+
+Dead : Once thread finished executing, it’s state is changed to Dead and it’s considered to be not alive.
+
+What is multithreading?
+------------------
+Multithreading is a process of executing multiple threads simultaneously. Multithreading is used to obtain the multitasking. 
+It consumes less memory and gives the fast and efficient performance.
+
+What is race-condition?
+-------------
+A Race condition is a problem which occurs in the multithreaded programming when various threads execute simultaneously accessing a shared resource at the same time. 
+The proper use of synchronization can avoid the Race condition.
+
+**What is the synchronization?
+------
+Synchronization is the capability to control the access of multiple threads to any shared resource. 
+It is used:
+a.To prevent thread interference.
+b.To prevent consistency problem.
+
+**How can you achieve Synchronization?
+-----
+Synchronization can be achieved in three ways:
+a.by the synchronized method
+b.by synchronized block
+c.by static synchronization
+
+**How does thread communicate with each other?
+------------
+When threads share resources, communication between Threads is important to coordinate their efforts. 
+Object class wait(), notify() and notifyAll() methods allows threads to communicate about the lock status of a resource.
+
+wait
+Object wait methods has variance, one which waits indefinitely for any other thread to call notify or notifyAll method on the object to wake up the current thread. Other puts the current thread in wait for specific amount of time before they wake up.
+
+notify
+notify method wakes up only one thread waiting on the object and that thread starts execution. So if there are multiple threads waiting for an object, this method will wake up only one of them. The choice of the thread to wake depends on the OS implementation of thread management.
+
+notifyAll
+notifyAll method wakes up all the threads waiting on the object, although which one will process first depends on the OS implementation.
+
+
+
+
+What is the deadlock?
+------------
+Deadlock is a situation in which every thread is waiting for a resource which is held by some other waiting thread. 
+In this situation, Neither of the thread executes nor it gets the chance to be executed. 
+
+
+
+
+
