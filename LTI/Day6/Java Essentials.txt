@@ -1,0 +1,173 @@
+Custom Exception
+throw vs throws
+-----
+CallableStatement
+
+-----
+Generics
+Annotations
+enum
+Java8 Lamda Expression
+Java 8 Date & Time API 
+
+Enum
+------
+Enum in java is a data type that contains fixed set of constants.
+A Java Enum is a special Java type used to define collections of constants.
+The java enum constants are static and final implicitly.
+It is available from JDK 1.5.
+
+
+Note:
+enum improves type safety
+enum is type-safe you can not assign anything else other than predefined Enum constants to an Enum variable.
+enum can be easily used in switch
+enum can be traversed
+enum can have fields, constructors and methods
+enum may implement many interfaces but cannot extend any class because it internally extends Enum class
+
+
+class EnumExample1{  
+public enum Season { WINTER, SPRING, SUMMER, FALL }  
+  
+public static void main(String[] args) {  
+for (Season s : Season.values())  
+System.out.println(s);
+
+Season x=Season.WINTER;  
+System.out.println(x);   
+  
+}}  
+
+Initializing Java enum :::::
+
+class EnumExample{  
+enum Season {   
+	WINTER(5), SPRING(10), SUMMER(15), FALL(20);   
+	private int value;  
+	private Season(int value){ this.value=value;  }  
+	}  
+public static void main(String args[]){  
+	for (Season s : Season.values())  
+		System.out.println(s+" "+s.value);  
+  }
+}  
+
+
+
+
+
+Java Lambda Expressions
+-----------------
+Lambda expression is a new and important feature of Java which was included in Java SE 8. 
+It provides a clear and concise way to represent one method interface using an expression. 
+It is very useful in collection library. It helps to iterate, filter and extract data from collection.
+Java lambda expression is treated as a function, so compiler does not create .class file.
+
+Why use Lambda Expression
+----
+To provide the implementation of Functional interface.
+Less coding.
+
+
+Java Lambda Expression Syntax :      (argument-list) -> {body}  
+Java lambda expression is consisted of three components.
+
+1) Argument-list: It can be empty or non-empty as well.
+2) Arrow-token: It is used to link arguments-list and body of expression.
+3) Body: It contains expressions and statements for lambda expression.
+
+No Parameter Syntax
+
+() -> {  
+//Body of no parameter lambda  
+}  
+
+One Parameter Syntax
+
+(p1) -> {  
+//Body of single parameter lambda  
+}
+  
+Two Parameter Syntax
+
+(p1,p2) -> {  
+//Body of multiple parameter lambda  
+}  
+
+---Lab---
+interface Addable{  
+    int add(int a,int b);  
+}  
+  
+public class Lambda1 {  
+    public static void main(String[] args) {  
+          
+        Addable ad1=(a,b)->(a+b);  
+        System.out.println(ad1.add(10,20));  
+          
+        // Lambda expression with return keyword.    
+        Addable ad2=(int a,int b)->{ return (a+b); };  
+        System.out.println(ad2.add(100,200));  
+    }  
+}  
+
+--Lab---
+import java.util.*;  
+public class Lambda2{  
+    public static void main(String[] args) {  
+          
+        List<String> list=new ArrayList<String>();  
+        list.add("aaa");  
+        list.add("mmm");  
+        list.add("iii");  
+        list.add("jjj");  
+          
+        list.forEach(  
+            (n)->System.out.println(n)  
+        );  
+    }  
+}  
+
+---------------------------
+
+Date-Time API in Java 8
+
+New date-time API is introduced in Java 8 to overcome the following drawbacks of old date-time API :
+
+Not thread safe : Unlike old java.util.Date which is not thread safe the new date-time API is immutable and doesn’t have setter methods.
+Less operations : In old API there are only few date operations but the new API provides us with many date operations.
+
+Java 8 under the package java.time
+
+Local : Simplified date-time API with no complexity of timezone handling.
+Zoned : Specialized date-time API to deal with various timezones.
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+public class Test1 {
+	public static void main(String[] args) {
+	    LocalDate date = LocalDate.now(); 
+	    System.out.println("date is "+ date); 
+	   
+	    LocalTime time = LocalTime.now(); 
+	    System.out.println("time is "+ time); 
+
+	    LocalDateTime current = LocalDateTime.now(); 
+	    System.out.println("date and time : "+ current); 
+	    
+	    DateTimeFormatter format =  DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");   
+	    String formatedDateTime = current.format(format);   
+	    System.out.println("in foramatted manner "+ formatedDateTime); 
+	}
+}
+
+
+
+
+
+
+
+
+
