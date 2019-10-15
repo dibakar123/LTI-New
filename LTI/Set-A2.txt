@@ -1,0 +1,345 @@
+Knowledge Based Test							
+
+1. Assume the current date as 09/04/2018 which is Monday. Predict the output of the code snippet.
+public class Test {
+	 public static void main(String args[]){
+		   Date date=new Date();
+		   SimpleDateFormat sd;
+		  sd=new SimpleDateFormat("E MMM dd yyyy");
+		  System.out.print(sd.format(date));}
+}
+a.	Mon Apr 09 2018
+b.	Mon Apr 9 2018
+c.	Mon April 09 2018
+d.	Monday Apr 09 2018
+
+2. Predict the output of the following code snippet.
+public class Test {
+	 public static void main(String [] args) 
+	    {
+	        String a = args[1];
+	        String b = args[2];
+	        String c = args[3];	        
+	        System.out.print(" args[2] = " + b);
+	    }
+}
+> java Test 1 2 3 4
+
+	a. args[2] = 2
+	b. args[2] = 3
+	c. An exception thrown at runtime
+	d. args[2] =  0 
+
+3. Predict the output of the following code snippet.
+public class Test {
+	public static void main(String[] args) {
+		StringBuffer sb = new StringBuffer("cognizant");
+		sb.reverse();
+		sb.replace(2, 7, "c");
+		sb.delete(0, 2);
+		System.out.println(sb);
+	}
+}
+	a. coc
+	b. cng
+	c. gnc
+	d. tnc
+
+4. Predict the output of the following code snippet.
+public class Test {
+	public static void main(String[] args) {
+	  boolean flag=true;
+		   if(flag=false)
+			   System.out.print("TRUE");
+		   else
+			   System.out.print("FALSE");
+	}
+}
+	a. TRUE
+	b. FALSE
+	c. Compilation fails
+	d. Compiles but prints nothing
+
+5. Predict the output of the following code snippet.
+interface A {
+ public void one();
+}
+interface B extends A {
+ public void two();
+}
+class C implements B{
+ public void two() {
+  System.out.println("method responds");
+ } 
+}
+public class Test {
+	public static void main(String[] args) {
+		new C().two();
+	}
+}
+	a. Compiles and prints "method responds"
+	b. Compiles but prints nothing
+	c. Compilation error
+	d. Compiles but throws exception an exception at runtime
+
+6. Predict the output of the following code snippet.
+public class Test {
+	public static void main(String[] args) {
+		 String pancard="ANQPG4685R";
+		 System.out.println(pancard.matches("[A-Z]{5}[0-9]{4}[A-Z]"));
+	}
+}
+	a. true
+	b. false
+
+7. Predict the output of the following code snippet.
+public class Test {
+	public static void main(String[] args) {
+		StringBuffer sb=new StringBuffer("Java");
+		  System.out.println(sb.capacity()); 
+	}
+}
+	a. 16
+	b. 20
+	c. 4
+	d. 12
+
+8. Predict the output of the following code snippet.
+public class Test {
+	public static void main(String[] args) {
+		TreeMap<Integer, String> hm = new TreeMap<Integer, String>();
+		hm.put(2, "Two");
+		hm.put(4, "Four");
+		hm.put(1, "One");
+		hm.put(6, "Six");
+		hm.put(7, "Seven");
+		SortedMap<Integer, String> sm = hm.subMap(2, 7);
+		SortedMap<Integer, String> sm2 = sm.tailMap(4);
+		System.out.print(sm2);
+	}
+}
+	a. {4=Four, 6=Six}
+	b. {2=Two, 4=Four, 6=Six, 7=Seven}
+	c. {1=One, 2=Two, 4=Four, 6=Six, 7=Seven}
+	d. {4=Four, 6=Six, 7=Seven}
+
+9.  Predict the output of the following code snippet.
+public class Test {
+	public static void main(String[] args) {
+		List<Integer> list1=new ArrayList<Integer>();
+		list1.add(2);
+		list1.add(4);
+		list1.add(6);
+		List<Integer> list2=new ArrayList<Integer>();
+		list2.add(4);
+		list2.add(5);
+		list2.add(6);
+		list1.retainAll(list2);
+		list1.addAll(list2);
+		list1.removeAll(list2);
+		System.out.println(list1.size());		
+	}
+}
+	a. 6
+	b. 5
+	c. 0
+	d. 2
+
+10. Predict the output of the following code snippet.
+class Person {
+	public void talk() {
+		System.out.print("I am a Person");
+	}
+}
+class Student extends Person {
+	public void talk() {
+		System.out.print("I am a Student");
+	}
+}
+public class Test {
+	public static void main(String[] args) {
+		Person p = new Student();
+		p.talk();
+	}
+}
+a.	Compiles and prints "I am a person"
+b.	Compiles and prints "I am a student"
+c.	Compilation error
+d.	Compiles but throws exception at runtime
+
+11.Predict the output of the following code snippet.
+class A {
+	int i = 10;
+	public void printValue() {
+		System.out.print("Value-A ");
+	}
+}
+class B extends A {
+	int i = 12;
+	public void printValue() {
+		System.out.print("Value-B ");
+	}
+}
+public class Test {
+	public static void main(String[] args) {
+		A a = new B();
+		a.printValue();
+		System.out.print(a.i);
+	}
+}
+	a. Value-A 10
+	a. Value-B 12
+	c. Value-A 12
+	d. Value-B 10
+
+12. Predict the output of the following code snippet.
+class A{
+      private void printName(){
+            System.out.println("Value-A");
+      }
+}
+class B extends A{
+      public void printName(){
+            System.out.println("Value-B");
+      }
+}
+public class Test {
+	public static void main(String[] args) {
+		A a = new B();
+		a.printName();
+	}
+}
+	a. Value-A
+	b. Value-B
+	c. Compilation fails as private methods cannot be overridden
+	d. Compiles but throws exception at runtime
+
+13. Predict the output of the following code snippet.
+public class Test implements Runnable
+{
+  public void run()
+  {
+    System.out.print("r1 ");
+    System.out.print("r2 ");
+  }    
+ public static void main( String[] args ) throws InterruptedException
+ {
+    Thread t = new Thread(new Test()); 
+    t.start();
+    System.out.print("m1 ");
+    t.join();
+    System.out.print("m2 ");
+ }
+}
+a.	compilation error
+b.	The output would be r1 r2 m1 m2
+c.	The output would be m1 m2 r1 r2
+d.	The output would be m1 r1 r2 m2
+
+14. Predict the output of the following code snippet.
+public class Test {	
+	int x = 10;
+	public void assign(int x) {
+		x = x;
+		System.out.println(this.x);
+	}
+	public static void main(String[] args) {
+		new Test().assign(100);
+	}
+}
+	a. 10
+	b. 100
+	c. 0
+	d. compilation error
+
+15. Predict which line generates compilation error.
+public class Test {
+	static int x = 100; // line 3
+	int y = 200; // line 4
+
+	public static void main(String[] args) {
+		final int z; // line 7
+		z = x + y; // line 8
+		System.out.println(z);
+	}
+}
+a. line 3
+b. line 4
+c. line 7
+d. line 8
+
+16. Predict the output of the following code snippet.
+class A {
+	public void m1() {
+		System.out.println("A");
+	}
+}
+class B extends A {
+	void m1() {
+		System.out.println("B");
+	}
+}
+public class Test {
+	public static void main(String[] args) {
+		A a = new B();
+		a.m1();
+	}
+}
+a.	Compiles and prints "A"
+b.	Compilation error
+c.	Compiles but throws exception at runtime 
+d.	Compiles and prints "B"
+
+17. Predict the output of the following code snippet.
+class A {
+	String msg;
+	A(String msg){
+		this.msg=msg;
+	}
+	public void m1() {
+		System.out.println("A");
+	}
+}
+class B extends A {	
+	public void m1() {
+		System.out.println("B");
+	}	
+}
+public class Test {
+	public static void main(String[] args) {
+		A a = new B();
+		a.m1();
+	}
+}
+	a. Compiles and prints "B"
+b. Compiles and prints "A"
+c. Compilation error
+d. Compiles but throws exception at runtime.
+
+18. Predict the output of the following code snippet.
+public class Test {
+	static{
+		System.out.print("One ");
+	}
+	public static void main(String[] args) {
+		System.out.print("Four ");
+		new Test();
+		System.out.print("Five ");
+	}
+	{
+		System.out.print("Three ");
+	}
+	static{
+		System.out.print("Two ");
+	}
+}
+	a. One Two Four Three Five 
+	b. One Two Three Four Five 
+	c. One Four Five Three Two
+	d. Four Five Three Two One
+
+======================================
+a	b	a	b	c
+a	b	a	c	b
+d	c	d	a	d
+b	c	a	

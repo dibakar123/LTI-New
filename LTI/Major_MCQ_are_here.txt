@@ -1,0 +1,9273 @@
+1)Which of the following declarations are correct? (Choose TWO) 
+	
+byte b = 256; 
+	
+int i = new Integer(“56”); ...........................(answer)
+	
+String s = “null”;------------------(answer) 
+	
+boolean b = TRUE
+
+
+2)What will happen if a main() method of a "testing" class tries to access a private instance variable of an object using dot notation?
+	
+The compiler will find the error and will not make a .class file   .....................(answer)
+	
+The program will compile successfully, but the .class file will not run correctly 
+	
+The compiler will automatically change the private variable to a public variable 
+	
+The program will compile and run successfully 
+
+
+3) class Test{
+static void method(){
+this.display();
+}
+static display(){
+System.out.println(("hello");
+}
+public static void main(String[] args){
+new Test().method();
+}
+}
+consider the code above & select the proper output from the options.
+	
+does not compile ---------------(answer)
+	
+Runtime Error 
+	
+compiles but no output 
+	
+hello 
+
+
+4) public class c123 {
+ private c123() {
+  System.out.println("Hellow");
+ }
+ public static void main(String args[]) {
+  c123 o1 = new c123();
+  c213 o2 = new c213();
+ }
+}
+class c213 {
+ private c213() {
+  System.out.println("Hello123");
+ }
+}
+
+What is the output?
+	
+Hellow 
+	
+Runs without any output 
+	
+It is not possible to declare a constructor as private 
+	
+Compilation Error   ...........................(answer)
+
+
+
+
+5)class One{
+int var1;
+One (int x){
+var1 = x;
+}}
+class Derived extends One{
+int var2;
+void display(){
+System.out.println("var 1="+var1+"var2="+var2);
+}}
+class Main{
+public static void main(String[] args){
+Derived obj = new Derived();
+obj.display();
+}}
+consider the code above & select the proper output from the options.
+	
+0 , 0 
+	
+compiles successfully but runtime error 
+	
+none of these 
+	
+compile error ----------------(answer)
+
+
+
+6) A constructor may return value including class type
+	
+true 
+	
+false ----------------(answer)
+
+
+
+7) Consider the following code and choose the correct option:
+class A{ A(){System.out.print("From A");}}
+class B extends A{ B(int z){z=2;}
+public static void main(String args[]){
+  new B(3);}}
+	
+Compiles and display 3 
+	
+Compiles but throws runtime exception 
+	
+Comiples and prints From A 
+	
+Compilation error ----------------(answer)
+
+
+
+8) Consider the following code and choose the correct option:
+class Test{ private static void display(){
+System.out.println("Display()");}
+private static  void show() { display();
+System.out.println("show()");}
+public static void main(String arg[]){
+show();}}
+	
+Compiles but throws runtime exception 
+	
+Compiles and prints
+ 
+Display()     .....................(answer)
+show() 
+	
+Compilation error 
+	
+Compiles and prints show()
+
+
+9)  Consider the following code and choose the correct option:
+class A{ private void display(){ System.out.print("Hi");}
+public static void main(String ar[]){
+display();}}
+	
+Compiles and displays Hi 
+	
+Compiles but doesn't display anything 
+	
+Compiles and throws run time exception 
+	
+Compilation fails ----------------(answer)
+
+
+
+10) Given:
+package QB;
+
+class Meal {
+  Meal() {
+    System.out.println("Meal()");
+  }
+}
+class Cheese {
+  Cheese() {
+    System.out.println("Cheese()");
+  }
+}
+class Lunch extends Meal {
+  Lunch() {
+    System.out.println("Lunch()");
+  }
+}
+class PortableLunch extends Lunch {
+  PortableLunch() {
+    System.out.println("PortableLunch()");
+  }
+}
+class Sandwich extends PortableLunch {
+    private Cheese c = new Cheese();
+
+  public Sandwich() {
+    System.out.println("Sandwich()");
+  }
+}
+public class MyClass7 {
+  public static void main(String[] args) {
+    new Sandwich();
+  }
+} What would be the output?
+	
+Meal()
+Lunch()
+PortableLunch()
+Sandwich()
+Cheese() 
+	
+Meal()
+Lunch()
+PortableLunch()    .................(answer)
+Cheese()
+Sandwich() 
+	
+Cheese()
+Sandwich()
+Meal()
+Lunch()
+PortableLunch() 
+	
+Meal()
+Cheese()
+Lunch()
+PortableLunch()
+Sandwich() 
+
+
+
+11) Consider the following code and choose the correct output:
+class Test{
+  public static void main(String args[]){
+   TreeMap<Integer, String> hm=new TreeMap<Integer, String>();
+  hm.put(2,"Two");
+ hm.put(4,"Four");
+ hm.put(1,"One");
+ hm.put(6,"Six");
+ hm.put(7,"Seven");
+ SortedMap<Integer, String> sm=hm.subMap(2,7);
+ SortedMap<Integer,String> sm2=sm.tailMap(4);
+ System.out.print(sm2);
+ }}
+	
+{2=Two, 4=Four, 6=Six, 7=Seven} 
+	
+{4=Four, 6=Six, 7=Seven} 
+	
+{4=Four, 6=Six}     ......................(answer)
+	
+{2=Two, 4=Four, 6=Six}
+
+
+
+12) What will be the output of following code?
+class Test{
+ public static void main(String args[]){
+  TreeSet<Integer> ts=new TreeSet<Integer>();
+  ts.add(2);
+  ts.add(3);
+  ts.add(7);
+  ts.add(5);
+SortedSet<Integer> ss=ts.subSet(1,7);
+  ss.add(4);
+  ss.add(6);
+System.out.print(ss);}}
+	
+[2,3,4,5,6]     ..........................(answer)
+	
+[2,3,4,5,6,7] 
+	
+[2,3,7,5,4,6] 
+	
+[2,3,7,5] 
+
+
+
+13) Given:
+ public static Collection get() {
+ Collection sorted = new LinkedList();
+ sorted.add("B"); sorted.add("C"); sorted.add("A");
+ return sorted;
+ }
+ public static void main(String[] args) {
+ for (Object obj: get()) {
+ System.out.print(obj + ", ");
+ }
+ }
+What is the result?
+	
+An exception is thrown at runtime. 
+	
+Compilation fails.   ......................(answer)
+	
+A, B, C, 
+	
+B, C, A, 
+
+
+
+
+
+14) Inorder to remove one element from the given Treeset, place the appropriate line of code 
+public class Main {
+  public static void main(String[] args) {
+    TreeSet<Integer> tSet = new TreeSet<Integer>();
+    System.out.println("Size of TreeSet : " + tSet.size());
+    tSet.add(new Integer("1"));
+    tSet.add(new Integer("2"));
+    tSet.add(new Integer("3"));
+   System.out.println(tSet.size());
+   // remove the one element from the Treeset
+    System.out.println("Size of TreeSet after removal : " + tSet.size());
+  }
+}
+	
+tSet.drop(new Integer("1")); 
+	
+tSet.clear(new Integer("1")); 
+	
+tSetdelete(new Integer("1")); 
+	
+tSet.remove(new Integer("1"));    ..................(answer)
+
+
+
+
+
+15) You wish to store a small amount of data and make it available for rapid access. You do not have a need for the data to be sorted, uniqueness is not an issue and
+ the data will remain fairly static Which data structure might be most suitable for this requirement?
+
+1) TreeSet
+2) HashMap
+3) LinkedList
+4) an array   .............................(answer)
+
+
+
+
+
+16) next() method of Scanner class will return _________
+	
+Integer 
+	
+int 
+	
+Long 
+	
+String ----------------(answer)
+
+
+
+
+17 ) Given:
+10. interface A { void x(); }
+11. class B implements A { 
+     public void x() { } 
+     public void y() { }        }
+12. class C extends B { 
+     public void x() {}         }
+And:
+20. java.util.List<a> list = new       java.util.ArrayList</a>();
+21. list.add(new B());
+22. list.add(new C());
+23. for (A a:list) {
+24. a.x();
+25. a.y();;
+26. }
+What is the result?
+	
+Compilation fails because of an error in line 21 
+	
+An exception is thrown at runtime 
+	
+Compilation fails because of an error in line 25 
+	
+The code runs with no output. -----------------(answer)
+	
+Compilation fails because of an error in line 23. 
+
+
+
+
+
+18) static void sort(List list) method is part of ________
+	
+ArrayList class 
+	
+Collections class ---------------------(answer)
+	
+Vector class 
+	
+Collection interface 
+
+
+
+
+
+19) 
+A) Iterator does not allow to insert elements during traversal
+B) Iterator allows bidirectional navigation.
+C) ListIterator allows insertion of elements during traversal
+D) ListIterator does not support bidirectional navigation
+	
+A and C is TRUE 
+	
+A and D is TRUE 
+	
+B and D is TRUE 
+	
+A and B is TRUE ---------------------(answer)
+
+
+
+
+
+20) 
+Given:
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+public class MainClass {
+
+  public static void main(String[] a) {
+    String elements[] = { "A", "B", "C", "D", "E" };
+    Set set = new HashSet(Arrays.asList(elements));
+
+    elements = new String[] { "A", "B", "C", "D" };
+    Set set2 = new HashSet(Arrays.asList(elements));
+
+    System.out.println(set.equals(set2));
+  }
+} What is the result of given code?
+	
+Compile time error 
+	
+Runtime Exception 
+	
+false       ...................(answer)
+	
+true 
+
+
+
+
+
+21)
+Consider the following code and choose the correct option:
+abstract class Fun{
+ void time(){
+  System.out.println("Fun Time"); }}
+class Run extends Fun{
+ void time(){
+  System.out.println("Fun Run"); }
+ public static void main(String[] args) {
+  Fun f1=new Run();
+  f1.time(); }}
+	
+Compiles but error at runtime 
+	
+Compilation error 
+	
+Fun Time 
+	
+Fun Run ---------------------(answer)
+
+
+
+22)
+
+Consider the following code and choose the correct option:
+class A{
+ void display(byte a, byte b){
+  System.out.println("sum of byte"+(a+b)); }
+ void display(int a, int b){
+  System.out.println("sum of int"+(a+b)); }
+  public static void main(String[] args) {
+  new A().display(3, 4); }}
+	
+Compiles but error at runtime 
+	
+sum of int7 ---------------------(answer)
+	
+sum of byte 7 
+	
+Compilation error
+
+
+
+
+23)
+Consider the following code and choose the correct option:
+class A{
+ void display(){  System.out.println("Hello A"); }}
+class B extends A{
+ void display(){
+  System.out.println("Hello B"); }}
+public class Test {
+ public static void main(String[] args) {  
+  B b=(B)  new A();
+  b.display(); }}
+	
+Hello A 
+	
+Hello B 
+	
+Compilation error ---------------------(answer)
+	
+Compiles but error at runtime 
+
+
+
+
+
+24)
+What will be the output of the program? 
+
+class SuperClass 
+{ 
+    public Integer getLength() 
+    {
+        return new Integer(4); 
+    } 
+} 
+
+public class SubClass extends SuperClass 
+{ 
+    public Long getLength() 
+    {
+        return new Long(5); 
+    } 
+
+    public static void main(String[] args) 
+    { 
+        SuperClass sp = new SuperClass(); 
+        SubClass sb = new SubClass(); 
+        System.out.println( 
+        sp.getLength().toString() + "," + sub.getLength().toString() ); 
+    } 
+}
+	
+5, 4 
+	
+4, 4 
+	
+Compilation fails ...................(answer)
+	
+4, 5 
+
+
+
+
+
+25)
+interface A{}
+class B implements A{}
+class C extends B{}
+public class Test extends C{
+public static void main(String[] args) {
+ C c=new C();
+ /* Line6 */}}
+
+Which code, inserted at line 6, will cause a java.lang.ClassCastException?
+	
+A a1=(Test)c; -------------(answer)
+	
+B b=c; 
+	
+A a2=(B)c; 
+	
+C c2=(C)(B)c;
+
+
+
+26) Given the following classes and declarations, which statements are true?
+// Classes
+class A {
+private int i;
+public void f() { /* ... */ }
+public void g() { /* ... */ }
+}
+class B extends A{
+public int j;
+public void g() { /* ... */ }
+}
+// Declarations:
+A a = new A();
+B b = new B();
+Select the three correct answers. 
+	
+The B class is a subclass of A-----------------(answer). 
+	
+The statement a.j = 5; is legal. 
+	
+The statement b.f(); is legal -----------------(answer).
+	
+The statement b.i = 3; is legal. 
+	
+The statement a.g(); is legal -----------------(answer).
+
+
+
+
+27) Consider the following code and choose the correct option:
+interface console{ 
+  int line;
+ void print();}
+class a implements console{
+   public void print(){
+  System.out.print("A");}
+ public static void main(String ar[]){
+  new a().print();}}
+	
+Compiles but error at run time 
+	
+A 
+	
+Runs but no output 
+	
+Compilation error ------------------(answer)
+
+
+
+
+28)
+A class Animal has a subclass Mammal. Which of the following is true:
+	
+Because of single inheritance, Mammal can have no other parent than Animal ------------------(answer)
+	
+Because of single inheritance, Animal can have only one subclass 
+	
+Because of single inheritance, Mammal can have no subclasses 
+	
+Because of single inheritance, Mammal can have no siblings.
+
+
+
+29)
+Consider the code below  & select the correct  ouput from the options:
+abstract class Ab{ public int getN(){return 0;}}
+class Bc extends Ab{ public int getN(){return 7;}}
+class Cd extends Bc { public int getN(){return 47;}}
+class Test{
+ public static void main(String[] args) {
+  Cd cd=new Cd();
+  Bc bc=new Cd();
+  Ab ab=new Cd();
+  System.out.println(cd.getN()+" "+
+    bc.getN()+" "+ab.getN()); }}
+	
+Compilation error 
+	
+0 0 0 
+	
+47 47 47   .........................(answer)
+	
+47 7 0 
+
+
+
+30)
+Consider  the given code and select the correct output:
+class Test{  
+ public static void main(String[] args){
+  int num1 = 012;
+  int num2 = 0x110;
+  int sum =num1+=num2;   
+  System.out.println("Ans = "+sum); }}
+	
+282       ........................(answer)
+	
+Compiles but error at run time 
+	
+26 
+	
+Compilation error 
+
+
+
+31)
+Consider the following code and choose the correct option: 
+class Test{  
+ interface Y{
+  void display(); } 
+ public static void main(String[] args) {
+  new Y(){
+   public void display(){
+    System.out.println("Hello World"); }
+  }.display(); }}
+	
+Hello World   .....................(answer)
+	
+Compilation error 
+	
+Compiles but error at run time 
+	
+Compiles but run without output 
+
+
+
+
+
+32)
+Consider the following code and select the correct output:
+class Test{  
+ interface Y{
+  void display(); } 
+ public static void main(String[] args) {
+  new Y(){
+   public void display(){
+    System.out.println("Hello World");   }  };
+ }}
+	
+Compiles but error at run time 
+	
+Compilation error 
+	
+Hello World 
+	
+Compiles but run without output   ................(answer)
+
+
+
+
+
+33)
+Consider the code below  & select the correct  ouput from the options:
+public class Test { 
+ public static void main(String[] args) {
+  String[] elements = { "for", "tea", "too" };
+  String first = (elements.length > 0) ?elements[0] : null;
+  System.out.println(first); }}
+	
+The variable first is set to elements[0].   ..................(answer)
+	
+The variable first is set to null. 
+	
+Compilation error 
+	
+Compiles but error at runtime
+
+
+
+34)
+Given classes A, B, and C, where B extends A, and C extends B, and where all classes
+implement the instance method void doIt(). How can the doIt() method in A be
+called from an instance method in C?
+	
+super.doIt() 
+	
+It is not possible --------------------(answer)
+	
+his.super.doIt() 
+	
+((A) this).doIt(); 
+	
+A.this.doIt() 
+
+
+
+
+
+35)
+As per the following code fragment, what is the value of a?
+String s;
+int a;
+s = "Foolish boy.";
+a = s.indexOf("fool");
+	
+0 
+	
+4 
+	
+random value 
+	
+-1 ---------------------(answer)
+
+
+
+36)
+class C{
+public static void main (String[] args) {
+byte b1=33;              //1
+b1++;                    //2
+byte b2=55;              //3
+b2=b1+1;                 //4
+System.out.println(b1+""+b2);
+}}
+Consider the code above & select the correct output.
+	
+compile time error at line   4    ..................(answer)
+	
+runtime exception 
+	
+none of the listed options 
+	
+compile time error at line   2 
+	
+prints 34,56 
+
+
+
+37)
+Consider the code below  & select the correct  ouput from the options:
+
+ public class Test {
+ public static void main(String [] args) {
+ int x = 5;
+ boolean b1 = true;
+ boolean b2 = false;
+ if ((x == 4) && !b2 )
+ System.out.print("1 ");
+ System.out.print("2 ");
+ if ((b2 = true) && b1 )
+ System.out.print("3 "); }
+	
+2 3   .....................(answer)
+	
+2 
+	
+3 
+	
+1 3 
+
+
+
+38)
+Consider the following code and choose the correct option:
+class Test{ 
+ class A{  static int x=3; } 
+ static void display(){
+  System.out.println(A.x); }
+  public static void main(String[] args) {
+  display(); }}
+	
+Compiles but error at run time 
+	
+Compilation error 
+	
+0   ..............................(answer)
+	
+3 
+
+
+
+
+39)
+What will be the output of the program? 
+
+public class CommandArgsTwo 
+{
+    public static void main(String [] argh) 
+    {
+        int x;
+        x = argh.length;
+        for (int y = 1; y <= x; y++) 
+        {
+            System.out.print(" " + argh[y]);
+        }
+    }
+}
+
+and the command-line invocation is 
+
+> java CommandArgsTwo 1 2 3
+	
+0 1 2 
+	
+An exception is thrown at runtime 
+	
+0 0 0 
+	
+2 3 
+
+
+
+
+
+
+40)
+
+A)A string buffer is a mutable sequence of characters.
+B) sequence of characters in the string buffer can not be changed.
+	
+Both A and B is FALSE 
+	
+Only B is TRUE 
+	
+Only A is TRUE 
+	
+Both A and B is TRUE --------------------(answer)
+
+
+
+
+41)
+What is the result of the following: 
+
+String ring = "One ring to rule them all,\n";
+String find = "One ring to find them.";
+
+if ( ring.startsWith("One") && find.startsWith("One") )
+ System.out.println( ring+find );
+else
+ System.out.println( "Different Starts" ); 
+	
+One ring to rule them all,\n
+One ring to find them. 
+	
+One ring to rule them all,-----------(answer)
+One ring to find them. -----------(answer)
+	
+One ring to rule them all, One ring to find them. 
+	
+Different Starts
+
+
+
+
+42)
+Given:
+public class Theory {
+public static void main(String[] args) {
+String s1 = "abc";
+String s2 = s1;
+s1 += "d";
+System.out.println(s1 + " " + s2 + " " + (s1==s2));
+
+StringBuffer sb1 = new StringBuffer("abc");
+StringBuffer sb2 = sb1;
+sb1.append("d");
+System.out.println(sb1 + " " + sb2 + " " + (sb1==sb2));
+}
+}
+Which are true? (Choose all that apply.) 
+	
+The first line of output is abc abc false 
+	
+The first line of output is abcd abc false ..................(answer)
+	
+Compilation fails 
+	
+The second line of output is abcd abcd true .................(answer)
+	
+The second line of output is abcd abc false
+
+
+
+
+43)
+Consider the following code and choose the correct option:
+class Test {
+ public static void main(String args[]) {
+ String s1 = "abc";
+ String s2 = "def";
+ String s3 = s1.concat(s2.toUpperCase( ) );
+ System.out.println(s1+s2+s3); } }
+	
+none of the listed options 
+	
+    abcabcDEFDEF 
+	
+     abcdefabcDEF    .......................(answer)
+	
+abcdefabcdef 
+
+
+
+
+44)
+For two string objects obj1 and obj2:
+A) Use of obj1 == obj2 tests whether two String object references refer to the same object
+B) obj1.equals(obj2) compares the sequence of characters in obj1 and obj2.
+	
+Only B is TRUE 
+	
+Only A is TRUE 
+	
+Both A and B is TRUE ---------(answer)
+	
+Both A and B is FALSE 
+
+
+
+
+45)
+Consider the following code and choose the correct option:
+class Test {
+ public static void main(String args[]) {
+ String name=new String("batman");
+ int ibegin=1;
+ char iend=3;
+ System.out.println(name.substring(ibegin, iend));
+ } }
+	
+bat 
+	
+Compilation error 
+	
+atm 
+	
+at   ........................(answer)
+
+
+
+
+46)
+Consider the following code and choose the correct option:
+public class Test {
+ public static void main(String[] args) {
+  String name="Anthony Gomes";
+  System.out.println(name.replace('n', name.charAt(3)).compareTo(name));  }}
+	
+0 
+	
+Compilation error 
+	
+6 
+	
+-6   .......................(answer)
+
+
+
+
+47)
+What does this code write: 
+
+StringTokenizer stuff = new StringTokenizer( "abc def+ghi", "+");
+System.out.println( stuff.nextToken() );
+System.out.println( stuff.nextToken() );
+	
+abc def
++ 
+	
+abc def   .........................(answer)
+ghi 
+	
+abc def
++ghi 
+	
+abc
+def 
+
+
+
+
+48)
+Consider the following code and choose the correct option:
+public class Test {
+ public static void main(String[] args) {
+  StringBuffer sb = new StringBuffer("antarctica");
+      sb.reverse();     
+      sb.replace(2, 7, "c");      
+      sb.delete(0,2);
+      System.out.println(sb); }}
+	
+ctna     .........................(answer)
+	
+iccratna 
+	
+tna 
+	
+acctna 
+
+
+
+49)
+Consider the following code and select the correct output:
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+public class Lists {
+public static void main(String[] args) {
+List<String> list=new ArrayList<String>();
+list.add("1");
+list.add("2");
+list.add(1, "3");
+List<String> list2=new LinkedList<String>(list);
+list.addAll(list2);
+list2 =list.subList(2,5);
+list2.clear();
+System.out.println(list);
+}
+}
+	
+[1,3,2,1,3,2] 
+	
+[3,1,2] 
+	
+[3,1,1,2] 
+	
+[1,3,2]   ...........................(answer)
+	
+[1,3,3,2] 
+
+
+
+
+
+50)
+Which interface does java.util.Hashtable implement?
+	
+Java.util.List 
+	
+Java.util.Collection 
+	
+Java.util.Table 
+	
+Java.util.Map     ....................(answer)
+
+
+
+51)
+Given:
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+public class MainClass {
+
+  public static void main(String[] a) {
+    String elements[] = { "A", "B", "C", "D", "E" };
+    Set set = new HashSet(Arrays.asList(elements));
+
+    elements = new String[] { "A", "B", "C", "D" };
+    Set set2 = new HashSet(Arrays.asList(elements));
+
+    System.out.println(set.equals(set2));
+  }
+} What is the result of given code?
+	
+true 
+	
+Compile time error 
+	
+false    ........................(answer)
+	
+Runtime Exception
+
+
+
+52)
+TreeSet<String> s = new TreeSet<String>();
+ TreeSet<String> subs = new TreeSet<String>();
+ s.add("a"); s.add("b"); s.add("c"); s.add("d"); s.add("e");
+
+ subs = (TreeSet)s.subSet("b", true, "d", true);
+ s.add("g");
+ s.pollFirst();
+ s.pollFirst();
+ s.add("c2");
+ System.out.println(s.size() +" "+ subs.size()); 
+	
+The size of s is 4 
+	
+The size of s is 7 
+	
+The size of subs is 1 
+	
+The size of subs is 3-----------(answer) 
+	
+The size of s is 5 ------------(answer)
+
+
+
+53)
+Which collection class allows you to access its elements by associating a key with an element's value, and provides synchronization?
+	
+java.util.TreeMap 
+	
+java.util.SortedMap 
+	
+java.util.TreeSet 
+	
+java.util.Hashtable    ....................(answer)
+
+
+
+54)
+A) Iterator does not allow to insert elements during traversal
+B) Iterator allows bidirectional navigation.
+C) ListIterator allows insertion of elements during traversal
+D) ListIterator does not support bidirectional navigation
+	
+A and D is TRUE 
+	
+A and B is TRUE 
+	
+B and D is TRUE 
+	
+A and C is TRUE -------------(answer)
+
+
+
+
+
+
+55)
+What is the result of attempting to compile and run the following code?
+import java.util.Vector;
+import java.util.LinkedList;
+public class Test1{ public static void main(String[] args) {
+ Integer int1 = new Integer(10); Vector vec1 = new Vector();
+ LinkedList list = new LinkedList(); vec1.add(int1); list.add(int1);
+ if(vec1.equals(list)) System.out.println("equal"); else System.out.println("not equal");
+ } }
+
+ 1. The code will fail to compile.
+ 2. Runtime error due to incompatible object comparison
+ 3. Will run and print "equal".
+ 4. Will run and print "not equal".
+	
+1 
+	
+2 
+	
+3 ...................(answer)
+	
+4 
+
+
+
+
+
+56)
+Given:
+ public static Collection get() {
+ Collection sorted = new LinkedList();
+ sorted.add("B"); sorted.add("C"); sorted.add("A");
+ return sorted;
+ }
+ public static void main(String[] args) {
+ for (Object obj: get()) {
+ System.out.print(obj + ", ");
+ }
+ }
+What is the result?
+	
+An exception is thrown at runtime. 
+	
+B, C, A, -----------------(answer)
+	
+Compilation fails. 
+	
+A, B, C, 
+
+
+
+
+
+57)
+
+Object get(Object key) - What does this method return if the key is not found in the Map?
+	
+-1 
+	
+none of the listed options 
+	
+null -------------(answer)
+	
+0 
+
+
+
+
+
+58)
+Given:
+ public class Venus {
+ public static void main(String[] args) {
+ int [] x = {1,2,3};
+ int y[] = {4,5,6};
+ new Venus().go(x,y);
+ }
+ void go(int[]... z) {
+ for(int[] a : z)
+ System.out.print(a[0]);
+ }
+ } What is the result?
+	
+14   ...............................(answer)
+	
+12 
+	
+1 
+	
+123 
+
+
+
+
+59)
+What are the thing to be placed to complete the code?
+class Wrap {
+  public static void main(String args[]) {
+
+    _______________ iOb = ___________ Integer(100);
+
+    int i = iOb.intValue();
+
+    System.out.println(i + " " + iOb); // displays 100 100
+  }
+}
+
+
+
+public class While 
+{
+    public void loop() 
+    {
+        int x= 0;
+        while ( 1 ) /* Line 6 */
+        {
+            System.out.print("x plus one is " + (x + 1)); /* Line 8 */
+        }
+    }
+}
+
+Which statement is true?
+	
+There is a syntax error on line 6 
+	
+There is a syntax error on line 1 
+	
+There are syntax errors on lines 1 and 6 -----------(*answer)
+	
+There are syntax errors on lines 1, 6, and 8 
+
+
+
+
+60)
+Which of the following loop bodies DOES compute the product from 1 to 10 like (1 * 2 * 3 * 4 * 5 *
+6 * 7 * 8 * 9 * 10)?
+int s = 1;
+for (int i = 1; i <= 10; i++)
+{
+<What to put here?>
+}
+	
+s *= i; ------------(answer)
+	
+Compilation error 
+	
+s++; 
+	
+s += i * i; 
+	
+s = s + s * i; 
+
+
+
+
+
+61)
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class Main {
+
+  public static void main(String[] args) {
+    TreeSet<String> tSet = new TreeSet<String>();
+    tSet.add("1");
+    tSet.add("2");
+    tSet.add("3");
+    tSet.add("4");
+    tSet.add("5");
+    SortedSet sortedSet =_____________("3");
+    System.out.println("Head Set Contains : " + sortedSet);
+  }
+} What is the missing method in the code to get the head set of the tree set?
+	
+tset.headset 
+	
+tSet.headSet   ...................(answer)
+	
+headSet 
+	
+HeadSet 
+
+
+
+
+
+62)
+Given:
+ public class Breaker2 {
+ static String o = "";
+ public static void main(String[] args) {
+ z:
+ for(int x = 2; x < 7; x++) {
+ if(x==3) continue;
+ if(x==5) break z;
+ o = o + x;
+ }
+ System.out.println(o);
+ }
+ }
+What is the result?
+	
+234 
+	
+24    .........................(answer)
+	
+2 
+	
+246
+
+
+
+
+
+63)
+Choose TWO correct options: 
+	
+OutputStream is the abstract superclass of all classes that represent an outputstream of
+bytes. ----------------(answer)
+	
+Subclasses of the class Reader are used to read character streams. 
+	
+To write characters to an outputstream, you have to make use of the class
+CharacterOutputStream. 
+	
+To write an object to a file, you use the class ObjectFileWriter ---------------(answer)
+
+
+
+
+
+64)
+class AutoBox {
+   public static void main(String args[]) {
+  
+  int i = 10;  
+  Integer iOb = 100; 
+     i = iOb; 
+     System.out.println(i + " " + iOb); 
+   }
+ } whether this code work properly, if so what would be the result?
+	
+Yes, 10, 100 
+	
+Yes, 100, 100 
+	
+No, Runtime error    
+	
+No, Compilation error  .............(answer)
+
+
+
+
+
+65)
+Which of the following statements are true regarding wrapper classes? (Choose TWO) 
+	
+String is a wrapper class 
+	
+Byte extends Number --------------(answer)
+	
+String is the wrapper class of char ----------(answer)
+	
+Double has a compareTo() method 
+	
+Character has a intValue() method 
+
+
+
+66)
+Given:
+ import java.util.*;
+ public class Explorer3 {
+ public static void main(String[] args) {
+ TreeSet<Integer> s = new TreeSet<Integer>();
+ TreeSet<Integer> subs = new TreeSet<Integer>();
+ for(int i = 606; i < 613; i++)
+ if(i%2 == 0) s.add(i);
+ subs = (TreeSet)s.subSet(608, true, 611, true);
+ subs.add(629);
+ System.out.println(s + " " + subs);
+ }
+ }
+What is the result?
+	
+Compilation fails. 
+	
+An exception is thrown at runtime.   .....................(answer)
+	
+[608, 610, 612, 629] [608, 610, 629] 
+	
+[608, 610, 612, 629] [608, 610] 
+
+
+
+
+
+67)
+Consider the following code and choose the correct output:
+class Test{
+  public static void main(String args[]){
+    int a=5;
+   if(a=3){
+   System.out.print("Three");}else{
+  System.out.print("Five");}}}
+	
+Three 
+	
+Compiles but no output 
+	
+Five 
+	
+Compilation error    .....................(answer)
+
+
+
+
+68)
+public class MyRunnable implements Runnable 
+{
+    public void run() 
+    {
+        // some code here
+    }
+}
+which of these will create and start this thread?
+	
+new Runnable(MyRunnable).start(); 
+	
+new Thread(MyRunnable).run(); 
+	
+new Thread(new MyRunnable()).start();   ........................(answer)
+	
+new MyRunnable().start(); 
+
+
+
+
+69)
+Consider the following code and choose the correct option:
+class Cthread extends Thread{
+   Cthread(){start();}
+  public void run(){
+  System.out.print("Hi");}
+public static void main (String args[]){
+ Cthread th1=new Cthread();
+Cthread th2=new Cthread();
+}}
+	
+compilation error 
+	
+will not create any child thread 
+	
+will create two child threads and display Hi twice -------------(answer)
+	
+will display Hi once 
+
+
+
+
+
+70)
+Consider the following code and choose the correct option:
+class Cthread extends Thread{  
+  public void run(){
+  System.out.print("Hi");}
+public static void main (String args[]){
+ Cthread th1=new Cthread();
+ th1.run();
+ th1.start();
+th1.run();
+}}
+	
+Compilation error 
+	
+will print Hi Thrice ----------(answer)
+	
+will print Hi once 
+	
+will print Hi twice and throws Exception at run time 
+
+
+
+
+
+71)
+class Cthread extends Thread{  
+  public void run(){
+  System.out.print("Hi");}
+public static void main (String args[]){
+ Cthread th1=new Cthread();
+ th1.run();
+ th1.start();
+ th1.start();
+}}
+	
+will print Hi Once 
+	
+will print Hi twice and  throws exception at runtime 
+	
+will start two thread 
+	
+will not print -----------(answer)
+
+
+
+72)
+Which of the following statements can be used to create a new Thread? (Choose TWO) 
+	
+Implement java.lang.Runnable and implement the run() method ---------(answer)
+	
+Extend java.lang.Runnable and override the start() method. ----------(answer)
+	
+Extend java.lang.Thread and override the run() method. 
+	
+Implement java.lang.Thread and implement the start() method. 
+	
+Implement java.lang.Thread and implement the run() method
+
+
+
+73)
+What will be the output of the program? 
+
+class MyThread extends Thread 
+{ 
+    MyThread() {} 
+    MyThread(Runnable r) {super(r); } 
+    public void run() 
+    { 
+        System.out.print("Inside Thread ");
+    } 
+} 
+class MyRunnable implements Runnable 
+{ 
+    public void run() 
+    { 
+        System.out.print(" Inside Runnable"); 
+    } 
+} 
+class Test 
+{  
+    public static void main(String[] args) 
+    { 
+        new MyThread().start(); 
+        new MyThread(new MyRunnable()).start(); 
+    } 
+}
+	
+Throws exception at runtime -------------------(answer)
+	
+Prints "Inside Thread Inside Thread" 
+	
+Does not compile 
+	
+Prints "Inside Thread Inside Runnable" 
+
+
+
+74)
+
+class Thread2 {
+ public static void main(String[] args) {
+ new Thread2().go(); }
+ public void go(){
+ Runnable rn=new Runnable(){
+ public void run(){
+ System.out.println("Good Day.."); } };
+ Thread t=new Thread(rn);
+ t.start();
+ }}
+what should be the correct output for the code written above? 
+	
+An exception is thrown at
+ runtime. 
+	
+The code executes 
+normally and prints "Good Day.." -------------------(answer)
+	
+prints Good Day.. Twice 
+	
+Compilation fails. 
+
+
+
+
+
+75)
+class PingPong2 {
+synchronized void hit(long n) {
+for(int i = 1; i < 3; i++)
+System.out.print(n + "-" + i + " ");
+}
+}
+ public class Tester implements Runnable {
+ static PingPong2 pp2 = new PingPong2();
+ public static void main(String[] args) {
+ new Thread(new Tester()).start();
+ new Thread(new Tester()).start();
+ }
+ public void run() { pp2.hit(Thread.currentThread().getId()); }
+ }
+Which statement is true?
+	
+The output could be 5-1 6-1 6-2 5-2 
+	
+The output could be 6-1 6-2 5-1 5-2   ......................(answer)
+	
+The output could be 6-1 5-2 6-2 5-1 
+	
+The output could be 6-1 6-2 5-1 7-1 
+
+
+
+
+
+76)
+Given:
+ public class Threads4 {
+ public static void main (String[] args) {
+ new Threads4().go();
+ }
+ public void go() {
+ Runnable r = new Runnable() {
+ public void run() {
+ System.out.print("run");
+ }
+ };
+ Thread t = new Thread(r);
+ t.start();
+ t.start();
+ }
+ }
+What is the result?
+	
+Compilation fails. 
+	
+An exception is thrown at runtime.--------------- (answer)
+	
+The code executes normally and prints "run". 
+	
+The code executes normally, but nothing is printed. 
+
+
+
+77)
+Consider the following code and choose the correct option:
+class Nthread extends Thread{
+  public void run(){
+  System.out.print("Hi");}
+  public static void main(String args[]){
+   Nthread th1=new Nthread();
+   Nthread th2=new Nthread();
+}
+	
+Will create two child threads and display Hi twice 
+	
+will not create any child thread 
+	
+will display Hi once 
+	
+compilation error 
+
+
+
+
+
+
+78)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class Exception1{
+public static void main(String args[]) { 
+ int i=1, j=1;
+try {
+i++; 
+ j--;
+if(i/j > 1)
+ i++;
+} catch(Exception e) {
+  System.out.println(2);
+} catch(ArithmeticException e) {
+System.out.println(0);
+}
+ finally {
+System.out.println(3);
+}
+}
+}
+	
+compilation error------------ (answer)
+	
+2 
+	
+3 
+
+
+
+
+79)
+Carefully read the question and answer accordingly.
+If you put a finally block after a try and its associated catch blocks, then once execution enters the try block,
+ the code in that finally block will definitely be executed except in some circumstances.select the correct circumstance from given options:
+	
+An exception arising in the finally block itself --------------(answer)
+	
+The use of System.exit() ------------(answer)
+	
+finally block will be always executed in any circumstances. 
+	
+The death of the thread 
+
+
+
+80)
+Carefully read the question and answer accordingly.
+Propagating exceptions across modules is not possible without throw and throws keyword. State True or False.
+	
+FALSE -----------------(answer)
+	
+TRUE 
+
+
+
+81)
+Carefully read the question and answer accordingly.
+Within try block if System.exit(0) is called then also finally block is going to be executed.
+State True or False.
+	
+FALSE -----------(answer)
+	
+TRUE 
+
+
+
+82)
+Carefully read the question and answer accordingly.
+is it valid to place some code in between try and catch blocks.
+	
+TRUE   .....................(answer)
+	
+FALSE 
+
+
+
+
+83)
+Carefully read the question and answer accordingly.
+which are  correct for checked exceptions
+	
+error and checked exceptions are same. 
+	
+A checked exception is a subclass of throwable class --------(answer)
+	
+Checked exceptions are the object of the Exception class or any of its subclasses except Runtime Exception class. --------(answer)
+	
+All runtime exceptions are checked exceptions 
+
+
+
+
+84)
+Carefully read the question and answer accordingly.
+which of these are the subclass of Exception class
+	
+Throwable 
+	
+IOException 
+	
+FileNotFindException 
+	
+RunTimeException   .................(answer)
+
+
+
+
+85)
+Carefully read the question and answer accordingly.
+The finally block always executes when the try block exits.
+State True or False.
+	
+FALSE 
+	
+TRUE------------ (answer)
+
+
+
+
+86)
+Carefully read the question and answer accordingly.
+Select two runtime exceptions.
+1.SQLException
+2.NullPointerException
+3.FileNotFoundException
+4.ArrayIndexOutOfBoundsException
+5.IOException
+	
+1&4 
+	
+2&3 
+	
+1&2 
+	
+2&4------------------ (answer)
+	
+1&5 
+
+
+
+
+
+87)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class Exe3 {
+public static void main(String[]args){
+ try{
+int i=10;
+int j=i/0;
+return;
+}catch(Exception e){
+try{
+System.out.println("welcome");
+return;
+}catch(Exception e1){
+}
+System.out.println("error");
+}
+}
+}
+	
+None of the listed options 
+	
+error 
+	
+compilation error 
+	
+welcome-----------(answer)
+
+
+
+
+
+88)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class While {
+public static void main(String[]args){
+ int a='A';
+int i=a+32;
+while(a<='Z'){
+a++;
+}
+System.out.println(i);
+System.out.println(a);
+}
+}
+	
+A,Z 
+	
+97,91   ...............(answer)
+	
+91,97 
+	
+a,z 
+
+
+
+
+
+89)
+Carefully read the question and answer accordingly.
+What happens when the following code is compiled and run. Select the one correct  
+answer.
+     for(int i = 1; i < 3; i++)
+        for(int j = 3; j >= 1; j--)
+            assert i!=j : i;
+	
+The number 2 gets printed with AssertionError 
+	
+The number 3 gets printed with AssertionError -------------(answer)
+	
+The program generates a compilation error. 
+	
+The class compiles and runs, but does not print anything. 
+	
+The number 1 gets printed with AssertionError 
+
+
+
+
+90)
+Carefully read the question and answer accordingly.
+_____________ is a multi way branch statement
+	
+label 
+	
+branch 
+	
+continue 
+	
+break 
+	
+switch--------------(answer)
+
+
+
+
+
+
+
+91)
+Carefully read the question and answer accordingly.
+The result of 10.987+”30.765” is _________________.
+	
+10.9873.765 
+	
+10.98730.765 ------------(answer)
+	
+10.987 
+	
+Compilation error
+
+
+92)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class Wrapper11 
+{
+ public static void main(String[]args)
+ {
+  Long l=100;
+  System.out.println(l);
+ }
+}
+	
+runtime Exception 
+	
+Compilation error---------------(answer)
+	
+code will execute with out printing 
+	
+100 
+
+
+
+
+93)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class WrapperClass1 {
+public static void main(String[]args){
+Integer i=new Integer(10);
+Integer j=new Integer(10);
+System.out.println(i==j);
+}
+}
+	
+None of the listed options 
+	
+False------------ (answer)
+	
+compilation error 
+	
+True 
+
+
+
+
+
+94)
+Carefully read the question and answer accordingly.
+What is the number of bytes used by Java primitive long
+	
+8 
+	
+4 
+	
+64--------------(answer) 
+	
+The number of bytes is compiler dependent 
+	
+2 
+
+
+
+95)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class WrapperClass12 
+{
+ public static void main(String[]args)
+ {
+  Boolean b=true;
+  boolean a=Boolean.parseBoolean("tRUE");
+  System.out.println(b==a);
+ }
+}
+	
+Compilation error 
+	
+Runtime Exception 
+	
+True ---------------(answer)
+	
+False 
+
+
+
+
+96)
+Carefully read the question and answer accordingly.
+Which of the following is a loop construct that will always be executed once?
+	
+do …. While 
+	
+for 
+	
+for..each 
+	
+switch---------- (answer)
+	
+while 
+
+
+
+
+97)
+Carefully read the question and answer accordingly.
+What is the value of variable "I" after execution of following code?
+public class Evaluate 
+{
+ public static void main(String[]args)
+ {
+  int i=10;
+  if(((i++)>12)&&(++i<15))
+   System.out.println(i);
+  else
+   System.out.println(i);
+ }
+}
+	
+12 
+	
+None of the listed options 
+	
+10 
+	
+11-----------(answer)
+
+
+
+
+
+98)
+Carefully read the question and answer accordingly.
+The InputStream.close() method closes this stream and releases all system resources
+	
+FALSE 
+	
+TRUE     .........................(answer)
+
+
+99)
+Carefully read the question and answer accordingly.
+DataInputStream is not necessarily safe for multithreaded access.
+	
+TRUE   ...........................(answer)
+	
+FALSE 
+
+
+100)
+Carefully read the question and answer accordingly.
+What is the output of this program?
+1.    import java.io.*;
+2.    class files {
+3.        public static void main(String args[]) {
+4.            File obj = new File("/java/system");
+5.            System.out.print(obj.getName());
+6.        }
+7.    }
+	
+/java/system 
+	
+java/system 
+	
+system ------------(answer)
+	
+compilation error 
+
+
+101)
+Carefully read the question and answer accordingly.
+Which of these class are related to input and output stream in terms of functioning?
+	
+Writer       ....................(answer)
+	
+OutputStream 
+	
+File 
+	
+Reader   ......................(answer)
+
+
+
+
+102)
+Carefully read the question and answer accordingly.
+An ObjectInputStream deserializes objects previously written using an ObjectOutputStream.
+State True or False.
+	
+FALSE 
+	
+TRUE    ...........................(answer)
+
+
+103)
+Carefully read the question and answer accordingly.
+State TRUE or FALSE.
+getParent() gives the parent directory of the file and isFile() Tests whether the file denoted by the given abstract pathname is a normal file.
+	
+TRUE ---------------(answer)
+	
+FALSE 
+
+
+
+104)
+Carefully read the question and answer accordingly.
+InputStream is the class used for stream of characters.
+State True or False.
+	
+FALSE    ........................(answer)
+	
+TRUE 
+
+
+
+105)
+Carefully read the question and answer accordingly.
+Which of these class are the member class of java.io package?
+	
+File----- (answer)
+	
+ObjectInput----------(answer)
+	
+String 
+	
+StringReader----------(answer)
+
+
+
+106)
+Carefully read the question and answer accordingly.
+Serialization is JVM independent.State True or False.
+	
+FALSE -------------(answer)
+	
+TRUE 
+
+
+
+
+107)
+Carefully read the question and answer accordingly.
+Serialization is representing object in a sequence of bytes.  State True or False.
+	
+FALSE 
+	
+TRUE    .....................(answer)
+
+ 1)
+What will be the result when you try to compile and run the following code? 
+ private class Base{
+    Base(){
+ int i = 100;
+ System.out.println(i);
+    }
+ }
+
+ public class Pri extends Base{
+    static int i = 200;
+    public static void main(String argv[]){
+ Pri p = new Pri();
+ System.out.println(i);
+    }
+ }
+	
+ a)100 followed by 200 ...............(answer)
+ b)Compile time error 
+ c)100 
+ d)200 
+
+
+
+
+
+
+ 2)
+public class c123 {
+ private c123() {
+  System.out.println("Hellow");
+ }
+ public static void main(String args[]) {
+  c123 o1 = new c123();
+  c213 o2 = new c213();
+ }
+ }
+ class c213 {
+ private c213() {
+  System.out.println("Hello123");
+ }
+ }
+
+ What is the output?
+	
+ a)It is not possible to declare a constructor as private 
+ b)Compilation Error 
+ c)Hellow.......................................... (answer)
+ d)Runs without any output
+ 
+
+
+
+
+
+ 3)What will be printed out if you attempt to compile and run the following code ? 
+ public class AA {
+ public static void main(String[] args) {
+  int i = 9;
+  switch (i) {
+  default:
+   System.out.println("default");
+  case 0:
+   System.out.println("zero");
+   break;
+  case 1:
+   System.out.println("one");
+  case 2:
+   System.out.println("two");
+  }
+ }
+ }
+	
+a)Compilation Error 
+	
+ default 
+	
+ b)default.......(answer)
+ zero 
+	
+ c)default
+ zero
+ one
+ two 
+
+
+
+
+ 4)
+A) No argument constructor is provided to all Java classes by default
+B) No argument constructor is provided to the class only when no constructor is defined.
+C) Constructor can have another class object as an argument
+D) Access specifiers are not applicable to Constructor
+
+ a)All are FALSE 
+ b)Only A is TRUE 
+ c)B and C is TRUE 
+ d)All are TRUE 
+
+
+
+
+ 5)
+What will be the result when you attempt to compile this program? 
+ public class Rand{
+    public static void main(String argv[]){
+ int iRand;
+ iRand = Math.random();
+ System.out.println(iRand);
+    }
+ }
+	
+ a)A random number between 0 and 1 
+ b)Compile time error referring to a cast problem ....................(answer)
+ c)A compile time error as random being an undefined method  
+ d)A random number between 1 and 10 
+
+
+
+
+
+
+ 6)
+class Sample
+ {int a,b;
+ Sample()
+ { a=1; b=2;
+ System.out.println(a+"\t"+b);
+ }
+ Sample(int x)
+ { this(10,20);
+ a=b=x;
+ System.out.println(a+"\t"+b);
+ }
+ Sample(int a,int b)
+ { this();
+ this.a=a;
+ this.b=b;
+ System.out.println(a+"\t"+b);
+ }
+ }
+ class This2
+ { public static void main(String args[])
+ {
+ Sample s1=new Sample (100);
+ }
+ }
+ What is the Output of the Program? 
+	
+ a)10                 20
+   1                    2
+   100                100 
+	
+ b)1                        2     ......................(answer)
+   10                      20
+   100                    100 
+	
+ c) 1                      2
+   100                 100
+   10                   20 
+	
+ d 100            100
+   1                  2
+   10               20 
+
+
+
+
+
+ 7)
+
+Consider the following code and choose the correct option:
+ class A{ private void display(){ System.out.print("Hi");}
+ public static void main(String ar[]){
+ display();}}
+	
+ a)Compilation fails  .................(answer)
+ b)Compiles and displays Hi 
+ c)Compiles but doesn't display anything 
+ d)Compiles and throws run time exception 
+
+
+ 
+
+
+
+8)
+What will be the result of compiling the following program?
+ public class MyClass {
+ long var;
+ public void MyClass(long param) { var = param; } // (Line no 1)
+ public static void main(String[] args) {
+ MyClass a, b;
+ a = new MyClass(); // (Line no 2)
+ }
+ } 
+	
+ a) A compilation error will occur at (2), since the class does not have a default
+    constructor 
+ b) A compilation error will occur at (Line no 1), since constructors cannot specify a
+    return value 
+ c) The program will compile without errors.                                                       ...........(answer c)
+ d) A compilation error will occur at (Line no 2), since the class does not have a constructor
+    that takes one argument of type int. 
+
+ 
+
+
+
+
+
+9)
+Which of the following will print -4.0
+ a)System.out.println(Math.floor(-4.7)); 
+ b)System.out.println(Math.round(-4.7)); 
+ c)System.out.println(Math.ceil(-4.7));    ....................(answer)
+ d)System.out.println(Math.min(-4.7));
+ 
+
+
+
+
+
+ 
+
+10) 
+class One{
+  int var1;
+ One (int x){
+ var1 = x;
+ }}
+ class Derived extends One{
+ int var2;
+ void display(){
+ System.out.println("var 1="+var1+"var2="+var2);
+ }}
+ class Main{
+ public static void main(String[] args){
+ Derived obj = new Derived();
+ obj.display();
+ }}
+ consider the code above & select the proper output from the options. 
+ 
+ a) compiles successfully but runtime error 
+ b) none of these 
+ c) 0 , 0 
+ d) compile error -----------------(answer)
+
+
+
+
+
+
+
+
+
+11) 
+
+
+
+Select the correct statement:
+	
+A subclass can override any method in a superclass 
+	
+  a)An overriding method can declare that it throws checked exceptions that are
+not thrown by the method it is overriding 
+	
+   b)The overriding method must have different return type as the overridden
+    method --------------(answer)
+	
+    c)Private methods cannot be overridden in subclasses 
+	
+   d)The parameter list of an overriding method can be a subset of the parameter
+    list of the method that it is overriding 
+
+
+
+
+
+
+
+
+
+12)
+
+Which declaration can be inserted at (1) without causing a compilation error?
+interface MyConstants {
+int r = 42;
+int s = 69;
+// (1) INSERT CODE HERE
+} 
+	
+final double circumference = 2 * Math.PI * r; 
+	
+int AREA = r * s; ----------------(answer)
+	
+int total = total + r + s; 
+	
+protected int CODE = 31337; 
+	
+public static MAIN = 15; 
+
+
+
+
+
+
+
+
+13)
+
+Consider the code below  & select the correct  ouput from the options:
+class A{
+ static int sq(int n){
+  return n*n; }}
+public class Test extends A{
+ static int sq(int n){
+  return super.sq(n); }
+ public static void main(String[] args) {
+  System.out.println(new Test().sq(3)); }}
+	
+Compilation error ..................................(answer)
+	
+Compiles but error at run time 
+	
+9 
+	
+3 
+
+
+
+
+
+
+
+14)
+interface A{}
+class B implements A{}
+class C extends B{}
+public class Test extends C{
+public static void main(String[] args) {
+ C c=new C();
+ /* Line6 */}}
+
+Which code, inserted at line 6, will cause a java.lang.ClassCastException?
+	
+B b=c; 
+	
+A a2=(B)c; 
+	
+A a1=(Test)c; --------------------------(answer)
+	
+C c2=(C)(B)c; 
+
+
+
+
+
+
+
+15)
+Consider the following code and choose the correct option:
+interface employee{
+ void saldetails();
+ void perdetails();
+}
+abstract class perEmp implements employee{
+ public void perdetails(){
+  System.out.println("per details"); }}
+ class Programmer extends perEmp{
+ public void saldetails(){
+  perdetails();
+  System.out.println("sal details"); }
+ public static void main(String[] args) {
+  perEmp emp=new Programmer();
+  emp.saldetails(); }}
+	
+sal details
+per details 
+	
+sal details 
+	
+compilation error 
+	
+per details-----------(answer)
+sal details -------------
+
+
+
+
+
+
+
+16)
+
+Consider the following code and choose the correct option:
+interface console{ 
+  int line=10;
+ void print();}
+class a implements console{
+   void print(){
+  System.out.print("A");}
+ public static void main(String ar[]){
+  new a().print();}}
+	
+Compiles but error at run time 
+	
+Compilation error ---------------------(answer)
+	
+A 
+	
+Runs but no output 
+
+
+
+
+
+
+
+
+
+17)
+Consider the following code and choose the correct option:
+abstract class Car{
+ abstract void accelerate(); 
+}
+class Lamborghini extends Car{
+ @Override
+ void accelerate() {
+  System.out.println("90 mph");   }
+  void nitroBooster(){
+  System.out.print("150 mph"); }
+  public static void main(String[] args) {
+  Car mycar=new Lamborghini();
+  Lamborghini lambo=(Lamborghini) mycar;
+  lambo.nitroBooster();}}
+	
+Compiles but error at runtime 
+	
+150 mph ------------------------(answer)
+	
+90 mph 
+	
+Compilation error 
+
+
+
+
+
+
+
+
+
+
+18)
+Consider the following code and choose the correct option:
+interface Output{
+ void display();
+ void show();
+}
+class Screen implements Output{
+ void show() {System.out.println("show");}
+  void display(){ System.out.println("display"); }public static void main(String[] args) {
+  new Screen().display();}}
+	
+Runs but no output 
+	
+display 
+	
+Compilation error --------------(error)
+	
+Compiles but error at run time 
+
+
+
+
+
+
+
+
+19)
+
+interface Vehicle{
+void drive();
+}
+final class TwoWheeler implements Vehicle{
+int wheels = 2;
+public void drive(){
+System.out.println("Bicycle");
+}
+}
+class ThreeWheeler extends TwoWheeler{
+public void drive(){
+System.out.println("Auto");
+}}
+class Test{
+public static void main(String[] args){
+ThreeWheeler obj = new ThreeWheeler();
+obj.drive();
+}}
+consider the code above & select the proper output from the options.
+	
+compile error--------(answer) 
+	
+Bicycle
+Auto 
+	
+runtime error 
+	
+Auto 
+
+
+
+20)(Already Solved in java e-Box)
+Object get(Object key) - What does this method return if the key is not found in the Map?
+	
+none of the listed options 
+	
+-1 
+	
+null 
+	
+0
+
+
+
+
+21)
+Which collection class allows you to grow or shrink its size and provides indexed access to
+its elements, but its methods are not synchronized?
+	
+java.util.LinkedHashSet 
+	
+java.util.Vector 
+	
+java.util.HashSet 
+	
+java.util.ArrayList   ............(answer) 
+	
+java.util.List 
+
+
+
+
+
+22)
+A) It is a good practice to store heterogenous data in a TreeSet.
+B) HashSet has default initial capacity (16) and loadfactor(0.75)
+C)HashSet  does not maintain order of Insertion
+D)TreeSet maintains order of Inserstion
+	
+A and D is TRUE 
+	
+A and C is TRUE 
+	
+A and B is TRUE 
+	
+B and C is TRUE -----------(answer)
+
+
+
+
+
+
+
+23)
+Consider the following code and select the correct output:
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+public class Lists {
+public static void main(String[] args) {
+List<String> list=new ArrayList<String>();
+list.add("1");
+list.add("2");
+list.add(1, "3");
+List<String> list2=new LinkedList<String>(list);
+list.addAll(list2);
+list2 =list.subList(2,5);
+list2.clear();
+System.out.println(list);
+}
+}
+	
+[3,1,2] 
+	
+[1,3,2,1,3,2] 
+	
+[1,3,3,2] 
+	
+[3,1,1,2] 
+	
+[1,3,2]   .........(answer) 
+
+
+
+
+
+
+
+
+24)
+Given:
+ public static Iterator reverse(List list) {
+ Collections.reverse(list);
+ return list.iterator();
+ }
+ public static void main(String[] args) {
+ List list = new ArrayList();
+ list.add("1"); list.add("2"); list.add("3");
+ for (Object obj: reverse(list))
+ System.out.print(obj + ", ");
+ }
+What is the result?
+	
+3, 2, 1, 
+	
+Compilation fails. -------(answer)
+	
+The code runs with no output. 
+	
+1, 2, 3, 
+
+
+
+
+
+
+
+
+
+
+
+25)
+Consider the following code and choose the correct output:
+class Test{
+  public static void main(String args[]){
+   TreeMap<Integer, String> hm=new TreeMap<Integer, String>();
+  hm.put(2,"Two");
+ hm.put(4,"Four");
+ hm.put(1,"One");
+ hm.put(6,"Six");
+ hm.put(7,"Seven");
+ SortedMap<Integer, String> sm=hm.subMap(2,7);
+ SortedMap<Integer,String> sm2=sm.tailMap(4);
+ System.out.print(sm2);
+ }}
+	
+{2=Two, 4=Four, 6=Six, 7=Seven} 
+	
+{2=Two, 4=Four, 6=Six} 
+	
+{4=Four, 6=Six} ....................(answer)
+	
+{4=Four, 6=Six, 7=Seven} 
+
+
+
+
+
+
+
+26)
+Consider the following code and choose the correct option:
+class Test{
+  public static void main(String args[]){
+   Integer arr[]={3,4,3,2};
+   Set<Integer> s=new TreeSet<Integer>(Arrays.asList(arr));
+   s.add(1);
+   for(Integer ele :s){
+    System.out.println(ele);   }  }}
+	
+prints 1,2,3,4 ..................(answer)
+Compilation error 
+	
+Compiles but exception at runtime 
+	
+prints 3,4,2,1
+
+
+
+
+
+
+
+27)
+Which statement is true about the following program?
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+public class WhatISThis {
+public static void main(String[] na){
+List<StringBuilder> list=new ArrayList<StringBuilder>();
+list.add(new StringBuilder("B"));
+list.add(new StringBuilder("A"));
+list.add(new StringBuilder("C"));
+Collections.sort(list,Collections.reverseOrder());
+System.out.println(list.subList(1,2));
+}
+} 
+	
+The program will compile and print the following output: [B,A] 
+	
+The program will compile and print the following output: [B] 
+	
+The program will compile and throw a runtime exception ..................(answer)
+	
+The program will not compile 
+
+
+
+
+Q1)
+int indexOf(Object o) - What does this method return if the element is not found in the List?
+	
+0 
+	
+-1 -----------(answer)
+	
+null 
+	
+none of the listed options 
+
+
+
+
+
+28)
+Given:
+ import java.util.*;
+
+ public class LetterASort{
+ public static void main(String[] args) {
+ ArrayList<String> strings = new ArrayList<String>();
+ strings.add("aAaA");
+ strings.add("AaA");
+ strings.add("aAa");
+ strings.add("AAaa");
+ Collections.sort(strings);
+ for (String s : strings) { System.out.print(s + " "); }
+ }
+ }
+What is the result?
+	
+AaA AAaa aAaA aAa 
+	
+aAaA aAa AAaa AaA 
+	
+AAaa AaA aAa aAaA .....................(answer)
+	
+Compilation fails
+
+
+
+
+
+29)
+What is the output of the following: 
+
+int a = 0;
+int b = 10;
+
+a = --b ;
+System.out.println("a: " + a + "  b: " + b );
+	
+a: 10 b: 9 
+	
+a: 9 b:11 
+	
+a: 0 b:9 
+	
+a: 9 b:9 ----------------------(answer)
+
+
+
+
+
+
+
+30)
+Which of the given options is similar to the following code: 
+
+value += sum++ ;
+	
+sum = sum + 1;
+value = value + sum; 
+	
+value = value + sum; 
+	
+value = value + sum;------------------------(answer)
+sum = sum + 1; 
+	
+value = value + ++sum;
+
+
+
+
+
+
+
+31)
+
+Which will legally declare, construct, and initialize an array?
+	
+int myList [] [] = {4,9,7,0}; 
+	
+int myList [] = {4, 3, 7};--------------(answer) 
+	
+int [] myList = (5, 8, 2); 
+	
+int [] myList = {"1", "2", "3"}; 
+
+
+
+
+
+
+
+
+
+32)
+class C{
+public static void main (String[] args) {
+byte b1=33;              //1
+b1++;                    //2
+byte b2=55;              //3
+b2=b1+1;                 //4
+System.out.println(b1+""+b2);
+}}
+Consider the code above & select the correct output.
+	
+compile time error at line   2 
+	
+runtime exception 
+	
+compile time error at line   4 ----------------------(answer)
+	
+none of the listed options 
+	
+prints 34,56 
+
+
+
+
+
+
+
+33)
+1. public class LineUp {
+2. public static void main(String[] args) {
+3. double d = 12.345;
+4. // insert code here
+5. }
+6. }
+Which code fragment, inserted at line 4, produces the output | 12.345|?
+
+A. System.out.printf("|%7f| \n", d);
+B. System.out.printf("|%3.7f| \n", d);
+C. System.out.printf("|%7.3d| \n", d);
+D. System.out.printf("|%7.3f| \n", d);    .............(answer)
+	
+A 
+	
+C 
+	
+D 
+	
+B
+
+
+
+
+
+
+34)
+Consider the following code snippet: 
+int i = 10;
+int n = i++%5;
+What are the values of i and n after the code is executed?
+	
+11 , 0 -----------------(answer)
+	
+10, 1 
+	
+10, 0 
+	
+11, 1 
+
+
+
+
+
+
+
+
+
+35)
+Given the following piece of code:
+public class Test {
+public static void main(String args[]) {
+int i = 0, j = 5 ;
+for( ; (i < 3) && (j++ < 10) ; i++ ) {
+System.out.print(" " + i + " " + j );
+}
+System.out.print(" " + i + " " + j );
+}
+}
+what will be the output?
+	
+compilation fails 
+	
+0 5 1 5 2 5 3 5 
+	
+0 6 1 7 2 8 3 9 
+	
+0 6 1 7 2 8 3 8    .............(answer) 
+
+
+
+
+
+
+
+
+36)
+Given classes A, B, and C, where B extends A, and C extends B, and where all classes
+implement the instance method void doIt(). How can the doIt() method in A be
+called from an instance method in C?
+	
+((A) this).doIt(); 
+	
+A.this.doIt() 
+	
+It is not possible -----------------(answer)
+	
+super.doIt() 
+	
+his.super.doIt() 
+
+
+
+
+
+
+
+
+
+37)
+What is the value of y when the code below is executed?
+int a = 4;
+   int b = (int)Math.ceil(a % 3 + a / 3.0);
+	
+1 
+	
+3 -------------------(answer)
+	
+4 
+	
+2 
+
+
+
+
+
+
+
+
+38)
+
+Here is the general syntax for method definition: 
+
+accessModifier returnType methodName( parameterList )
+{
+  Java statements
+
+  return returnValue;
+}
+
+
+What is true for the returnType and the returnValue?
+	
+The returnValue must be the same type as the returnType, or be of a type that can be converted to returnType without loss of information. --------------------(answer)
+	
+If the returnType is void then the returnValue can be any type 
+	
+The returnValue must be exactly the same type as the returnType 
+	
+The returnValue can be any type, but will be automatically converted to returnType when the method returns to the caller. 
+
+
+
+
+
+39)
+Consider the following code and choose the correct option:
+public class Test {
+ public static void main(String[] args) {
+  StringBuffer sb = new StringBuffer("antarctica");
+      sb.reverse();     
+      sb.replace(2, 7, "c");      
+      sb.delete(0,2);
+      System.out.println(sb); }}
+	
+acctna 
+	
+iccratna 
+	
+ctna .................(answer)
+	
+tna 
+
+
+
+
+
+
+
+
+
+
+40)
+Given:
+ String test = "This is a test";
+ String[] tokens = test.split("\s");
+ System.out.println(tokens.length);
+What is the result?
+	
+4 
+	
+0 
+	
+Compilation fails. ------------------(answer)
+	
+1 
+
+
+
+
+
+
+
+
+41)
+Examine this code: 
+
+String stringA = "Hello ";
+String stringB = " World";
+String stringC = " Java";
+String result;
+Which of the following puts a reference to "Hello World Java" in result?
+	
+result+stringA+stringB+stringC; 
+	
+result.concat( stringA, stringB, stringC ); 
+	
+result = stringA.concat( stringB.concat( stringC ) ); ---------------------(answer)
+	
+result = concat(StringA).concat(StringB).concat(StringC) 
+
+
+
+
+
+
+42)
+class StringManipulation{
+public static void main(String[] args){
+String str = new String("Cognizant");
+str.concat(" Technology");
+StringBuffer sbf = new StringBuffer(" Solutions");
+System.out.println(str+sbf);
+}}
+consider the code above & select the proper output from the options.
+	
+Cognizant Technology 
+	
+Cognizant Technology Solutions 
+	
+Cognizant Solutions ................(answer)
+	
+Technology Solutions 
+
+
+
+
+
+
+
+43)
+Consider the following code and choose the correct option:
+public class Test {
+ public static void main(String[] args) {
+  StringBuffer sb=new StringBuffer("YamunaRiver");
+  System.out.println(sb.capacity()); }}
+	
+24 
+	
+11 
+	
+10 
+	
+27   ...................(answer)
+
+
+
+
+
+
+
+
+44)
+Examine this code: 
+
+String stringA = "Wild";
+String stringB = " Irish";
+String stringC = " Rose";
+String result;
+
+Which of the following puts a reference to "Wild Irish Rose" in result?
+	
+result+stringA+stringB+stringC; 
+	
+result.concat( stringA, stringB, stringC ); 
+	
+result = stringA.concat( stringB.concat( stringC ) ); ................(answer)
+	
+result = concat(StringA).concat(StringB).concat(StringC) 
+
+
+
+
+
+
+
+
+
+45)
+A)A string buffer is a mutable sequence of characters.
+B) sequece of characters in the string buffer can not be changed.
+	
+Both A and B is TRUE 
+	
+Only B is TRUE 
+	
+Both A and B is FALSE 
+	
+Only A is TRUE---------------(answer)
+
+
+
+
+
+
+46)
+Given:
+public class Theory {
+public static void main(String[] args) {
+String s1 = "abc";
+String s2 = s1;
+s1 += "d";
+System.out.println(s1 + " " + s2 + " " + (s1==s2));
+
+StringBuffer sb1 = new StringBuffer("abc");
+StringBuffer sb2 = sb1;
+sb1.append("d");
+System.out.println(sb1 + " " + sb2 + " " + (sb1==sb2));
+}
+}
+Which are true? (Choose all that apply.) 
+	
+The first line of output is abc abc false 
+	
+The second line of output is abcd abcd true ..............(answer)
+	
+The second line of output is abcd abc false 
+	
+The first line of output is abcd abc false 
+	
+Compilation fails 
+
+
+
+
+
+47)
+Consider the following code and choose the correct option:
+public class Test {
+ public static void main(String[] args) {
+  String name="vikaramaditya";
+  System.out.println(name.substring(2, 5).toUpperCase().charAt(2));}}
+	
+K 
+	
+I 
+	
+A 
+	
+R .........................(answer)
+
+
+
+
+
+
+
+
+
+48)
+Which code can be inserted at Line X to print "Equal"?
+public class EqTest{
+  public static void main(String argv[]){
+   EqTest e=new EqTest();
+  }
+
+ EqTest(){
+   String s="Java";
+   String s2="java";
+   // Line X
+    {
+    System.out.println("Equal");
+    }else
+    {
+    System.out.println("Not equal");
+   }
+  }
+}
+	
+if(s.equalsIgnoreCase(s2)) ................(answer)
+	
+if(s==s2) 
+	
+if(s.equalIgnoreCase(s2)) 
+	
+if(s.noCaseMatch(s2)) 
+	
+if(s.equals(s2)) 
+
+
+
+
+
+
+
+49)
+What is the range of the random number r generated by the code below?
+int r = (int)(Math.floor(Math.random() * 8)) + 2;
+	
+3 <= r <= 10 
+	
+2<= r <= 10 
+	
+3 <= r <= 9 
+	
+2 <= r <= 9----------------(answer)
+
+
+
+
+
+
+50)
+public class Test {
+ public static void main(String [] args) {
+ int x = 5;
+ boolean b1 = true;
+ boolean b2 = false;
+
+ if ((x == 4) && !b2 )
+ System.out.print("1 ");
+ System.out.print("2 ");
+ if ((b2 = true) && b1 )
+System.out.print("3 ");
+ }
+ }
+What is the result?
+	
+1 2 3 
+	
+2 3    ......................(answer)
+	
+3 
+	
+2 
+
+
+
+
+
+
+51)
+Which of these statements are true? 
+	
+ArrayList is a sub class of Vector 
+	
+Stack is a subclass of Vector 
+	
+HashTable is a sub class of Dictionary ------------------(answer)
+	
+LinkedList is a subclass of ArrayList 
+
+
+
+52)
+public void foo( boolean a, boolean b)
+{ 
+    if( a ) 
+    {
+        System.out.println("A"); /* Line 5 */
+    } 
+    else if(a && b) /* Line 7 */
+    { 
+        System.out.println( "A && B"); 
+    } 
+    else /* Line 11 */
+    { 
+        if ( !b ) 
+        {
+            System.out.println( "notB") ;
+        } 
+        else 
+        {
+            System.out.println( "ELSE" ) ; 
+        } 
+    } 
+}
+
+What would be the result?
+	
+If a is false and b is true then the output is "ELSE" --------------(answer)
+	
+If a is false and b is false then the output is "ELSE" 
+	
+If a is true and b is true then the output is "A && B" 
+	
+If a is true and b is false then the output is "notB" 
+
+
+
+
+
+
+
+
+
+
+53)
+
+Consider the following code and choose the correct output:
+class Test{
+  public static void main(String args[]){
+   int num=3;   switch(num){
+   default :{
+   System.out.print("default");}
+   case 1: case 3: case 4:  {
+    System.out.println("apple");  break;}     
+   case 2: case 5: {
+    System.out.println("black berry");  }break;  } }}
+	
+default 
+	
+apple ..................(answer)
+	
+compilation error 
+	
+default
+apple 
+
+
+
+
+
+
+
+54)
+Given:
+double height = 5.5;
+   if(height-- >= 5.0)
+   System.out.print("tall ");
+   if(--height >= 4.0)
+   System.out.print("average ");
+   if(height-- >= 3.0)
+   System.out.print("short ");
+   else
+   System.out.print("very short ");
+  }
+What would be the Result?
+	
+very short 
+	
+short 
+	
+tall short --------------------(answer)
+	
+tall 
+	
+average 
+
+
+
+
+
+
+
+
+
+
+55)
+Consider the following code and choose the correct option:
+int i = l, j = -1; 
+switch (i) 
+{
+    case 0, 1: j = 1;
+    case 2: j = 2; 
+    default: j = 0; 
+} 
+System.out.println("j = " + j);
+	
+Compilation fails ---------------(answer)
+	
+j = -1 
+	
+j = 0 
+	
+j = 1 
+
+
+
+
+56)
+public class While 
+{
+    public void loop() 
+    {
+        int x= 0;
+        while ( 1 ) /* Line 6 */
+        {
+            System.out.print("x plus one is " + (x + 1)); /* Line 8 */
+        }
+    }
+}
+
+Which statement is true?
+	
+There are syntax errors on lines 1, 6, and 8 
+	
+There is a syntax error on line 1 
+	
+There is a syntax error on line 6 ------------------(answer)
+	
+There are syntax errors on lines 1 and 6 
+
+
+
+
+
+
+
+57)
+Consider the following code and choose the correct option:
+class Test{
+  public static void main(String args[]){    int x=034;
+    int y=12;    
+    int ans=x+y;
+    System.out.println(ans);
+  }}
+	
+Compiles but error at run time 
+	
+46 
+	
+40  ........................(answer)
+	
+compilation error 
+
+
+
+
+
+
+
+
+58)
+
+Given:
+ class Atom {
+ Atom() { System.out.print("atom "); }
+ }
+ class Rock extends Atom {
+ Rock(String type) { System.out.print(type); }
+}
+ public class Mountain extends Rock {
+ Mountain() {
+ super("granite ");
+ new Rock("granite ");
+ }
+ public static void main(String[] a) { new Mountain(); }
+ }
+What is the result?
+	
+atom granite atom granite  ......................(answer)
+	
+atom granite granite 
+	
+granite granite 
+	
+Compilation fails. 
+
+
+
+
+
+
+
+
+
+59)
+The following block of code creates a Thread using a Runnable target: 
+
+Runnable target = new MyRunnable();
+Thread myThread = new Thread(target);
+
+Which of the following classes can be used to create the target, so that the preceding code compiles correctly?
+	
+public class MyRunnable implements Runnable{void run(){}} 
+	
+public class MyRunnable extends Runnable{public void run(){}} 
+	
+public class MyRunnable extends Object{public void run(){}} 
+	
+public class MyRunnable implements Runnable{public void run(){}} -------------------------(answer)
+
+
+
+
+
+
+60)
+class Cthread extends Thread{  
+  public void run(){
+  System.out.print("Hi");}
+public static void main (String args[]){
+ Cthread th1=new Cthread();
+ th1.run();
+ th1.start();
+ th1.start();
+}}
+	
+will print Hi Once 
+	
+will not print 
+	
+will print Hi twice and  throws exception at runtime 
+	
+will start two thread 
+
+
+
+
+
+61)
+
+Which of the following methods are defined in class Thread? (Choose TWO) 
+	
+terminate() 
+	
+notify() 
+	
+start() ............(answer)
+	
+wait() 
+	
+run() ..............(answer)
+
+
+
+
+
+
+
+
+62)
+Consider the following code and choose the correct option:
+class Cthread extends Thread{  
+  public void run(){
+  System.out.print("Hi");}
+public static void main (String args[]){
+ Cthread th1=new Cthread();
+ th1.run();
+ th1.start();
+th1.run();
+}}
+	
+Compilation error 
+	
+will print Hi once 
+	
+will print Hi twice and throws Exception at run time 
+	
+will print Hi Thrice 
+
+
+
+
+
+
+
+
+
+
+63)
+Consider the following code and choose the correct option:
+class Nthread extends Thread{
+  public void run(){
+  System.out.print("Hi");}
+  public static void main(String args[]){
+   Nthread th1=new Nthread();
+   Nthread th2=new Nthread();
+}
+	
+Will create two child threads and display Hi twice 
+	
+will display Hi once 
+	
+will not create any child thread 
+	
+compilation error 
+
+
+
+
+
+
+
+
+64)
+What will be the output of the program? 
+
+class MyThread extends Thread 
+{
+    public static void main(String [] args) 
+    {
+        MyThread t = new MyThread();
+        t.start();
+        System.out.print("one. ");
+        t.start();
+        System.out.print("two. ");
+    }
+    public void run() 
+    {
+        System.out.print("Thread ");
+    }
+}
+	
+The output cannot be determined. 
+	
+Compilation fails 
+	
+An exception occurs at runtime. ------------------(answer)
+	
+It prints "Thread one. Thread two." 
+
+
+
+
+
+
+63)
+Assume the following method is properly synchronized and called from a thread A on an object B:
+
+wait(2000);
+
+After calling this method, when will the thread A become a candidate to get another turn at the CPU?
+	
+Two seconds after lock B is released. 
+	
+Two seconds after thread A is notified. 
+	
+After thread A is notified, or after two seconds. ---------------------(answer)
+	
+After the lock on B is released, or after two seconds. 
+
+
+
+
+
+
+
+
+64)
+class Thread2 {
+ public static void main(String[] args) {
+ new Thread2().go(); }
+ public void go(){
+ Runnable rn=new Runnable(){
+ public void run(){
+ System.out.println("Good Day.."); } };
+ Thread t=new Thread(rn);
+ t.start();
+ }}
+what should be the correct output for the code written above? 
+	
+An exception is thrown at
+ runtime. 
+	
+prints Good Day.. Twice 
+	
+The code executes 
+normally and prints "Good Day.." ------------------(answer)
+	
+Compilation fails. 
+
+
+
+
+
+
+
+
+
+65)
+public class MyRunnable implements Runnable 
+{
+    public void run() 
+    {
+        // some code here
+    }
+}
+which of these will create and start this thread?
+	
+new MyRunnable().start(); 
+	
+new Thread(new MyRunnable()).start(); ------------------(answer)
+	
+new Runnable(MyRunnable).start(); 
+	
+new Thread(MyRunnable).run(); 
+
+
+
+
+
+
+
+66)
+A) Exception is the superclass of all errors and exceptions in the java language
+B) RuntimeException and its subclasses are unchecked exception.
+	
+Both A and B are FALSE 
+	
+Both A and B are TRUE --------------------(answer)
+	
+Only A is TRUE 
+	
+Only B is TRUE 
+
+
+
+
+
+
+
+
+
+
+67)
+Which of the following statements are true? (Choose TWO) 
+	
+Both wait() and notify() must be called from a synchronized context. 
+	
+A thread will resume execution as soon as its sleep duration expires. 
+	
+The notify() method is overloaded to accept a duration -------------(answer)
+	
+The wait() method is overloaded to accept a duration ---------------(answer)
+	
+Deadlock will not occur if wait()/notify() is used 
+
+
+
+
+
+68)
+A) Checked Exception must be explicity caught or propagated to the calling method 
+B) If runtime system can not find an appropriate method to handle the exception, then the runtime system terminates and uses the default exception handler.
+	
+Only B is TRUE 
+	
+Only A is TRUE 
+	
+Both A and B is FALSE 
+	
+Bothe A and B is TRUE ------------------------(answer)
+
+
+
+
+69)
+Consider the following code and choose the correct option:
+class Test{
+  static void display(){
+   throw new RuntimeException();
+  }
+     public static void main(String args[]){
+      try{display();
+      }catch(Exception e){ }
+       catch(RuntimeException re){}
+       finally{System.out.println("exit");}}}
+	
+Compiles and no output 
+	
+Compilation fails ----------------------------(answer)
+	
+exit 
+	
+Compiles but exception at runtime 
+
+
+
+
+
+
+70)
+public static void parse(String str) {
+try {
+float f = Float.parseFloat(str);
+} catch (NumberFormatException nfe) {
+f = 0;
+} finally {
+System.out.println(f);
+}
+}
+public static void main(String[] args) {
+parse("invalid");
+}
+	
+A ParseException is thrown by the parse method at runtime. 
+	
+0 
+	
+Compilation fails ----------------------(answer)
+	
+A NumberFormatException is thrown by the parse method at runtime. 
+
+
+
+
+
+
+71)
+Which two can be used to create a new Thread? 
+	
+Extend java.lang.Runnable and override the start() method. 
+	
+Extend java.lang.Thread and override the run() method. .............(answer)
+	
+Implement java.lang.Thread and implement the run() method. 
+	
+Implement java.lang.Runnable and implement the run() method. ...........(answer)
+	
+Implement java.lang.Thread and implement the start() method. 
+
+
+
+
+
+72)
+Given:
+11. class A {
+12. public void process() { System.out.print("A,"); }
+13. class B extends A {
+14. public void process() throws IOException {
+15. super.process();
+16. System.out.print("B,");
+17. throw new IOException();
+18. }
+19. public static void main(String[] args) {
+20. try { new B().process(); }
+21. catch (IOException e) { System.out.println("Exception"); }
+22. }
+What is the result?
+	
+A,B,Exception 
+	
+Exception 
+	
+Compilation fails because of an error in line 14.-----------------------(answer) 
+	
+Compilation fails because of an error in line 20. 
+
+
+
+73)
+Consider the following code and choose the correct option:
+int array[] = new int[10];
+array[-1] = 0;
+	
+compiles 
+successfully 
+	
+runtime error --------------------(answer)
+	
+none of the listed options 
+	
+does not compile 
+
+
+
+
+74)
+What will happen when you attempt to compile and run the following code?
+public class Bground extends Thread{
+public static void main(String argv[]){
+                Bground b = new Bground();
+                b.run();
+        }
+        public void start(){
+                for (int i = 0; i <10; i++){
+                        System.out.println("Value of i = " + i);
+                }
+        }
+}
+	
+A compile time error indicating that no run method is defined for the Thread class 
+	
+Clean compile but no output at runtime -----------------(answer)
+	
+Clean compile and at run time the values 0 to 9 are printed out 
+	
+A run time error indicating that no run method is defined for the Thread class 
+
+
+
+
+
+75)
+Given:
+public class ExceptionTest 
+{ 
+    class TestException extends Exception {} 
+    public void runTest() throws TestException {} 
+    public void test() /* Line X */ 
+    { 
+        runTest(); 
+    } 
+}
+At Line X, which code is necessary to make the code compile?
+	
+throws RuntimeException 
+	
+No code is necessary 
+	
+throws Exception ----------------------------(answer)
+	
+throw Exception 
+
+
+
+
+
+76)
+Given:
+ static void test() {
+ try {
+ String x = null;
+ System.out.print(x.toString() + " ");
+ }
+ finally { System.out.print("finally "); }
+ }
+ public static void main(String[] args) {
+ try { test(); }
+ catch (Exception ex) { System.out.print("exception "); }
+ }
+What is the result?
+	
+Compilation fails. 
+	
+finally exception-----------------------------------(answer) 
+	
+finally 
+	
+null 
+
+
+
+
+77)
+Which of these are two legal ways of accessing a File named "file.tst" for reading. Select the correct option:
+A)FileReader fr = new FileReader("file.tst"); 
+B)FileInputStream fr = new FileInputStream("file.tst");
+C)InputStreamReader isr = new InputStreamReader(fr, "UTF8"); 
+D)FileReader fr = new FileReader("file.tst", "UTF8");
+	
+A,D 
+	
+A,B ...................(answer)
+	
+C,D 
+	
+B,C 
+
+
+
+
+
+78)
+Consider the following code and choose the correct option:
+public class Test{
+  public static void main(String[] args) throws IOException {
+  File file = new File("d:/temp.txt");
+  FileReader reader=new FileReader(file);
+  reader.skip(7);  int ch;
+  while((ch=reader.read())!=-1){
+   System.out.print((char)ch);  }  }}
+	
+Compilation error 
+	
+Compiles but error at runtime --------------------------(answer)
+	
+Skip the first seven characters and then starts reading file and display it on console 
+	
+Compiles and runs without output 
+
+
+
+
+
+79)
+import java.io.*;
+public class MyClass implements Serializable {
+
+private Tree tree = new Tree();
+
+public static void main(String [] args) {
+MyClass mc= new MyClass();
+try {
+FileOutputStream fs = new FileOutputStream(”MyClass.ser”);
+ObjectOutputStream os = new ObjectOutputStream(fs);
+os.writeObject(mc); os.close();
+} catch (Exception ex) { ex.printStackTrace(); }
+} } 
+	
+Compilation fails --------------------------------(answer)
+	
+A instance of MyClass and an instance of Tree are both serialized 
+	
+An instance of MyClass is serialized 
+	
+An exception is thrown at runtime 
+
+
+
+
+
+80)
+Consider the following code and choose the correct option:
+public class Test {
+ public static void main(String[] args) {
+  File file=new File("d:/prj,d:/lib");
+  file.mkdirs();}}
+	
+Compiles but error at run time 
+	
+Compiles and executes but directories are not created ------------------(answer)
+	
+Compilation error 
+	
+creates directories names prj and lib in d: drive 
+
+
+
+
+81)
+Consider the following code and choose the correct option:
+class std{
+ int call; std(int c){call=c;}
+ int getCall(){return call;}
+}
+public class Test{
+  public static void main(String[] args) throws IOException {
+   File file=new File("d:/std.txt");
+  FileOutputStream fos=new FileOutputStream(file);
+  ObjectOutputStream oos=new ObjectOutputStream(fos);
+  std s1=new std(10);
+  oos.writeObject(s1);
+  oos.close();
+  }}
+	
+Compiles but error at run time -----------------(answer)
+	
+Compilation error 
+	
+the state of the object s1 will not be store to the file. 
+	
+the state of the object s1 will be store to file std.txt 
+
+
+
+82)
+Consider the following code and choose the correct option:
+public class Test {
+ public static void main(String[] args) {
+  File file=new File("d:/prj/lib");
+  file.mkdirs();}}
+	
+Compiles but error at run time 
+	
+Compiles and executes but directory is not created 
+	
+Compilation error 
+	
+creates directory d:/prj/lib --------------(ans)
+
+
+
+
+83)
+import java.io.*;
+public class MyClass implements Serializable {
+private int a;
+public int getA() { return a; }
+publicMyClass(int a){this.a=a; }
+private void writeObject( ObjectOutputStream s)
+throws IOException {
+// insert code here
+}
+}
+
+Which code fragment, inserted at line 15, will allow Foo objects to be
+correctly serialized and deserialized?
+	
+s.writeObject(x); ------------(ans)
+	
+s.defaultWriteObject(); 
+	
+s.serialize(x); 
+	
+s.writeInt(x); 
+
+
+
+
+84)
+Consider the following code and choose the correct option:
+class std implements Serializable{
+ int call; std(int c){call=c;}
+ int getCall(){return call;}
+}
+public class Test{
+  public static void main(String[] args) throws IOException {
+   File file=new File("d:/std.txt");
+  FileOutputStream fos=new FileOutputStream(file);
+  ObjectOutputStream oos=new ObjectOutputStream(fos);
+  std s1=new std(10);
+  oos.writeObject(s1);
+  oos.close();
+  }}
+	
+Compilation error 
+	
+the state of the object s1 will be store to file std.txt 
+	
+the state of the object s1 will not be store to the file. 
+	
+Compiles but error at run time ----------------(answer)
+
+
+
+
+
+
+85)
+A file is readable but not writable on the file system of the host platform. What will
+be the result of calling the method canWrite() on a File object representing this file?
+	
+The boolean value true is returned 
+	
+none of the listed options 
+	
+The boolean value false is returned 
+	
+The file is modified from being unwritable to being writable. 
+	
+A SecurityException is thrown 
+
+
+
+
+86)
+Consider the following code and choose the correct option:
+public class Test {
+ public static void main(String[] args) throws IOException {  
+  File file=new File("D:/jlist.lst");
+  byte buffer[]=new byte[(int)file.length()+1];
+  FileInputStream fis=new FileInputStream(file);
+  int ch=0;
+  while((ch=fis.read())!=-1){
+   System.out.print(ch); } }}
+	
+reads data from file one byte at a time and display it on the console. 
+	
+reads data from file named jlist.lst in byte form and ascii value ----------(ans)
+	
+Compilation error 
+	
+Compiles but error at runtime 
+
+
+
+
+
+
+
+87)
+
+Which method will return boolean when we try to execute SQL Query from a JDBC program? 
+	
+executeSQL() 
+	
+executeQuery() 
+	
+execute()  ...................(answer)
+	
+executeUpdate() 
+
+
+
+
+
+
+
+88)
+Which of the following methods finds the maximum number 
+of connections that a specific driver can obtain?
+	
+Connection.getMaxConnections 
+	
+DatabaseMetaData.getMaxConnections    .....................(answer) 
+	
+ResultSetMetaData.getMaxConnections 
+	
+Database.getMaxConnections 
+
+
+
+
+89)
+It is possible to insert/update record in a table by using ResultSet. State TRUE/FALSE 
+	
+false 
+	
+true ---------(ans)
+
+
+
+
+90)
+A) When one use callablestatement, 
+in that case only parameters are send over network not sql query.
+
+B) In preparestatement sql query will compile for first time only
+	
+Both A and B is TRUE 
+	
+Only A is TRUE 
+	
+Only B is TRUE 
+	
+Both A and B is FALSE -------------(ans)
+
+
+
+
+91)
+Which of the following options contains only JDBC interfaces?
+	
+All of the given options 
+	
+1) Driver
+2) Connection
+3) ResultSet 
+4) DriverManager
+5) Class 
+	
+1) Driver---------------------(ans)
+2) Connection
+3) ResultSet
+4) ResultSetMetaData
+5) Statement
+6) PreparedStatement
+7) Callablestatement
+8) DataBaseMetaData 
+	
+1) Driver
+2) Connection
+3) ResultSet
+4) ResultSetMetaData
+5) Statement
+6) DriverManager
+7) PreparedStatement
+8) Callablestatement
+9) DataBaseMetaData 
+
+
+
+
+
+92)
+Given :
+public class MoreEndings {
+  public static void main(String[] args) throws Exception {
+    Class driverClass = Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+DriverManager.registerDriver((Driver) driverClass.newInstance());
+// Some code
+} Inorder to compile & execute this code, what should we import?
+	
+java.sql.Driver 
+	
+java.sql.Driver         ..............(answer)
+java.sql.DriverManager ..............(answer)
+	
+java.sql.DataSource 
+	
+java.sql.Driver 
+
+
+
+93)
+
+Cosider the following code & select the correct output.
+String sql ="select rollno, name from student"; 
+  PreparedStatement pst=cn.prepareStatement(sql);
+  System.out.println(pst.toString());
+  ResultSet rs=pst.executeQuery();
+   while(rs.next()){
+   System.out.println(rs.getString(3));  }
+	
+Compiles but error at run time ------------------(ans)
+	
+Compilation error 
+	
+will show city 
+	
+will show only name 
+
+
+
+
+
+
+94)
+getConnection() is method available in?
+	
+ResultSet Interface 
+	
+PreparedStatement Interface 
+	
+Driver Interface 
+	
+Statement Interface 
+	
+DriverManager Class   .......................(answer)
+
+
+
+
+
+
+
+95)
+Which of the following methods are needed for loading a database driver in JDBC? 
+	
+registerDriver() method 
+	
+registerDriver() method and Class.forName() ..................(answer)
+	
+getConnection 
+	
+Class.forName() 
+
+
+
+
+
+
+
+96)
+Which of the following method can be used to execute to execute all type of queries i.e. either Selection or Updation SQL Queries?
+	
+executeAll() 
+	
+execute()    ......................(answer)
+	
+executeUpdate() 
+	
+executeQuery() 
+	
+executeAllSQL() 
+
+
+
+
+
+
+
+97)
+Carefully read the question and answer accordingly.
+What will be the output of following code?
+class Super2
+{
+ public void display()
+ {
+System.out.println("super class display method");
+ }
+ public void exe()
+ {
+ System.out.println("super class exe method");
+ display();
+ }
+}
+public class InheritMethod extends Super2
+{
+ public void display()
+ {
+ 
+System.out.println("sub class display method");
+ }
+ 
+public static void main(String [] args)
+ {
+ 
+InheritMethod o=new InheritMethod();
+ 
+ o.exe();
+ }
+ 
+}
+	
+None of the listed options 
+	
+super class exe method sub class display method   ...................(answer)
+	
+super class exe method super class display method 
+	
+Compilation error 
+
+
+
+
+98)
+Carefully read the question and answer accordingly.
+Constructor of an class is executed each time when an object of that class is created
+	
+TRUE -------(answer)
+	
+FALSE 
+
+
+
+
+99)
+Carefully read the question and answer accordingly.
+A class can be declared as _______ if you do not want the class to be subclassed. Using
+the __________keyword we can abstract a class from its implementation
+	
+private,abstract 
+	
+final,interface --------------(ans)
+	
+public,friend 
+	
+protected ,interface 
+	
+final,protected 
+
+
+
+
+
+100)
+Carefully read the question and answer accordingly.
+A field with default access specifier can be accessed  out side the package. 
+State True or False.
+	
+FALSE----------(ans) 
+	
+TRUE 
+
+
+
+101)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+class Super
+{
+ static void show()
+ {
+ System.out.println("super class show method");
+ }
+ static class StaticMethods 
+ {
+ void show()
+ {
+ System.out.println("sub class show method");
+ }
+ }
+ public static void main(String[]args)
+ {
+ Super.show();
+ new Super.StaticMethods().show();
+ }
+}
+	
+Compilation Error 
+	
+super class show method sub class show method   ...................(answer)
+	
+super class show method 
+	
+sub class show method super class show method 
+
+
+
+
+
+102)
+Carefully read the question and answer accordingly.
+Which of the following statements are true about Method Overriding?
+I:  Signature must be same including return type
+II: If the super class method is throwing the exception then overriding method 
+should throw the same Exception
+III: Overriding can be done in same class
+IV: Overriding should be done in two different classes with no relation between the classes
+	
+I & III 
+	
+I 
+	
+II & IV -------(ans)
+	
+III 
+
+
+
+
+103)
+
+Carefully read the question and answer accordingly.
+________ determines which member of a class can be used by other classes.
+	
+specifier 
+	
+Class 
+	
+Access specifier ----------(ans   )
+	
+Implementation 
+	
+Inheritance 
+
+
+
+
+
+
+104)
+Carefully read the question and answer accordingly.
+The constructor of a class must not have a return type.
+	
+TRUE ---------(ans)
+	
+FALSE 
+
+
+
+
+105)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+class Super
+{
+ int num=20;
+ public void display()
+ {
+ System.out.println("super class method");
+ }
+}
+public class ThisUse extends Super
+{
+ int num;
+ public ThisUse(int num)
+ {
+ this.num=num;
+ }
+ public void display()
+ {
+ System.out.println("display method");
+ }
+ public void Show()
+ {
+ this.display();
+ display();
+ System.out.println(this.num);
+ System.out.println(num);
+ }
+ public static void main(String[]args)
+ {
+ ThisUse o=new ThisUse(10);
+ o.Show();
+ }
+}
+	
+super class method display method 20 20 
+	
+display method display method 10 10    ..................(answer)
+	
+display method display method 20 20 
+	
+super class method display method 10 10 
+
+
+
+
+106)
+Carefully read the question and answer accordingly.
+Which of the following method is used to initialize the instance variable of a class.
+	
+Class 
+	
+Constructor ---------->(answer)
+	
+Destructor 
+	
+Public 
+	
+Variable 
+
+
+
+
+107)
+Carefully read the question and answer accordingly.
+Choose the correct option.
+Statement I: When all methods in a class are abstract the class can be declared as an interface.
+Choose the correct option.
+Statement II: An interface defines a contract for classes to implement the behavior.
+	
+Statement I & II are FASLE 
+	
+Statement I is TRUE & II is FALSE 
+	
+Statement I & II are TRUE ---------->(answer)
+	
+Statement I is FALSE & II is TRUE 
+
+
+
+
+108)
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+An abstract class cannot contain non abstract methods
+	
+TRUE 
+	
+FALSE ----------->(answer)
+
+
+
+
+109)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+class super3{
+int i=10;
+public super3(int num){
+i=num;
+}
+}
+public class Inherite1 extends super3{
+ public Inherite1(int a){
+super(a);
+}
+ public void Exe(){
+System.out.println(i);
+}
+public static void main(String[]args){
+ Inherite1 o=new Inherite1(50);
+super3 s=new Inherite1(20);
+ System.out.println(s.i);
+o.Exe();
+}
+}
+	
+10 50 
+	
+10 20 
+	
+20 50     ......................(answer)
+	
+20 10 
+
+
+
+
+110)
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+The super() call can only be used in constructor calls and not method calls.
+	
+FALSE 
+	
+TRUE ----------->(answer)
+
+
+
+
+111)
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+If any class has at least one abstract method you must declare it as abstract class
+	
+FALSE 
+	
+TRUE --------------->(answer)
+
+
+
+
+112)
+Carefully read the question and answer accordingly.
+abstract public class Employee 
+{
+ protected abstract double getSalesAmount();
+ public double getCommision() {
+ return getSalesAmount() * 0.15;
+ }
+}
+class Sales extends Employee 
+{
+// insert method here
+}
+Which two methods, inserted independently, correctly complete the Sales
+class?
+1.double getSalesAmount() { return 1230.45; }
+2. public double getSalesAmount() { return 1230.45; }
+3.private double getSalesAmount() { return 1230.45; }
+4.protected double getSalesAmount() { return 1230.45; }
+	
+1&3 
+	
+2&4 
+	
+2&3 
+	
+1&2 
+	
+3&4 
+
+
+
+
+113)
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+A concrete class can extend more than one super class whether that super class is either concrete or abstract class
+	
+FALSE 
+	
+TRUE   ..........................(answer)
+
+
+
+
+114)
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+If any method overrides one of it’s super class methods, we can invoke the overridden method through the this keyword.
+	
+TRUE 
+	
+FALSE   ........................(answer)
+
+
+
+
+115)
+Carefully read the question and answer accordingly.
+What is the outputof below code:
+package p1;
+class Parent {
+ public static void doWork() {
+ System.out.println("Parent");
+ }
+}
+class Child extends Parent {
+ public static void doWork() {
+ System.out.println("Child");
+ }
+}
+class Test {
+ public static void main(String[] args) {
+ Child.doWork();
+ }
+}
+	
+Child Parent 
+	
+Child      .........................(answer)
+	
+Parent Child 
+	
+Parent 
+
+
+
+
+116)
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+An overriding method can also return a subtype of the type returned by the overridden method.
+	
+FALSE 
+	
+TRUE    ....................(answer)
+
+
+
+
+117)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class VariableDec 
+{
+ public static void main(String[]args)
+ {
+  int x = 1;
+  if(x>0 )
+   x = 3;
+  switch(x) 
+  {
+   case 1: System.out.println(1);
+   case 0: System.out.println(0);
+   case 2: System.out.println(2);
+   break;
+   case 3: System.out.println(3);
+   default: System.out.println(4);
+   break;
+  }
+ }
+}
+	
+4 
+	
+Compilation error 
+	
+1 0 2 
+	
+3 4     .....................(answer)
+
+
+
+118)
+
+Carefully read the question and answer accordingly.
+What is the correct structure of a java program?
+I: import statement 
+II: class declaration 
+III: package statement 
+IV: method,variable declarations
+	
+I->II->III->IV 
+	
+III->I->II->IV.   ....................(answer)
+	
+I->III->II->IV 
+	
+I->III->IV->II 
+
+
+
+
+119)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class Operators 
+{
+ public static void main(String[]args)
+ {
+  int i=12;
+  int j=13;
+  int k=++i-j--;
+  System.out.println(i);
+  System.out.println(j);
+  System.out.println(k);
+ }
+}
+	
+13,13,0 
+	
+12,12,-1 
+	
+12,13,-1 
+	
+13,12,0    ..................(answer)
+
+
+
+
+120)
+Carefully read the question and answer accordingly.
+Garbage collection guarantee that a program will not run out of memory. State True or False.
+	
+TRUE 
+	
+FALSE   ...................(answer)
+
+
+121)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class Variabledec {
+public static void main(String[]args){
+boolean x = true;
+int a;
+if(x) a = x ? 2: 1;
+else a = x ? 3: 4;
+System.out.println(a);
+}
+}
+	
+4 
+	
+1 
+	
+2     ................(answer)
+	
+3 
+
+
+122)
+Carefully read the question and answer accordingly.
+Which of the following is not the Java keyword?
+	
+throwed    ...................(answer)
+	
+Integer 
+	
+implements 
+	
+extends 
+	
+Boolean 
+
+
+
+
+123)
+Carefully read the question and answer accordingly.
+Which of the following is the correct syntax for suggesting that the JVM to performs garbage collection?
+	
+System.free(); 
+	
+System.setGarbageCollection(); 
+	
+System.out.gc(); 
+	
+System.gc();   .....................(answer)
+
+
+
+
+124)
+Carefully read the question and answer accordingly.
+_____________ Operator is used to create an object.
+	
+main 
+	
+print 
+	
+class 
+	
+Object 
+	
+new      .....................(answer)
+
+
+125)
+Carefully read the question and answer accordingly.
+How can you force garbage collection of an object?
+1.Garbage collection cannot be forced
+2.Call System.gc(). 
+3.Call Runtime.gc().
+4. Set all references to the object to new values(null, for example).
+	
+Option 2 
+	
+Option 3 
+	
+Option 4 
+	
+Option 1    ........................(answer)
+
+
+
+126)
+Carefully read the question and answer accordingly.
+Garbage collector thread is a  daemon thread.
+State True or False.
+	
+TRUE   ...................(answer)
+	
+FALSE 
+
+
+
+
+127)
+Carefully read the question and answer accordingly.
+Which two statements are true?
+1.It is possible for more than two threads to deadlock at once.
+2.The JVM implementation guarantees that multiple threads cannot enter into a
+deadlocked state.
+3.Deadlocked threads release once their sleep() method's sleep duration has expired.
+4.If a piece of code is capable of deadlocking, you cannot eliminate the possibility of
+deadlocking by inserting
+invocations of Thread.yield().
+	
+1&2 
+	
+1&4 --------------->(answer)
+	
+1&3 
+	
+2&4 
+	
+2&3 
+
+
+
+
+128)
+Carefully read the question and answer accordingly.
+You have created a TimeOut class as an extension of Thread, the purpose of which is to print a “Time’s Over” message if the Thread is not interrupted within 10 seconds of being started. Here is the run method that you have coded:
+public void run() {
+System.out.println(“Start!”);
+try {
+Thread.sleep(10000);
+System.out.println(“Time’s Over!”);
+} catch (InterruptedException e) {
+System.out.println(“Interrupted!”);
+}
+}Given that a program creates and starts a TimeOut object, which of the following statements is true?
+	
+Exactly 10 seconds after the “Start!” is printed, “Time’s Over!” will be printed. 
+	
+If “Time’s Over!” is printed, you can be sure that at least 10 seconds have elapsed since “Start!” was printed. 
+	
+The delay between “Start!” being printed and “Time’s Over!” will be 10 seconds plus or minus one tick of the system clock. 
+	
+Exactly 10 seconds after the start method is called, “Time’s Over!” will be printed. 
+
+
+
+
+130)
+Carefully read the question and answer accordingly.
+Predict the output of below code:
+package p1;
+class MyThread extends Thread {
+ public void run(int a) {
+  System.out.println("Important job running in MyThread");
+ }
+ public void run(String s) {
+  System.out.println("String in run");
+ }
+}
+class Test {
+ public static void main(String[] args) {
+  MyThread t1=new MyThread();
+  t1.start();
+ }
+}
+	
+Important job running in MyThread 
+	
+Important job running in MyThread String in run 
+	
+Compile Error 
+	
+No Output   ....................(answer)
+	
+String in run 
+
+
+
+
+131)
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+The below code will compile &   provide desired output:
+package p1;
+class MyThread extends Thread {
+ public void run() {
+  System.out.println("Important job running in MyThread");
+ }
+ public void run(String s) {
+  System.out.println("String in run is " + s);
+ }
+}
+class Test {
+ public static void main(String[] args) {
+  MyThread t1=new MyThread();
+  t1.start();
+ }
+}
+	
+TRUE      ....................(answer)
+	
+FALSE 
+
+
+
+
+
+132)
+Carefully read the question and answer accordingly.
+ public class Threads 
+{
+ public static void main (String[] args) 
+ {
+  new Threads().go();
+ }
+ public void go()
+ {
+  Runnable r = new Runnable()
+   {
+   public void run() 
+   {
+   System.out.print("Run");
+    }
+  };
+  
+  Thread t = new Thread(r);
+   t.start();
+   t.start();
+  }
+}
+What will be the result?
+	
+The code executes normally and prints "Run". 
+	
+The code executes normally, but nothing is printed. 
+	
+An exception is thrown at runtime.   .....................(answer)
+	
+Compilation fails. 
+
+
+
+
+133)
+Carefully read the question and answer accordingly.
+Synchronization is achieved by using which of the below methods
+	
+Synchronized abstract classes 
+	
+Synchronized methods     ............................(answer)
+	
+Synchronized blocks 
+	
+Synchronized classes 
+	
+Synchronized interfaces 
+
+
+
+
+
+134)
+Carefully read the question and answer accordingly.
+What will be the output of below code:
+package p1;
+class MyThread extends Thread {
+ public void run() {
+  System.out.println("Important job running in MyThread");
+ }
+}
+class Test {
+ public static void main(String[] args) {
+  MyThread t1=new MyThread();
+  t1.run();
+ }
+}
+	
+Runtime Exception 
+	
+Non of the options 
+	
+Compile Error 
+	
+Important job running in MyThread    ......................(answer)
+
+
+
+
+135)
+Carefully read the question and answer accordingly.
+Which of these is not valid method in Thread class
+	
+boolean isAlive() 
+	
+void run() 
+	
+boolean getPriority() ---------->(answer)
+	
+void start()
+
+
+
+
+136)
+Carefully read the question and answer accordingly.
+Which of the below is invalid state of thread?
+	
+Stop        ....................(answer)
+	
+Running 
+	
+Blocked 
+	
+Dead 
+	
+Runnable 
+
+
+
+
+
+137)
+Carefully read the question and answer accordingly.
+Which of  the following statements are true?
+Statement1: When a thread is sleeping as a result of sleep(), it releases its locks.
+Statement2: The Object.wait() method can be invoked only from a synchronized context.
+	
+Statement1 is TRUE but Statement2 is FALSE. 
+	
+BOTH Statement1 & Statement2 are TRUE. 
+	
+BOTH Statement1 & Statement2 are FALSE. 
+	
+Statement2 is TRUE but Statement1 is FALSE.---------->(answer) 
+
+
+
+
+
+138)
+Carefully read the question and answer accordingly.
+You need to store elements in a collection that guarantees that no duplicates are stored and all elements can be accessed in natural order. Which interface provides that capability?
+	
+java.util.Collection 
+	
+java.util.Map 
+	
+java.util.List 
+	
+java.util.Set    .....................(answer)
+
+
+
+
+
+139)
+Carefully read the question and answer accordingly.
+Which statements are true about comparing two instances of the same class, given that the 
+equals() and hashCode() methods have been properly overridden?
+	
+If the hashCode() comparison == returns true, the equals() method might return true ------------->(answer)
+	
+If the equals() method returns true, the hashCode() comparison == might return false 
+	
+If the equals() method returns false, the hashCode() comparison == might return true 
+	
+If the hashCode() comparison == returns true, the equals() method must return true 
+
+
+
+
+140)
+Carefully read the question and answer accordingly.
+Consider you are developing shopping cart application you have to store details of items 
+purchased by the each customer in intermediate memory before storing 
+purchase details in actual database permanently note that number of different items 
+purchased by customer is not definite it may vary. 
+How do you implement given requirement using java considering best performance of the
+ application?
+	
+Implement using Arrays 
+	
+Implement using file API’s 
+	
+None of the listed options 
+	
+Implement using Collection API’s..........(answer) 
+
+
+
+
+141)
+Carefully read the question and answer accordingly.
+In Thread implementation methods like wait(), notify(), notifyAll() should be used in synchronized context . 
+State true or false
+	
+TRUE       ......................(answer)
+	
+FALSE 
+
+
+
+142)
+
+Carefully read the question and answer accordingly.
+Which of the following is incorrect statement regarding the use of generics and parameterized types in Java?
+	
+>>Generics and parameterized types eliminate the need for down casts when using Java Collections. 
+	
+>>When designing your own collections class (say, a linked list), generics and parameterized 
+types allow you to achieve type safety with just a single class definition as
+ opposed to defining multiple classes. ------------->(answer)
+	
+>>All of the mentioned 
+	
+>>Generics provide type safety by shifting more type checking responsibilities to the compiler. 
+
+
+
+
+143)
+Carefully read the question and answer accordingly.
+Which collection class allows you to grow or shrink its size and provides indexed access to its elements, but whose methods are not synchronized?
+	
+java.util.LinkedHashSet 
+	
+java.util.HashSet 
+	
+java.util.ArrayList      ..........................(answer)
+	
+java.util.List 
+
+
+
+
+144)
+Carefully read the question and answer accordingly.
+Consider the development scenario where you have created Employee class with implementation 
+code and as per the project requirement you have to ensure that developer in team reusing 
+code written in Employee class only using inheritance by extending the employee class
+ but not by creating the instance of Employee object directly. Please suggest the solution
+ to implement given requirement?
+
+
+	
+Make Employee class methods private 
+	
+Mark Employee class with abstract keyword ----------->(answer)
+	
+Make Employee class methods public 
+	
+Mark Employee class with final keyword 
+
+
+
+
+145)
+
+Carefully read the question and answer accordingly.
+Consider you are developing java application in a team consists of 20 developers and 
+you have been asked to develop class by Name ProgrammerAnalyst and
+ to ensure that other developers in team use ProgrammerAnalyst class only by 
+creating object and team member should not be given provision to inherit and 
+modify any functionality written in ProgrammerAnalyst class using inheritance. 
+How do you achieve this requirement in development scenario?
+
+	
+Declare the ProgrammerAnalyst class has abstract 
+	
+Declare the ProgrammerAnalyst class has private 
+	
+None of the listed options 
+	
+Declare the ProgrammerAnalyst class has final--------> (answer)
+
+
+
+146)
+Carefully read the question and answer accordingly.
+In Thread implementation making method synchronized is always better in order to increase 
+application performance rather than using synchronize block to synchronize certain 
+block of statements written in java inside the method. 
+State True or False.
+	
+FALSE ------->(doubt)
+	
+TRUE 
+
+
+
+
+147)
+Carefully read the question and answer accordingly.
+What will happen if two thread of same priority are called to be processed simultaneously?
+	
+Any one will be executed first lexographically 
+	
+It is dependent on the operating system.     .....................(answer)
+	
+Both of them will be executed simultaneously 
+	
+None of them will be executed 
+
+
+
+
+148)
+Carefully read the question and answer accordingly.
+What will be the output of below code?
+public class Test {
+ public static void main(String[] args) {
+  int i = 1;
+  Integer I = new Integer(i);
+  method(i);
+  method(I);
+ }
+ static void method(Integer I) {
+  System.out.print(" Wrapper");
+ }
+ static void method(int i) {
+  System.out.print(" Primitive");
+ }
+}
+	
+Wrapper 
+	
+Primitive Wrapper   ...............(answer)
+	
+Primitive 
+	
+None Of the options 
+	
+Wrapper Primitive 
+
+
+
+
+149)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class Wrapper11 
+{
+ public static void main(String[]args)
+ {
+  Long l=100;
+  System.out.println(l);
+ }
+}
+	
+100 
+	
+code will execute with out printing 
+	
+runtime Exception 
+	
+Compilation error     .................(answer)
+
+
+
+
+150)
+Carefully read the question and answer accordingly.
+Which of the following is a loop construct that will always be executed once?
+	
+for..each 
+	
+do …. While         .............(answer)
+	
+switch 
+	
+while 
+	
+for 
+
+
+
+
+151)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class While {
+public static void main(String[]args){
+ int a='A';
+int i=a+32;
+while(a<='Z'){
+a++;
+}
+System.out.println(i);
+System.out.println(a);
+}
+}
+	
+91,97 
+	
+a,z 
+	
+97,91     ................(answer)
+	
+A,Z 
+
+
+
+
+152)
+Carefully read the question and answer accordingly.
+Each case in switch statement should end with ________ statement
+	
+default 
+	
+new 
+	
+break     ...................(answer)
+	
+continue 
+	
+none 
+
+
+
+
+153)
+Carefully read the question and answer accordingly.
+The result of 10.987+”30.765” is _________________.
+	
+10.98730.765 ----------(ans)
+	
+10.987 
+	
+10.9873.765 
+	
+Compilation error 
+
+
+
+
+154)
+Carefully read the question and answer accordingly.
+We can use Wrapper objects of type int, short, char in switch case.
+State True or False.
+	
+FALSE 
+	
+TRUE --------->(answer)
+
+
+
+155)
+Carefully read the question and answer accordingly.
+Data can be passed to the function ____
+	
+none of these 
+	
+by value 
+	
+by reference 
+	
+Both by value & reference ------>(answer)
+
+
+
+156)
+Carefully read the question and answer accordingly.
+_____________ is a multi way branch statement
+	
+switch     ....................(answer)
+	
+branch 
+	
+break 
+	
+continue 
+	
+label 
+
+
+157)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class WrapperClass1 {
+public static void main(String[]args){
+String s="10Bangalore";
+int i=Integer.parseInt(s);
+System.out.println(i);
+}
+}
+	
+10 
+	
+Runtime Exception      .......................(answer)
+	
+10Bangalore 
+	
+Compilation error 
+
+
+
+158)
+Carefully read the question and answer accordingly.
+executeUpdate() & execute() are valid methods that can be used for executing DDL statements. State  True or False
+	
+FALSE   ..........................(answer)
+	
+TRUE 
+
+
+
+
+159)
+Carefully read the question and answer accordingly.
+Which object allows you to execute parametrized queries?
+	
+ResultSet 
+	
+Parametrized 
+	
+Condition 
+	
+PreparedStatement    .......................(answer)
+
+
+
+160)
+Carefully read the question and answer accordingly.
+What is the state of the parameters of the PreparedStatement object when the user clicks on the Query button?
+	
+started 
+	
+paused 
+	
+initialized     .........................(answer)
+	
+stopped
+
+
+
+161)
+Carefully read the question and answer accordingly.
+Which method executes a simple query and returns a single Result Set object?
+	
+executeQuery()     ...................(answer)
+	
+executeUpdate() 
+	
+execute() 
+	
+noexecute() 
+
+
+
+
+162)
+Carefully read the question and answer accordingly.
+You are using JDBC-ODBC bridge driver to establish a connection with a database. 
+You have created a DSN Mydsn. Which statement will you use to connect to the database?
+	
+Connection cn=DriverManager.getConnection("jdbc:odbc:dsn" ,"username", "password"); 
+	
+Connection cn=DriverManager.getConnection("jdbc:odbc:Mydsn", "username", "password");--------->(answer) 
+	
+Connection cn=DriverManager.getConnection("jdbc:odbc"); 
+	
+Connection cn=DriverManager.getConnection("jdbc:odbc ","username", "password"); 
+
+
+
+
+163)
+Carefully read the question and answer accordingly.
+Which type of driver converts JDBC calls into the network protocol used by the database management system directly?
+	
+Type 2 driver 
+	
+Type 1 driver 
+	
+Type 3 driver 
+	
+Type 4 driver      .........................(answer)
+
+
+
+
+164)
+
+Carefully read the question and answer accordingly.
+Which type of Statement can execute parameterized queries?
+	
+ParameterizedStatement and CallableStatement 
+	
+ParameterizedStatement 
+	
+All kinds of Statements (i.e. which implement a sub interface of Statement) 
+	
+PreparedStatement    ...................(answer)
+
+
+
+
+165)
+Carefully read the question and answer accordingly.
+Type 1 & Type 3 driver types are not vendor specific implementation of Java driver. State  True or False
+	
+FALSE     .....................(answer)
+	
+TRUE   
+
+
+
+
+166)
+Carefully read the question and answer accordingly.
+If your JDBC Connection is in auto-commit mode, which it is by default
+, then every SQL statement is committed to the database upon its completion. 
+ State True or False.
+	
+TRUE ----------->(answer)
+	
+FALSE 
+
+
+
+167)
+Carefully read the question and answer accordingly.
+Connection object can be initialized using which method of the Driver Manager class?
+	
+putConnection() 
+	
+Connection() 
+	
+getConnetion()    ...................(answer)
+	
+setConnection() 
+
+
+
+168)
+Carefully read the question and answer accordingly.
+State TRUE or FALSE.
+getParent() gives the parent directory of the file and
+ isFile() Tests whether the file denoted by the given abstract pathname is a normal file.
+	
+FALSE 
+	
+TRUE --------------->(answer)
+
+
+
+169)
+Carefully read the question and answer accordingly.
+Which of the following are abstract classes?
+1.Reader
+2.InputStreamReader
+3.InputStream
+4.OutputStream
+	
+1&3&4 
+	
+1&2&3 
+	
+1&2&4 
+	
+1&2 
+	
+2&4 
+
+
+
+170)
+
+Carefully read the question and answer accordingly.
+InputStreamReader is sub class of FilterReader.
+	
+TRUE 
+	
+FALSE    .....................(answer)
+
+
+180)
+Carefully read the question and answer accordingly.
+Serialization is JVM independent.State True or False.
+	
+FALSE 
+	
+TRUE   ..................(answer)
+
+
+
+
+190)
+Carefully read the question and answer accordingly.
+Which of the following is a marker interface used for object serialization?
+	
+Runnable 
+	
+None of the listed options 
+	
+Serializable    ............................(answer)
+	
+Externalizable 
+
+
+191)
+Carefully read the question and answer accordingly.
+isFile() returns true if called on a file or when called on a directory
+	
+FALSE 
+	
+TRUE    ......................(answer)
+
+
+
+
+192)
+Carefully read the question and answer accordingly.
+DataInputStream is not necessarily safe for multithreaded access.
+	
+FALSE 
+	
+TRUE .................(answer)
+
+
+
+
+193)
+Carefully read the question and answer accordingly.
+InputStream is the class used for stream of characters.
+State True or False.
+	
+FALSE 
+	
+TRUE   ......................(answer)
+
+
+
+194)
+Carefully read the question and answer accordingly.
+The InputStream.close() method closes this stream and releases all system resources
+	
+FALSE 
+	
+TRUE -------->(answer)
+
+
+
+195)
+Carefully read the question and answer accordingly.
+Statement 1:static variables can be serialized
+Statement2:transient  variables cannot be serialized
+which of the following is true?
+	
+statement 1:false statement2:true 
+	
+statement 1:true statement2:false 
+	
+statement 1:true statement2:true --------->(answer)
+	
+statement 1:false statement2:false 
+
+
+
+
+
+196)
+Carefully read the question and answer accordingly.
+What will be the output of following code?
+public class Exception1{
+public static void main(String args[]) { 
+ int i=1, j=1;
+try {
+i++; 
+ j--;
+if(i/j > 1)
+ i++;
+} catch(ArithmeticException e) {
+System.out.println(0);
+} catch(ArrayIndexOutOfBoundsException e) {
+System.out.println(1);
+} catch(Exception e) {
+  System.out.println(2);
+}
+ finally {
+System.out.println(3);
+}
+System.out.println(4);
+}
+}
+1.0
+2.1
+3.3
+4.4.
+	
+1&3&4 ...............(answer)
+	
+1&2&4 
+	
+1&2 
+	
+2&4 
+	
+1&2&3 
+
+
+
+197)
+
+Carefully read the question and answer accordingly.
+
+which of these are the subclass of Exception class
+	
+IOException 
+	
+Throwable 
+	
+RunTimeException ...............(answer)
+	
+FileNotFindException 
+
+
+
+198)
+Carefully read the question and answer accordingly.
+Which of the following exception is not mandatory to be handled in code?
+	
+IOException 
+	
+NullPointerException ---------->(answer)
+	
+FileNotFoundException 
+	
+SQLException 
+
+
+
+199)
+Carefully read the question and answer accordingly.
+which are  correct for checked exceptions
+	
+error and checked exceptions are same. 
+	
+All runtime exceptions are checked exceptions 
+	
+A checked exception is a subclass of throwable class ------>(answer)
+	
+Checked exceptions are the object of the Exception class or any of its subclasses except Runtime Exception class. 
+
+
+
+200)
+
+Carefully read the question and answer accordingly.
+is it valid to place some code in between try and catch blocks.
+	
+FALSE 
+	
+TRUE    ..................(answer)
+
+
+201)
+
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+class super5{
+ void Get()throws Exception{
+System.out.println("IOException");
+}
+}
+public class Exception2 extends super5{
+public static void main(String[]args){
+super5 o=new super5();
+try{
+o.Get();
+ }catch(IOException e){
+}
+}
+}
+	
+compilation error 
+	
+None of the listed options 
+	
+Runtime error 
+	
+IOException 
+
+
+202)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class Exception1
+{
+ public static void main(String[]args)
+ {
+  System.out.println("A");
+  try
+  {
+   System.exit(0);
+  }catch(Exception e)
+  {
+    System.out.println("B");
+  }
+   System.out.println("C");
+ }
+}
+}
+	
+Compilation error     .................(answer)
+	
+None of the listed options 
+	
+A 
+	
+A,C 
+
+
+
+203)
+Carefully read the question and answer accordingly.
+Which of the following are checked exceptions?
+1.ClassNotFoundException
+2.InterruptedException
+3.NullPointerException
+4.ArrayIndexOutOfBoundsException
+	
+1&4 
+	
+1&3 
+	
+1&2     ...............(answer)
+	
+2&3 
+	
+2&4 
+
+
+
+204)
+Carefully read the question and answer accordingly.
+Which is/are true among given statements
+	
+A ClassNotFoundException is thrown when the reported class is not found by the ClassLoader in the CLASSPATH. --------->
+	
+None of the options 
+	
+NoClassDefFoundError is a subClass of ClassNotFoundException 
+	
+NoClassDefFoundError means that the class was found by the ClassLoader 
+however when trying to load the class,
+ it ran into an error reading the class definition. --------->(answer)
+
+
+
+Carefully read the question and answer accordingly.
+At Point X in below code, which code is necessary to make the code compile?
+public class Test 
+{ 
+    class TestException extends Exception {} 
+    public void runTest() throws TestException {} 
+    public void test() /* Point X */ 
+    { 
+       runTest(); 
+    } 
+}
+	
+catch ( Exception e ) 
+	
+throws RuntimeException 
+	
+No code is necessary. 
+	
+throws Exception    ..................(answer)
+
+
+
+
+205)
+
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+StringTokenizer implements the Enumeration interface
+	
+TRUE   ..................(answer)
+	
+FALSE 
+
+
+
+206)
+
+Carefully read the question and answer accordingly.
+endsWith() member methods of String class creates new String object. State  True or False
+	
+FALSE     ..............(answer)
+	
+TRUE 
+
+
+207)
+
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+The APIS of StringBuffer are synchronized unlike that of StringBuilder
+	
+FALSE (answer:not synchronized)
+	
+TRUE
+
+
+
+
+208)
+Carefully read the question and answer accordingly.
+What is the output of below code:
+package p1;
+public class Hackathon {
+ public static void main(String[] args) {
+  String x = "Java";
+  x.toUpperCase();
+  System.out.println("x = " + x);
+ }
+}
+	
+x = Java    ....................(answer)
+	
+x="" 
+	
+x = JAVA 
+	
+x="JAVA"
+
+
+209)
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+String s = new String(); is valid statement in java
+	
+FALSE 
+	
+TRUE    .............(answer)
+
+
+210)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class CompareStrings{
+public static void main(String[]args){
+if("  string  ".trim()=="string")
+System.out.println("both strings are equal");
+else
+System.out.println("both strings are  not equal");
+}
+}
+	
+both strings are equal 
+	
+compilation error 
+	
+Strings cannot be compare using == operator 
+	
+both strings are not equal   ............(answer)
+
+
+
+211)
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+String class do not provides a method which is used to compare two strings lexicographically.
+	
+FALSE ...........(answer)
+	
+TRUE 
+
+
+
+212)
+Carefully read the question and answer accordingly.
+Choose the correct option.
+Statement I: StringBuffer is efficient than “+” concatenation
+Statement II: Using API’s in StringBuffer the content and length of String can be changed which intern creates new object.
+	
+Statement I & II are TRUE .......(answer)
+	
+Statement I is TRUE & II is FALSE 
+	
+Statement I & II are FASLE 
+	
+Statement I is FALSE & II is TRUE 
+
+
+
+213)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class CompareStrings{
+public static void main(String[]args){
+String a=new String("string");
+String s=new String("string");
+if(a==s)
+System.out.println("both strings are equal");
+else
+System.out.println("both strings are  not equal");
+}
+}
+	
+Strings cannot be compare using == operator 
+	
+both strings are not equal       ..................(answer)
+	
+both strings are equal 
+	
+compilation error 
+
+
+
+214)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class StringCompare{
+public static void main(String[]args){
+if("string"=="string")
+System.out.println("both strings are equal");
+else
+System.out.println("both strings are  not equal");
+}
+}
+	
+both strings are equal     .................(answer)
+	
+compilation error 
+	
+both strings are not equal 
+	
+Runtime error 
+
+
+
+
+215)
+Carefully read the question and answer accordingly.
+what is the way to iterate over the elements of a Map
+	
+for loop 
+	
+foreach      .............(answer if multiple option)
+	
+Iterator     .................(answer)
+	
+list Iterator 
+
+
+216)
+Carefully read the question and answer accordingly.
+Which of the following are synchronized?
+1.Hashtable
+2.Hashmap
+3.Vector
+4.ArrayList
+	
+1&4 
+	
+2&4 
+	
+1&2 
+	
+2&3 
+	
+1&3      ................(answer)
+
+
+
+
+217)
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class Compare
+{
+ public static void main(String[]args)
+ {
+  String s=new String("abc");
+  String s1=new String("abc");
+  System.out.println(s.compareTo(s1));
+ }
+}
+	
+None of the listed options 
+	
+True 
+	
+False 
+
+0     ..................(answer)
+
+
+
+218)
+Carefully read the question and answer accordingly.
+As per the below code find which statements are true. 
+public class Test {
+ public static void main(String[] args) {
+   Line 1:  ArrayList<String> myList=new List<String>();    
+   Line 2:  String string = new String();
+   Line 3:  myList.add("string");
+   Line 4:  int index = myList.indexOf("string");
+  System.out.println(index);
+ }
+}
+	
+Line 1 has compilation error ..........(answer)
+	
+Line 4 has neither error nor exceptions. 
+	
+Line 2 has run time exceptions 
+	
+In Line 4 null pointer exception will occur as String string contains null value 
+
+
+
+
+219)
+Carefully read the question and answer accordingly.
+The LinkedList class supports two constructors.
+	
+TRUE    .....................(answer)
+	
+FALSE 
+
+
+
+220)
+Carefully read the question and answer accordingly.
+Consider the following statements about the Map type Objects:
+Statement A: Changes made in the set view returned by keySet() will be reflected in the original map.
+Statement B: All Map implementations keep the keys sorted.
+Which of the following option is true regarding the above statements?
+	
+Statement A is false and Statement B is true 
+	
+Both Statements A and B are false ..........(answer)
+	
+Statement A is true and Statement B is false 
+	
+Both Statements A and B are true 
+
+
+
+
+221)
+Carefully read the question and answer accordingly.
+Method keySet() in Map returns a set view of the keys contained in that map.
+State True or False.
+	
+TRUE    ...........(answer)
+	
+FALSE 
+
+
+
+222)
+Carefully read the question and answer accordingly.
+Consider the following list of code:
+A) Iterator iterator = hashMap.keySet().iterator();
+B) Iterator iterator = hashMap.iterator();
+C) Iterator iterator = hashMap.keyMap().iterator();
+D) Iterator iterator = hashMap.entrySet().iterator();
+E) Iterator iterator = hashMap.entrySet.iterator();
+Assume that hashMap is an instance of HashMap type collection implementation.
+Which of the following option gives the correct partial code about getting 
+an Iterator to the HashMap entries?
+	
+C 
+	
+A 
+	
+B 
+	
+E 
+	
+D............(answer)
+
+
+223)
+Carefully read the question and answer accordingly.
+Is "Array" a subclass of "Collection" ?
+	
+FALSE 
+	
+TRUE    ..................(answer)
+
+
+224)
+Carefully read the question and answer accordingly.
+Enumeration is having remove() method.
+State True or False.
+	
+FALSE     ............(false)
+	
+TRUE
+-------------------------------------------------------------------------------------------------------------
+
+1)
+
+Which of the following is a checked exception?)
+	
+NullPointerException 
+	
+ArrayIndexOutOfBoundsException 
+	
+Arithmetic Exception 
+	
+IOException  ................................(answer)
+
+
+2)
+
+
+class s implements Runnable 
+{ 
+    int x, y; 
+    public void run() 
+    { 
+        for(int i = 0; i < 1000; i++) 
+            synchronized(this) 
+            { 
+                x = 12; 
+                y = 12; 
+            } 
+        System.out.print(x + " " + y + " "); 
+    } 
+    public static void main(String args[]) 
+    { 
+        s run = new s(); 
+        Thread t1 = new Thread(run); 
+        Thread t2 = new Thread(run); 
+        t1.start(); 
+        t2.start(); 
+    } 
+}
+ 
+What is the output?
+	
+prints 12 12 12 12 .................................(answer)
+	
+Cannot determine output. 
+	
+DeadLock 
+	
+Compilation Error 
+
+
+
+3)
+
+
+Given:
+public class ExceptionTest 
+{ 
+    class TestException extends Exception {} 
+    public void runTest() throws TestException {} 
+    public void test() /* Line X */ 
+    { 
+        runTest(); 
+    } 
+}
+At Line X, which code is necessary to make the code compile?
+	
+throws RuntimeException 
+	
+throw Exception 
+	
+throws Exception   ......................................(answer)
+	
+No code is necessary 
+
+4)
+
+In the given code snippet
+try { int a = Integer.parseInt("one"); }
+what is used to create an appropriate catch block? (Choose all that apply.)
+A. ClassCastException
+B. IllegalStateException
+C. NumberFormatException
+D. IllegalArgumentException 
+	
+ClassCastException 
+	
+IllegalArgumentException 
+	
+NumberFormatException 
+	
+IllegalStateException 
+
+
+5)
+
+Which of the following statements is true?
+	
+Any statement that can throw an Exception must be enclosed in a try block. 
+	
+The Error class is a RuntimeException. 
+	
+Any statement that can throw an Error must be enclosed in a try block. 
+	
+catch(X x) can catch subclasses of X where X is a subclass of Exception.............................(answer)
+ 
+
+6)
+
+
+Given:
+ class X { public void foo() { System.out.print("X "); } }
+
+ public class SubB extends X {
+ public void foo() throws RuntimeException {
+ super.foo();
+ if (true) throw new RuntimeException();
+ System.out.print("B ");
+ }
+ public static void main(String[] args) {
+ new SubB().foo();
+ }
+ }
+What is the result?
+	
+X, followed by an Exception, followed by B. 
+	
+No output, and an Exception is thrown. 
+	
+X, followed by an Exception. .....................(answer)
+	
+none 
+
+
+7)
+
+
+class Trial{
+public static void main(String[] args){
+try{
+System.out.println("Java is portable");
+} } }
+	
+We cannot have a try block block without a catch / finally block     .................(answer)
+	
+We cannot have a try block without a catch block 
+	
+Nothing is diaplayed 
+	
+Java is portable 
+
+8)
+
+Which three of the following are methods of the Object class? 
+
+1.notify(); 
+2.notifyAll(); 
+3.isInterrupted(); 
+4.synchronized(); 
+5.interrupt(); 
+6.wait(long msecs); 
+7.sleep(long msecs); 
+8.yield();
+	
+2, 4, 5 
+	
+1, 2, 6   .......................(answer)
+	
+1, 2, 4 
+	
+2, 3, 4 
+
+9)
+
+Which digit,and in what order,will be printed when the following program is run?
+
+Public class MyClass {
+  public static void main(String[] args) {
+   int k=0;
+  try {
+         int i=5/k;
+        }
+catch(ArithmeticException e) {
+   System.out.println("1");
+    }
+catch(RuntimeException e) {
+   System.out.println("2");
+  return;
+    }
+catch(Exception e) {
+   System.out.println("3");
+    }
+finally{
+System.out.println("4");
+}
+System.out.println("5");
+}
+}
+	
+The program will only print 1 ,4 and 5 in order   .....................(answer)
+	
+The program will only print 5 
+	
+The program will only print 1 and 4 in order 
+	
+The program will only print 1,2 and 4 in order 
+	
+The program will only print 1,2,4 and 5 in order
+
+
+10)
+
+
+Consider the following code and choose the correct option:
+int array[] = new int[10];
+array[-1] = 0;
+	
+runtime error 
+	
+compiles 
+successfully 
+	
+none of the listed options 
+	
+does not compile 
+
+
+11)
+
+
+Which of the following opens the file "myData.stuff" for output first deleting any file with that name?
+	
+FileOutputStream fos = new FileOutputStream( new BufferedOutputStream( "myData.stuff") ) 
+	
+FileOutputStream fos = new FileOutputStream( "myData.stuff", true ) 
+	
+FileOutputStream fos = new FileOutputStream( "myData.stuff") .........................(answer)
+	
+DataOutputStream dos = new DataOutputStream( "myData.stuff" ) 
+
+
+12)
+
+
+What happens when the constructor for FileInputStream fails to open a file for reading?
+	
+throws a FileNotFoundException ........................(answer)
+	
+throws a DataFormatException 
+	
+throws a ArrayIndexOutOfBoundsException 
+	
+returns null 
+
+
+13)
+
+
+Consider the following code and choose the correct option:
+class std{
+ int call; std(int c){call=c;}
+ int getCall(){return call;}
+}
+public class Test{
+  public static void main(String[] args) throws IOException {
+   File file=new File("d:/std.txt");
+  FileOutputStream fos=new FileOutputStream(file);
+  ObjectOutputStream oos=new ObjectOutputStream(fos);
+  std s1=new std(10);
+  oos.writeObject(s1);
+  oos.close();
+  }}
+	
+Compiles but error at run time ......................(answer)
+	
+Compilation error 
+	
+the state of the object s1 will be store to file std.txt 
+	
+the state of the object s1 will not be store to the file.
+ 
+
+14)
+
+
+Consider the following code and choose the correct option:
+public class Test {
+ public static void main(String[] args) throws IOException {  
+  File file=new File("D:/jlist.lst");
+  byte buffer[]=new byte[(int)file.length()+1];
+  FileInputStream fis=new FileInputStream(file);
+  int ch=0;
+  while((ch=fis.read())!=-1){
+   System.out.print((char)ch); } }}
+	
+reads data from file one byte at a time and display it on the console. 
+	
+Compiles but error at runtime ...............................................(answer)
+	
+Compilation error 
+	
+reads data from file named jlist.lst in byte form and display garbage value 
+
+
+15)
+
+
+Consider the following code and choose the correct option:
+public class Test {
+ public static void main(String[] args) {
+  File file=new File("d:/prj/lib");
+  file.mkdirs();}}
+	
+Compiles but error at run time 
+	
+creates directory d:/prj/lib 
+	
+Compilation error 
+	
+Compiles and executes but directory is not created
+ 
+
+16)
+
+
+Consider the following code and choose the correct option:
+class std implements Serializable{
+ int call; std(int c){call=c;}
+ int getCall(){return call;}
+}
+public class Test{
+  public static void main(String[] args) throws IOException {
+   File file=new File("d:/std.txt");
+  FileOutputStream fos=new FileOutputStream(file);
+  ObjectOutputStream oos=new ObjectOutputStream(fos);
+  std s1=new std(10);
+  oos.writeObject(s1);
+  oos.close();
+  }}
+	
+Compiles but error at run time 
+	
+the state of the object s1 will not be store to the file. 
+	
+the state of the object s1 will be store to file std.txt 
+	
+Compilation error 
+
+
+17)
+
+
+Consider the following code and choose the correct output:
+public class Person{
+public void talk(){ System.out.print("I am a Person "); }
+}
+public class Student extends Person {
+public void talk(){ System.out.print("I am a Student "); }
+}
+what is the result of this piece of code:
+public class Test{
+public static void main(String args[]){
+Person p = new Student();
+p.talk();
+}
+}
+	
+I am a Person I am a Student 
+	
+I am a Person 
+	
+I am a Student ...................(answer)
+	
+I am a Student I am a Person
+
+
+18)
+
+
+Which of these are two legal ways of accessing a File named "file.tst" for reading. Select the correct option:
+A)FileReader fr = new FileReader("file.tst"); 
+B)FileInputStream fr = new FileInputStream("file.tst");
+C)InputStreamReader isr = new InputStreamReader(fr, "UTF8"); 
+D)FileReader fr = new FileReader("file.tst", "UTF8");
+	
+A,B ..............................................(answer)
+	
+C,D 
+	
+B,C 
+	
+A,D 
+
+
+19)
+
+Consider the following code and choose the correct option:
+public class Test{
+  public static void main(String[] args) throws IOException {
+  File file = new File("d:/temp.txt");
+  FileReader reader=new FileReader(file);
+  reader.skip(7);  int ch;
+  while((ch=reader.read())!=-1){
+   System.out.print((char)ch);  }  }}
+	
+Compiles but error at runtime 
+	
+Skip the first seven characters and then starts reading file and display it on console 
+	
+Compiles and runs without output 
+	
+Compilation error
+ 
+
+20)
+
+
+Give Code snipet:
+{// Somecode
+ResultSet rs = st.executeQuery("SELECT * FROM survey");
+
+    while (rs.next()) {
+      String name = rs.getString("name");
+      System.out.println(name);
+    }
+
+    rs.close();
+// somecode
+} What should be imported related to ResultSet?
+	
+java.sql.ResultSet ........................................(answer)
+	
+java.sql.DriverManager 
+	
+java.sql.Connection 
+	
+java.sql.Driver 
+
+
+21)
+
+
+An application can connect to different Databases at the same time. State TRUE/FALSE.
+	
+true ....................(answer)
+	
+false
+ 
+
+22)
+
+
+A) It is not possible to execute select query with execute() method
+B) CallableStatement can executes store procedures  only but not functions
+	
+Both A and B is FALSE 
+	
+Only B is TRUE ...................(answer)
+	
+Only A is TRUE 
+	
+Both A and B is TRUE 
+
+
+23)
+
+
+What is the default type of ResultSet in JDBC applications?
+	
+Updatable, Forward only ...................(answer)
+	
+Updatable, Scroll sensitive 
+	
+Read only, Scroll Sensitive 
+	
+Read Only, Forward Only 
+
+
+24)
+
+
+It is possible to insert/update record in a table by using ResultSet. State TRUE/FALSE 
+	
+true ...................(answer)
+	
+false 
+
+
+25)
+
+
+Which of the following methods are needed for loading a database driver in JDBC? 
+	
+registerDriver() method ......................(answer)
+	
+Class.forName() ......................(answer)
+	
+getConnection 
+	
+registerDriver() method and Class.forName() 
+
+
+26)
+
+
+Which of the following methods finds the maximum number of connections that a specific driver can obtain?
+	
+ResultSetMetaData.getMaxConnections 
+	
+Connection.getMaxConnections 
+	
+Database.getMaxConnections 
+	
+DatabaseMetaData.getMaxConnections ............................(answer)
+
+
+27)
+
+
+Consider the following code & select the correct option for output.
+String sql ="select empno,ename from emp";  
+  PreparedStatement pst=cn.prepareStatement(sql);
+    System.out.println(pst.toString());
+  ResultSet rs=pst.executeQuery();
+   System.out.println(rs.getString(1)+ " "+rs.getString(2));
+	
+Compiles but error at run time 
+	
+Compilation error 
+	
+Compiles but no output 
+	
+will show first employee record 
+
+
+28)
+
+
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+class Super
+{
+ static void show()
+ {
+ System.out.println("super class show method");
+ }
+ static class StaticMethods 
+ {
+ void show()
+ {
+ System.out.println("sub class show method");
+ }
+ }
+ public static void main(String[]args)
+ {
+ Super.show();
+ new Super.StaticMethods().show();
+ }
+}
+	
+Compilation Error 
+	
+sub class show method super class show method 
+	
+super class show method sub class show method 
+	
+super class show method 
+
+
+29)
+
+
+Carefully read the question and answer accordingly.
+Which of the following are true about constructors?
+	
+Constructors can be overloaded ...............................(answer)
+	
+Constructors can be overridden. 
+	
+Constructors should be called explicitly like methods 
+	
+Constructor is a special type of method which may have return type. 
+
+
+30)
+
+
+Carefully read the question and answer accordingly.
+When one method is overridden in sub class the access specifier of the method in sub class should be equal as method in super class.
+State True or False.
+	
+TRUE 
+	
+FALSE .....................(answer)
+
+
+31)
+
+
+Carefully read the question and answer accordingly.
+A field with default access specifier can be accessed  out side the package. 
+State True or False.
+	
+FALSE ..........................................(answer)
+	
+TRUE 
+
+
+32)
+
+
+Carefully read the question and answer accordingly.
+What will be the output of following code?
+class Super2
+{
+ public void display()
+ {
+System.out.println("super class display method");
+ }
+ public void exe()
+ {
+ System.out.println("super class exe method");
+ display();
+ }
+}
+public class InheritMethod extends Super2
+{
+ public void display()
+ {
+ 
+System.out.println("sub class display method");
+ }
+ 
+public static void main(String [] args)
+ {
+ 
+InheritMethod o=new InheritMethod();
+ 
+ o.exe();
+ }
+ 
+}
+	
+Compilation error 
+	
+super class exe method super class display method 
+	
+None of the listed options 
+	
+super class exe method sub class display method
+
+
+33)
+
+
+Carefully read the question and answer accordingly.
+A class can be declared as _______ if you do not want the class to be subclassed. Using
+the __________keyword we can abstract a class from its implementation
+	
+final,interface ....................(answer)
+	
+private,abstract 
+	
+protected ,interface 
+	
+public,friend 
+	
+final,protected 
+
+
+34)
+
+
+Carefully read the question and answer accordingly.
+Constructor of an class is executed each time when an object of that class is created
+	
+FALSE 
+	
+TRUE .............................................................(answer)
+
+
+35)
+
+
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+class Super
+{
+ int num=20;
+ public void display()
+ {
+ System.out.println("super class method");
+ }
+}
+public class ThisUse extends Super
+{
+ int num;
+ public ThisUse(int num)
+ {
+ this.num=num;
+ }
+ public void display()
+ {
+ System.out.println("display method");
+ }
+ public void Show()
+ {
+ this.display();
+ display();
+ System.out.println(this.num);
+ System.out.println(num);
+ }
+ public static void main(String[]args)
+ {
+ ThisUse o=new ThisUse(10);
+ o.Show();
+ }
+}
+	
+super class method display method 20 20 
+	
+display method display method 20 20 
+	
+display method display method 10 10   ...........................(answer)
+	
+super class method display method 10 10 
+
+
+36)
+
+
+Carefully read the question and answer accordingly.
+If display method in super class has a protected specifier then what should be the specifier for the overriding display method in sub class?
+	
+private 
+	
+protected or default 
+	
+None of the listed options 
+	
+protected or public .....................................(answer)
+
+
+37)
+
+
+Carefully read the question and answer accordingly.
+Which of the following statements are true about Method Overriding?
+I:  Signature must be same including return type
+II: If the super class method is throwing the exception then overriding method should throw the same Exception
+III: Overriding can be done in same class
+IV: Overriding should be done in two different classes with no relation between the classes
+	
+I .........................(answer)
+	
+I & III 
+	
+III 
+	
+II & IV 
+
+
+38)
+
+
+Carefully read the question and answer accordingly.
+abstract public class Employee 
+{
+ protected abstract double getSalesAmount();
+ public double getCommision() {
+ return getSalesAmount() * 0.15;
+ }
+}
+class Sales extends Employee 
+{
+// insert method here
+}
+Which two methods, inserted independently, correctly complete the Sales
+class?
+1.double getSalesAmount() { return 1230.45; }
+2. public double getSalesAmount() { return 1230.45; }
+3.private double getSalesAmount() { return 1230.45; }
+4.protected double getSalesAmount() { return 1230.45; }
+	
+3&4 
+	
+2&4   .......................(answer)
+	
+1&3 
+	
+2&3 
+	
+1&2 
+
+
+39)
+
+
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+Interface can be used when common functionalities have to be implemented differently across multiple classes.
+	
+FALSE 
+	
+TRUE .....................(answer)
+
+
+40)
+
+
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+If any class has at least one abstract method you must declare it as abstract class
+	
+FALSE .................................(answer)
+	
+TRUE
+
+
+41)
+
+
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+An abstract class cannot contain non abstract methods
+	
+FALSE ....................................................(answer)
+	
+TRUE 
+
+
+42)
+
+
+Carefully read the question and answer accordingly.
+Choose the correct option.
+Statement I: When all methods in a class are abstract the class can be declared as an interface.
+Choose the correct option.
+Statement II: An interface defines a contract for classes to implement the behavior.
+	
+Statement I & II are TRUE ...........................(answer)
+	
+Statement I is FALSE & II is TRUE 
+	
+Statement I & II are FASLE 
+	
+Statement I is TRUE & II is FALSE 
+
+
+43)
+
+
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+The below code will compile &   provide desired output:
+package p1;
+interface Bounceable {
+ void bounce();
+ void setBounceFactor(int bf);
+ private class BusinessLogic
+ {
+  int var1;
+  float var2;
+  double result(int var1,float var2){
+   return var1*var2;
+  }
+ }
+}
+class Test {
+ public static void main(String[] args) {
+  System.out.println(new Bounceable.BusinessLogic().result(12,12345.22F));
+ }
+}
+	
+FALSE   ..................(answer)
+	
+TRUE
+ 
+
+44)
+
+
+Carefully read the question and answer accordingly.
+class InterfaceDemo
+{
+ public static void main(String [] args)
+ {
+  DigiCam cam1=new DigiCam();
+  cam1.doCharge();
+ }//main
+}
+interface USB
+{
+ int readData();
+ boolean writeData(String input);
+ void doCharge();
+}
+class DigiCam implements USB
+{
+ public int readData(){ return 0;}
+ public boolean writeData(String input){ return false; }
+ void doCharge(){ return;}
+}
+Which of the following is correct with respect to given code?
+	
+Code will compile but wont print any message 
+	
+Runtime Exception 
+	
+Code will not compile due to weaker access privilege. 
+	
+Code will Compile without any Error 
+
+
+45)
+
+
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+Object class provides a method named getClass() which returns runtime class of an object.
+	
+FALSE 
+	
+TRUE ...............................................(answer)
+
+
+46)
+
+
+Carefully read the question and answer accordingly.
+Which of the following keywords ensures that a method cannot be overridden?
+	
+static 
+	
+abstract 
+	
+final    .........................................................(answer)
+	
+protected 
+
+
+47)
+
+
+Carefully read the question and answer accordingly.
+public class Person 
+{
+ private String name;
+ public Person(String name) { this.name = name; }
+ public boolean equals(Person p) 
+ {
+  return p.name.equals(this.name);
+ }
+}
+Which statement is true?
+	
+The equals method does NOT properly override the Object class's equals method. 
+	
+The code will compile as Object class's equals method is overridden. 
+	
+Compilation fails because the private attribute p.name cannot be accessed. 
+	
+This class must also implement the hashCode method as well. 
+
+
+48)
+
+
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class Operators 
+{
+ public static void main(String[]args)
+ {
+  int i=12;
+  int j=13;
+  int k=++i-j--;
+  System.out.println(i);
+  System.out.println(j);
+  System.out.println(k);
+ }
+}
+	
+12,13,-1 
+	
+13,13,0 
+	
+12,12,-1 
+	
+13,12,0   ........................(answer)
+
+
+49)
+
+
+Carefully read the question and answer accordingly.
+Members of the classs are accessed by _________ operator
+	
+none of these 
+	
+address 
+	
+scope resolution 
+	
+dot .............................................(answer)
+
+
+50)
+
+
+Carefully read the question and answer accordingly.
+Statement A:finalize will always run before an object is garbage collected
+Statement B:finalize method will be called only once by the garbage collector
+which of the following is true?
+	
+Both Statements A and B are true ...........................(answer)
+	
+Both Statements A and B are false 
+	
+Statement A is false and Statement B is true 
+	
+Statement A is true and Statement B is false 
+
+
+51)
+
+
+Carefully read the question and answer accordingly.
+Which of the following code snippets make objects eligible for Garbage Collection? 
+Statement A: String s = "new string"; s = s.replace('e', '3');
+Statement B:String replaceable = "replaceable"; StringBuffer sb = new StringBuffer(replaceable);replaceable = null; sb = null;
+	
+Both Statements A and B 
+	
+Neither Statements A nor B 
+	
+Statement B alone ...................(answer)
+	
+Statement A alone
+
+
+52)
+
+
+Carefully read the question and answer accordingly.
+After which line the object initially referred by str ("Hello" String object) is eligible for garbage collection?
+class Garbage{
+public static void main(string[]args){
+line 1:String str=new String("Hello");
+line 2. String str1=str;
+line 3.str=new String("Hi");
+line 4.str1=new String("Hello Again");
+5.return;
+}
+}
+	
+line 1 
+	
+line 3 
+	
+line 5 
+	
+line 4 
+
+
+53)
+
+
+Carefully read the question and answer accordingly.
+_____________ Operator is used to create an object.
+	
+main 
+	
+Object 
+	
+new .................................(answer)
+	
+print 
+	
+class 
+
+
+54)
+
+
+Carefully read the question and answer accordingly.
+Garbage collector thread is a  daemon thread.
+State True or False.
+	
+FALSE 
+	
+TRUE ...............................................(answer)
+
+
+55)
+
+
+Carefully read the question and answer accordingly.
+Garbage collection guarantee that a program will not run out of memory. State True or False.
+	
+FALSE ....................................................(answer)
+	
+TRUE 
+
+56)
+
+
+Carefully read the question and answer accordingly.
+Which of the following is the correct syntax for suggesting that the JVM to performs garbage collection?
+	
+System.free(); 
+	
+System.gc();  ...........................(answer)
+	
+System.setGarbageCollection(); 
+	
+System.out.gc(); 
+
+
+57)
+
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class VariableDec1
+{
+ public static void main(String[]args)
+ {
+  int I=32;
+  char c=65;
+  char a=c+I;
+  System.out.println(a);
+ }
+}
+	
+compilation error .......................(answer)
+	
+a 
+	
+97 
+	
+None of the listed options 
+
+
+58)
+
+
+Carefully read the question and answer accordingly.
+Which of these interface(s) are  part of Java’s core collection framework?
+	
+SortedQueue 
+	
+Set ....................(answer)
+	
+SortedList 
+	
+List ......................(answer)
+
+
+59)
+
+Carefully read the question and answer accordingly.
+Method keySet() in Map returns a set view of the keys contained in that map.
+State True or False.
+	
+TRUE ....................(answer)
+	
+FALSE 
+
+
+60)
+
+Carefully read the question and answer accordingly.
+Iterator i= new HashMap().entrySet().iterator();
+is this correct declaration
+	
+TRUE .........................(answer)
+	
+FALSE 
+
+
+61)
+
+
+Carefully read the question and answer accordingly.
+Iterator is having previous() method.
+State True or False.
+	
+FALSE .........................(answer)
+	
+TRUE 
+
+
+62)
+
+
+Carefully read the question and answer accordingly.
+Which of the following are true statements?
+	
+The ListIterator interface provides the ability to determine its position in the List. 
+	
+The ListIterator interface provides forward and backward iteration capabilities. ..................(answer)
+	
+The ListIterator interface extends both the List and Iterator interfaces 
+	
+The Iterator interface declares only three methods: hasNext, next and remove.......................(answer)
+
+
+63)
+
+
+Carefully read the question and answer accordingly.
+The ArrayList<String> is immutable.
+	
+TRUE ........................(answer)
+	
+FALSE 
+
+
+64)
+
+
+Carefully read the question and answer accordingly.
+Consider the following code:
+ import java.util.Set;
+ import java.util.TreeSet;
+
+ class TestSet { 
+   public static void main(String[] args) {
+      Set set = new TreeSet<String>(); 
+      set.add("Green World"); 
+      set.add(1);
+      set.add("Green Peace"); 
+      System.out.println(set); 
+   }
+ }
+
+Which of the following option gives the output for the above code?
+	
+Prints the output [Green World, 1, Green Peace] at line no 9 
+	
+Throws Runtime Exception 
+	
+Compilation error at line no 8 
+	
+Prints the output [Green World, Green Peace] at line no 9 
+
+
+65)
+
+Carefully read the question and answer accordingly.
+Which of the following are synchronized?
+1.Hashtable
+2.Hashmap
+3.Vector
+4.ArrayList
+	
+1&4 
+	
+1&2 
+	
+1&3 ....................(answer)
+	
+2&3 
+	
+2&4 
+
+
+66)
+
+
+Carefully read the question and answer accordingly.
+The add method of Set returns false if you try to add a duplicate element.
+	
+FALSE 
+	
+TRUE ........................(answer)
+
+
+67)
+
+
+Carefully read the question and answer accordingly.
+What is the return type of next() in Iterator?
+	
+Object ........................(answer)
+	
+void 
+	
+boolean 
+	
+String 
+
+
+68)
+
+Carefully read the question and answer accordingly.
+What is the output of below code:
+package p1;
+public class Hackathon {
+ public static void main(String[] args) {
+  String x = "Java";
+  x.toUpperCase();
+  System.out.println("x = " + x);
+ }
+}
+	
+x = Java ..............(answer)
+	
+x = JAVA 
+	
+x="JAVA" 
+	
+x="" 
+
+
+69)
+
+
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class CompareStrings{
+public static void main(String[]args){
+String a=new String("string");
+String s=new String("string");
+if(a==s)
+System.out.println("both strings are equal");
+else
+System.out.println("both strings are  not equal");
+}
+}
+	
+compilation error 
+	
+both strings are not equal .....................(answer)
+	
+both strings are equal 
+	
+Strings cannot be compare using == operator 
+
+
+70)
+
+
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+import java.util.*;
+public class StringTokens
+{
+ public static void main(String[]args)
+ {
+  String s="India is a\n developing country";
+  StringTokenizer o=new StringTokenizer(s);
+  System.out.println(o.countTokens());
+ }
+}
+	
+6 
+	
+None of the listed options 
+	
+5 ...................................(answer)
+	
+4 
+
+
+71)
+
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+String class do not provides a method which is used to compare two strings lexicographically.
+	
+FALSE ................(answer)
+	
+TRUE 
+
+
+72)
+
+Carefully read the question and answer accordingly.
+State whether TRUE or FALSE.
+String s = new String(); is valid statement in java
+	
+FALSE 
+	
+TRUE .......................(answer)
+
+
+73)
+
+Carefully read the question and answer accordingly.
+String class contains API used for?
+	
+Extracting strings 
+	
+Searching strings 
+	
+All of above ................................................(answer)
+	
+Comparing strings 
+
+74)
+
+
+Carefully read the question and answer accordingly.
+What is the output of below code:
+package p1;
+public class Hackathon {
+ public static void main(String[] args) {
+  String x = "Java";
+  x.concat(" Rules!");
+  System.out.println("x = " + x);
+ }
+}
+	
+Error 
+	
+x = Rules 
+	
+x = Java  ........................(answer)
+	
+x = Java Rules
+
+
+75)
+
+
+Carefully read the question and answer accordingly.
+Choose the correct option.
+Statement I: StringBuffer is efficient than “+” concatenation
+Statement II: Using API’s in StringBuffer the content and length of String can be changed which intern creates new object.
+	
+Statement I & II are TRUE 
+	
+Statement I is TRUE & II is FALSE ........................(answer)
+	
+Statement I is FALSE & II is TRUE 
+	
+Statement I & II are FASLE 
+
+
+76)
+
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class StringBuffer1
+{
+ public static void main(String[]args)
+ {
+  StringBuffer s1=new StringBuffer("welcome");
+  StringBuffer s2=new StringBuffer("welcome");
+  System.out.println(s1.equals(s2));
+  System.out.println(s1.equals(s1));
+ }
+}
+	
+false true ....................(answer)
+	
+true false 
+	
+false false 
+	
+true true 
+
+
+77)
+
+Carefully read the question and answer accordingly.
+What will be the output for following code?
+public class StringCompare{
+public static void main(String[]args){
+if("string"=="string")
+System.out.println("both strings are equal");
+else
+System.out.println("both strings are  not equal");
+}
+}
+	
+both strings are not equal 
+	
+compilation error 
+	
+both strings are equal ......................(answer)
+	
+Runtime error 
+
+
+
+78)
+
+Consider the following code and choose the correct output:
+class Test{
+ public static void main(String args[]){
+   boolean flag=true;
+   if(flag=false){
+   System.out.print("TRUE");}else{
+   System.out.print("FALSE");}}}
+	
+compilation error 
+	
+false    ...............................(answer)
+	
+Compiles 
+	
+true 
+
+
+
+79)
+
+
+Consider the following code and choose the correct option:
+class Test{
+  public static void main(String args[]){
+   Long  L = null;    long  l = L;
+  System.out.println(L); 
+  System.out.println(l);
+  }}
+	
+null
+0 
+	
+Compilation error 
+	
+Compiles but error at run time 
+	
+0
+null 
+
+
+
+
+
+
+80)
+
+public class SwitchTest 
+{  
+    public static void main(String[] args) 
+    {
+        System.out.println("value =" + switchIt(4)); 
+    } 
+    public static int switchIt(int x) 
+    {
+        int j = 1;  
+        switch (x) 
+        { 
+            case 1: j++; 
+            case 2: j++;  
+            case 3: j++; 
+            case 4: j++; 
+            case 5: j++; 
+            default: j++; 
+            } 
+        return j + x;  
+    } 
+}
+What will be the output of the program?
+	
+value = 4 
+	
+value = 6 
+	
+value = 8    ........................(answer)
+	
+value = 2 
+
+
+
+
+
+81)
+
+What is the output :
+class One{
+ public static void main(String[] args) {
+  int a=100;  
+  if(a>10)     
+   System.out.println("M.S.Dhoni");  
+  else if(a>20)       
+   System.out.println("Sachin");  
+  else if(a>30)        
+   System.out.println("Virat Kohli");}
+ }
+	
+Virat Kohli 
+	
+M.S.Dhoni
+Sachin
+Virat Kohli 
+	
+all of these 
+	
+M.S.Dhoni ................................(answer)
+
+
+
+
+82)
+
+What will be the output of following code? 
+
+import java.util.*; 
+class I 
+{
+    public static void main (String[] args) 
+    {
+        Object i = new ArrayList().iterator(); 
+        System.out.print((i instanceof List)+","); 
+        System.out.print((i instanceof Iterator)+","); 
+        System.out.print(i instanceof ListIterator); 
+    } 
+}
+	
+Prints: false, true, true 
+	
+Prints: false, true, false ...................(answer)
+	
+Prints: false, false, false 
+	
+Prints: false, false, true 
+
+
+
+
+
+83)
+
+Which of the following statements are true regarding wrapper classes? (Choose TWO) 
+	
+String is a wrapper class 
+	
+Character has a intValue() method 
+	
+String is the wrapper class of char 
+	
+Double has a compareTo() method ...............(answer)
+	
+Byte extends Number .....................(answer)
+
+
+84)
+public void foo( boolean a, boolean b)
+{ 
+    if( a ) 
+    {
+        System.out.println("A"); /* Line 5 */
+    } 
+    else if(a && b) /* Line 7 */
+    { 
+        System.out.println( "A && B"); 
+    } 
+    else /* Line 11 */
+    { 
+        if ( !b ) 
+        {
+            System.out.println( "notB") ;
+        } 
+        else 
+        {
+            System.out.println( "ELSE" ) ; 
+        } 
+    } 
+}
+
+What would be the result?
+	
+If a is false and b is false then the output is "ELSE" 
+	
+If a is false and b is true then the output is "ELSE" 
+	
+If a is true and b is false then the output is "notB" 
+	
+If a is true and b is true then the output is "A && B" 
+
+
+85)
+
+Consider the following code and choose the correct option: 
+class Test{
+  public static void main(String args[]){
+ Long data=23;
+  System.out.println(data); }}
+	
+None of the listed options 
+	
+Compiles but error at run time 
+	
+Compilation error   .......................(answer)
+	
+23 
+
+
+86)
+
+switch(x) 
+{ 
+ default: 
+ System.out.println("Hello"); 
+}
+Which of the following are acceptable types for x? 
+1.byte 
+2.long 
+3.char 
+4.float 
+5.Short 
+6.Long 
+	
+2 and 4 
+	
+4 and 6 
+	
+3 and 5 
+	
+1 ,3 and 5 .....................(answer)
+
+
+87)
+
+Given:
+ public class Test {
+ public enum Dogs {collie, harrier, shepherd};
+ public static void main(String [] args) {
+ Dogs myDog = Dogs.shepherd;
+ switch (myDog) {
+ case collie:
+ System.out.print("collie ");
+ case default:
+ System.out.print("retriever ");
+ case harrier:
+ System.out.print("harrier ");
+ }
+ }
+ }
+What is the result?
+	
+retriever 
+	
+shepherd 
+	
+harrier 
+	
+Compilation fails. ......................(answer)
+
+
+
+88)
+
+What will be the output of the program? 
+
+class MyThread extends Thread 
+{
+    public static void main(String [] args) 
+    {
+        MyThread t = new MyThread();
+        t.start();
+        System.out.print("one. ");
+        t.start();
+        System.out.print("two. ");
+    }
+    public void run() 
+    {
+        System.out.print("Thread ");
+    }
+}
+	
+The output cannot be determined. 
+	
+It prints "Thread one. Thread two." 
+	
+An exception occurs at runtime. ..................(answer)
+	
+Compilation fails 
+
+
+89)
+
+Consider the following code and choose the correct option:
+class Cthread extends Thread{  
+  public void run(){
+  System.out.print("Hi");}
+public static void main (String args[]){
+ Cthread th1=new Cthread();
+ th1.run();
+ th1.start();
+th1.run();
+}}
+	
+Compilation error 
+	
+will print Hi twice and throws Exception at run time 
+	
+will print Hi Thrice ...............................(answer)
+	
+will print Hi once 
+
+90)
+
+A) Exception is the superclass of all errors and exceptions in the java language
+B) RuntimeException and its subclasses are unchecked exception.
+	
+Both A and B are FALSE 
+	
+Only A is TRUE 
+	
+Both A and B are TRUE
+ 
+only B...........................(answer)
+
+91)
+
+class PingPong2 {
+synchronized void hit(long n) {
+for(int i = 1; i < 3; i++)
+System.out.print(n + "-" + i + " ");
+}
+}
+ public class Tester implements Runnable {
+ static PingPong2 pp2 = new PingPong2();
+ public static void main(String[] args) {
+ new Thread(new Tester()).start();
+ new Thread(new Tester()).start();
+ }
+ public void run() { pp2.hit(Thread.currentThread().getId()); }
+ }
+Which statement is true?
+	
+The output could be 6-1 5-2 6-2 5-1 
+	
+The output could be 6-1 6-2 5-1 7-1 
+	
+The output could be 5-1 6-1 6-2 5-2 
+	
+The output could be 6-1 6-2 5-1 5-2 .............................(answer)
+
+
+
+92)
+
+What will be the output of the program? 
+
+class MyThread extends Thread 
+{ 
+    MyThread() {} 
+    MyThread(Runnable r) {super(r); } 
+    public void run() 
+    { 
+        System.out.print("Inside Thread ");
+    } 
+} 
+class MyRunnable implements Runnable 
+{ 
+    public void run() 
+    { 
+        System.out.print(" Inside Runnable"); 
+    } 
+} 
+class Test 
+{  
+    public static void main(String[] args) 
+    { 
+        new MyThread().start(); 
+        new MyThread(new MyRunnable()).start(); 
+    } 
+}
+	
+Does not compile .....................................(answer)
+	
+Prints "Inside Thread Inside Thread" 
+	
+Throws exception at runtime 
+	
+Prints "Inside Thread Inside Runnable" 
+
+
+93)
+
+
+Which of the following methods are defined in class Thread? (Choose TWO) 
+	
+start() ..................................(answer)
+	
+notify() 
+	
+terminate() 
+	
+wait() 
+	
+run() .....................................(answer)
+
+
+94)
+
+The following block of code creates a Thread using a Runnable target: 
+
+Runnable target = new MyRunnable();
+Thread myThread = new Thread(target);
+
+Which of the following classes can be used to create the target, so that the preceding code compiles correctly?
+	
+public class MyRunnable implements Runnable{public void run(){}} 
+	
+public class MyRunnable extends Object{public void run(){}} 
+	
+public class MyRunnable extends Runnable{public void run(){}} 
+	
+public class MyRunnable implements Runnable{void run(){}} 
+
+
+
+95)
+
+
+
+Given:
+ public class Threads4 {
+ public static void main (String[] args) {
+ new Threads4().go();
+ }
+ public void go() {
+ Runnable r = new Runnable() {
+ public void run() {
+ System.out.print("run");
+ }
+ };
+ Thread t = new Thread(r);
+ t.start();
+ t.start();
+ }
+ }
+What is the result?
+	
+The code executes normally and prints "run". 
+	
+The code executes normally, but nothing is printed. 
+	
+Compilation fails. 
+	
+An exception is thrown at runtime. ....................(answer)
+	
+Only B is TRUE 
+
+
+
+
+96)
+
+
+Consider the following code:
+
+System.out.print("Start ");
+try 
+{
+    System.out.print("Hello world");
+    throw new FileNotFoundException();
+}
+System.out.print(" Catch Here "); /* Line 7 */
+catch(EOFException e) 
+{
+    System.out.print("End of file exception");
+}
+catch(FileNotFoundException e) 
+{
+    System.out.print("File not found");
+}
+
+given that EOFException and FileNotFoundException are both subclasses of IOException. If this block of code is pasted in a method, choose the best option.
+	
+Code output: Start Hello world Catch Here File not found. 
+	
+Code output: Start Hello world End of file exception. 
+	
+The code will not compile. ...................................(answer)
+	
+Code output: Start Hello world File Not Found 
+
+
+
+97)
+
+
+Which two can be used to create a new Thread? 
+	
+Extend java.lang.Runnable and override the start() method. 
+	
+Extend java.lang.Thread and override the run() method. .....................(answer)
+	
+Implement java.lang.Thread and implement the run() method. 
+	
+Implement java.lang.Thread and implement the start() method. 
+	
+Implement java.lang.Runnable and implement the run() method. .................(answer)
+
+
+98)
+
+
+If a method is capable of causing an exception that it does not handle, it must specify this behavior using throws so that callers of the method can guard themselves against such Exception
+	
+true ...................(answer)
+	
+false 
+
+
+99)
+
+consider the code & choose the correct output:
+class Threads2 implements Runnable {
+
+  public void run() {
+  System.out.println("run.");
+  throw new RuntimeException("Problem");
+  }
+  public static void main(String[] args) {
+  Thread t = new Thread(new Threads2());
+  t.start();
+  System.out.println("End of method.");
+  }
+ }
+	
+End of method.
+java.lang.RuntimeException: Problem 
+	
+java.lang.RuntimeException: Problem 
+	
+run
+java.lang.RuntimeException: Problem 
+	
+End of method.
+run.
+java.lang.RuntimeException: Problem ........................(answer)
+
+
+100)
+
+Which statement is true?
+	
+The notify() method causes a thread to immediately release its locks.................(answer) 
+	
+The notifyAll() method must be called from a synchronized context ..................(answer)
+	
+The notify() method is defined in class java.lang.Thread 
+	
+To call sleep(), a thread must own the lock on the object ...............(answer)
+
+
+101)
+
+Which of the following methods are static? (Multiple Answer)
+	
+start() 
+	
+join() 
+	
+sleep() .............(answer)
+	
+yield() .................(answer)
+
+
+
+102)
+
+
+
+The exceptions for which the compiler doesn’t enforce the handle or declare rule
+	
+Exception 
+	
+all of these 
+	
+Unchecked exceptions ..............................................(answer)
+	
+Checked exceptions 
+
+
+
+103)
+
+
+class s implements Runnable 
+{ 
+    int x, y; 
+    public void run() 
+    { 
+        for(int i = 0; i < 1000; i++) 
+            synchronized(this) 
+            { 
+                x = 12; 
+                y = 12; 
+            } 
+        System.out.print(x + " " + y + " "); 
+    } 
+    public static void main(String args[]) 
+    { 
+        s run = new s(); 
+        Thread t1 = new Thread(run); 
+        Thread t2 = new Thread(run); 
+        t1.start(); 
+        t2.start(); 
+    } 
+}
+ What is the output?
+	
+DeadLock 
+	
+Cannot determine output. 
+	
+prints 12 12 12 12 ..................(answer)
+	
+Compilation Error 
+
+
+
+104)
+
+What is wrong with the following code?
+
+Class MyException extends Exception{}
+public class Test{
+public void foo() {
+try {
+bar();
+} finally {
+baz();
+} catch(MyException e) {}
+}
+public void bar() throws MyException {
+throw new MyException();
+}
+public void baz() throws RuntimeException {
+throw new RuntimeException();
+}
+}
+	
+A catch block cannot follow a finally block 
+	
+Since the method foo() does not catch the exception generated by the method baz(),it must declare the RuntimeException in a throws clause 
+	
+A try block cannot be followed by both a catch and a finally block 
+	
+A finally block must always follow one or more catch blocks 
+	
+An empty catch block is not allowed 
+
+
+
+
+105)
+
+
+Given:
+class X implements Runnable 
+{ 
+    public static void main(String args[]) 
+    {
+        /* Some code */
+    } 
+    public void run() {} 
+}
+Which of the following line of code is suitable to start a thread ?
+	
+Thread t = new Thread(X); t.start(); 
+	
+X run = new X(); Thread t = new Thread(run); t.start(); .......................(answer)
+	
+Thread t = new Thread(); x.run(); 
+	
+Thread t = new Thread(X); 
+
+
+
+106)
+
+
+Consider the following code and choose the correct option:
+public class Test {
+ public static void main(String[] args) {  
+  File file=new File("D:/jlist.lst");
+  byte buffer[]=new byte[(int)file.length()+1];
+  FileInputStream fis=new FileInputStream(file);
+  fis.read(buffer);
+  System.out.println(buffer);
+ }
+}
+	
+Compilation error ..............................(answer)
+	
+Compiles but error at runtime 
+	
+reads data from file named jlist.lst in byte form and display it on console. 
+	
+reads data from file named jlist.lst in byte form and display garbage value 
+
+
+107)
+
+
+A file is readable but not writable on the file system of the host platform. What will
+be the result of calling the method canWrite() on a File object representing this file?
+	
+A SecurityException is thrown ...........................................................(answer)
+	
+The boolean value true is returned 
+	
+The boolean value false is returned 
+	
+The file is modified from being unwritable to being writable. 
+	
+none of the listed options 
+
+
+108)
+
+
+import java.io.*;
+public class MyClass implements Serializable {
+private int a;
+public int getA() { return a; }
+publicMyClass(int a){this.a=a; }
+private void writeObject( ObjectOutputStream s)
+throws IOException {
+// insert code here
+}
+}
+
+Which code fragment, inserted at line 15, will allow Foo objects to be
+correctly serialized and deserialized?
+	
+s.defaultWriteObject(); 
+	
+s.writeInt(x); 
+	
+s.writeObject(x); 
+	
+s.serialize(x); 
+
+
+109)
+
+Consider the following code and choose the correct option:
+public class Test {
+ public static void main(String[] args) {
+  File file=new File("d:/prj/lib");
+  file.mkdirs();}}
+	
+creates directory d:/prj/lib 
+	
+Compilation error 
+	
+Compiles but error at run time 
+	
+Compiles and executes but directory is not created 
+
+
+110)
+
+What is the DataOutputStream method that writes double precision floating point values to a stream?
+	
+writeFloat() 
+	
+write() 
+	
+writeBytes() 
+	
+writeDouble() ........................(answer)
+
+
+
+111)
+
+import java.io.*;
+public class MyClass implements Serializable {
+
+private Tree tree = new Tree();
+
+public static void main(String [] args) {
+MyClass mc= new MyClass();
+try {
+FileOutputStream fs = new FileOutputStream(”MyClass.ser”);
+ObjectOutputStream os = new ObjectOutputStream(fs);
+os.writeObject(mc); os.close();
+} catch (Exception ex) { ex.printStackTrace(); }
+} } 
+	
+Compilation fails 
+	
+An instance of MyClass is serialized 
+	
+An exception is thrown at runtime 
+	
+A instance of MyClass and an instance of Tree are both serialized 
+
+
+112)
+
+
+Consider the following code and choose the correct option:
+class std implements Serializable{
+ int call; std(int c){call=c;}
+ int getCall(){return call;}
+}
+public class Test{
+  public static void main(String[] args) throws IOException {
+   File file=new File("d:/std.txt");
+  FileOutputStream fos=new FileOutputStream(file);
+  ObjectOutputStream oos=new ObjectOutputStream(fos);
+  std s1=new std(10);
+  oos.writeObject(s1);
+  oos.close();
+  }}
+	
+the state of the object s1 will not be store to the file. 
+	
+the state of the object s1 will be store to file std.txt 
+	
+Compiles but error at run time 
+	
+Compilation error 
+
+
+113)
+
+
+Consider the following code and choose the correct option:
+public class Test {
+ public static void main(String[] args) throws IOException {  
+  File file=new File("D:/jlist.lst");
+  byte buffer[]=new byte[(int)file.length()+1];
+  FileInputStream fis=new FileInputStream(file);
+  int ch=0;
+  while((ch=fis.read())!=-1){
+   System.out.print(ch); } }}
+	
+Compiles but error at runtime 
+	
+reads data from file one byte at a time and display it on the console. 
+	
+Compilation error 
+	
+reads data from file named jlist.lst in byte form and ascii value 
+
+
+
+114)
+
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+public class MoreEndings {
+public static void main(String[] args) {
+try {
+FileInputStream fis = new FileInputStream("seq.txt");
+InputStreamReader isr = new InputStreamReader(fis);
+int i = isr.read();
+while (i != -1) {
+System.out.print((char)i + "|");
+i = isr.read();
+}
+} catch (FileNotFoundException fnf) {
+System.out.println("File not found");
+} catch (EOFException eofe) {
+System.out.println("End of stream");
+} catch (IOException ioe) {
+System.out.println("Input error");
+}
+}
+}
+Assume that the file "seq.txt" exists in the current directory, has the required
+access permissions, and contains the string "Hello".
+Which statement about the program is true?
+	
+The program will compile and print H|e|l|l|o|End of stream. 
+	
+The program will not compile because a certain unchecked exception is not
+caught. 
+	
+The program will compile, print H|e|l|l|o|, and then terminate normally. ....................(answer)
+	
+The program will compile and print H|e|l|l|o|Input error. 
+
+
+
+
+115)
+
+
+
+
+Consider the following code and choose the correct output:
+public class Person{
+public void talk(){ System.out.print("I am a Person "); }
+}
+public class Student extends Person {
+public void talk(){ System.out.print("I am a Student "); }
+}
+what is the result of this piece of code:
+public class Test{
+public static void main(String args[]){
+Person p = new Student();
+p.talk();
+}
+}
+	
+I am a Person 
+	
+I am a Student I am a Person 
+	
+I am a Person I am a Student 
+	
+I am a Student .....................(answer)
+
+
+116)
+
+
+It is possible to insert/update record in a table by using ResultSet. State TRUE/FALSE 
+	
+true ......................(answer)
+	
+false 
+
+
+
+117)
+
+
+
+A) It is not possible to execute select query with execute() method
+B) CallableStatement can executes store procedures  only but not functions
+	
+Only A is TRUE 
+	
+Both A and B is FALSE 
+	
+Only B is TRUE .....................(answer)
+	
+Both A and B is TRUE 
+
+
+
+118)
+
+
+Given :
+public class MoreEndings {
+  public static void main(String[] args) throws Exception {
+    Class driverClass = Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+DriverManager.registerDriver((Driver) driverClass.newInstance());
+// Some code
+} Inorder to compile & execute this code, what should we import?
+	
+java.sql.Driver
+java.sql.DriverManager .........................(answer)
+	
+java.sql.Driver 
+	
+java.sql.DataSource 
+	
+java.sql.Driver 
+
+
+119)
+
+Which of the following method can be used to execute to execute all type of queries i.e. either Selection or Updation SQL Queries?
+	
+executeAll() 
+	
+executeUpdate() 
+	
+executeAllSQL() 
+	
+executeQuery() 
+	
+execute() .......................(answer)
+
+
+120)
+
+getConnection() is method available in?
+	
+DriverManager Class ......................(answer)
+	
+Driver Interface 
+	
+ResultSet Interface 
+	
+PreparedStatement Interface 
+	
+Statement Interface 
+
+
+121)
+
+
+Give Code snipet:
+{// Somecode
+ResultSet rs = st.executeQuery("SELECT * FROM survey");
+
+    while (rs.next()) {
+      String name = rs.getString("name");
+      System.out.println(name);
+    }
+
+    rs.close();
+// somecode
+} What should be imported related to ResultSet?
+	
+java.sql.DriverManager 
+	
+java.sql.Connection 
+	
+java.sql.ResultSet ...............(answer)
+	
+java.sql.Driver 
+
+
+122)
+
+Cosider the following code & select the correct output.
+String sql ="select rollno, name from student"; 
+  PreparedStatement pst=cn.prepareStatement(sql);
+  System.out.println(pst.toString());
+  ResultSet rs=pst.executeQuery();
+   while(rs.next()){
+   System.out.println(rs.getString(3));  }
+	
+will show only name 
+	
+Compiles but error at run time 
+	
+will show city 
+	
+Compilation error ..................(answer)
+
+
+
+
+123)
+
+
+Which of the following options contains only JDBC interfaces?
+	
+All of the given options 
+	
+1) Driver
+2) Connection
+3) ResultSet
+4) ResultSetMetaData
+5) Statement
+6) DriverManager
+7) PreparedStatement
+8) Callablestatement
+9) DataBaseMetaData 
+	
+1) Driver
+2) Connection
+3) ResultSet 
+4) DriverManager
+5) Class 
+	
+1) Driver
+2) Connection
+3) ResultSet
+4) ResultSetMetaData    ...............................(answer)
+5) Statement
+6) PreparedStatement
+7) Callablestatement
+8) DataBaseMetaData 
+
+
+124)
+
+
+By default all JDBC transactions are autocommit. State TRUE/FALSE.
+	
+true   ..............................(answer)
+	
+false 
+
+
+125)
+
+
+Consider the following code & select the correct option for output.
+String sql ="select empno,ename from emp";  
+  PreparedStatement pst=cn.prepareStatement(sql);
+    System.out.println(pst.toString());
+  ResultSet rs=pst.executeQuery();
+   System.out.println(rs.getString(1)+ " "+rs.getString(2));
+	
+Compiles but error at run time 
+	
+will show first employee record 
+	
+Compiles but no output 
+	
+Compilation error .............................(answer)
+

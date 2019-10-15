@@ -1,0 +1,289 @@
+Core Java Knowledge Based Mock 						
+
+1. State true or false: 
+	A. When we use both implements & extends keywords in a single java program then we must always use extends first and implements keyword later.
+	B. A class can implement multiple interfaces and an interface can extend multiple interfaces.
+
+a.	Both the statements are true
+b.	Both the statements are false
+c.	Statement A is true and B is false
+d.	Statement A is false and B is true
+
+2. Read the statement: 
+	A class Animal has a subclass Mammal. 
+    What inference can you draw from it?
+
+a. Mammal class cannot have any siblings.
+b. Mammal class can have no other parent other than Animal
+c. Mammal class cannot have any subclasses
+d. Animal class can have only one subclass
+
+3. Fill in the blanks:
+	An immutable object is __________________.
+a.	an object whose state can be changed after it is created.
+b.	an object whose state cannot be changed after it is created.
+c.	an object which cannot be casted to another type.
+d.	an object which cannot be cloned.
+
+4. Dennis wants that a method within a class is only accessible by classes that are defined within the same package as the class of the method. What should he do?
+a.	Declare the method with the keyword public
+b.	Declare the method with keyword protected
+c.	Declare the method with keyword private
+d.	Without any accessibility specifiers.
+
+5. State true or false:
+	A. The finalize () method is called by garbage collection thread before collecting object.
+	B. When there is no reference to an object, then that object is assumed to be no longer needed and the memory occupied by the object is released by JVM.
+a.	Both statements are true
+b.	Both statements are false
+c.	Only statement A is true
+d.	Only statement B is true
+
+6. How to declare a constant field of int type in Java?
+a.	const int x = 10;
+b.	static int x = 10;
+c.	final static int x = 10;
+d.	volatile int x =10;
+
+7.  The base class for all exceptions is _______.
+a.	java.lang.Exception
+b.	java.lang.Throwable
+c.	java.lang.RuntimeException
+d.	java.lang.Error
+
+8. If we try to add duplicate key to the HashMap, what will happen?
+a.	It will throw an exception.
+b.	It won't add the new key-value pair but also not throw any exception.
+c.	The new value will replace the value of the existing key.
+d.	The new key-value pair will be added successfully.
+
+9. Which of the following are the valid retention policy type available in Java?
+a.	SOURCE, CLASS, RUNTIME
+b.	CLASS, RUNTIME, CODE
+c.	SOURCE, CLASS, CODE
+d.	SOURCE, RUNTIME, CODE
+
+10. State true or false:
+A. The default retention policy type is CLASS.
+B. The @interface element is used to make a user defined annotation.
+a.	Both the statements are true
+b.	Both the statements are false
+c.	Statement A is true and B is false
+d.  Statement A is false and B is true
+
+11. Predict the output of the code snippet:
+public class Test {
+	public static void main(String[] args) {
+		List<Integer> list=new ArrayList<Integer>();
+		list.add(2);
+		list.add(4);
+		list.add(3);		
+		Iterator<Integer> it=list.iterator();
+		while(it.hasNext()){
+			it.next();
+			it.remove();			
+		}
+		System.out.println("Size = "+list.size());		
+	}
+}
+	a. Throws java.util.ConcurrentModificationException
+	b. Prints Size = 3
+	c. Prints Size = 0
+	d. Compilation error
+
+12. State true or false:
+	A. ListIterator allows insertion of elements during traversal.
+	B. ListIterator does not support bidirectional navigation.
+a.	Both the statements are true
+b.	Both the statements are false
+c.	Statement A is true and B is false
+	d.  Statement A is false and B is true
+
+13.  Predict the output of the given code:
+class A{
+	public void meth1(){
+		System.out.print("A");
+	}
+}
+class B extends A{
+	public void meth1(){
+		super.meth1();
+		System.out.print("B");
+	}
+}
+class C extends B{
+	public void meth1(){
+		super.meth1();
+		System.out.print("C");
+	}
+}
+public class Test {
+	public static void main(String[] args) {
+			new C().meth1();	
+	}
+}
+	a.  Prints "C"
+	b.  Prints "ABC"
+	c.  Prints "CBA"
+	d.  Prints "C" followed by runtime error
+
+14. How many objects will be created and how many objects will be garbage collection eligible after line 7?
+public class Test {
+	public static void main(String[] args) {
+			Test t1, t2;
+			t1=new Test();
+			Test t3=new Test();
+			t2=t1;
+			t1=t3; //line 7
+	}
+} 
+a. 3 objects created, 3 objects garbage collection eligible
+b. 2 objects created, 2 objects garbage collection eligible
+c. 3 objects created, 2 objects garbage collection eligible
+d. 2 objects created, no objects garbage collection eligible
+
+15. Predict the output of the code snippet:
+public class Test {
+	public static void main(String[] args) {
+		TreeSet<Integer> ts=new TreeSet<Integer>();
+		ts.add(6);
+		ts.add(1);
+		ts.add(9);
+		ts.add(2);
+		ts.add(9);
+		Set<Integer> ss=ts.descendingSet();
+		System.out.println(ss);		
+	}
+   	}
+a.	[6, 1, 9, 2, 9]
+b.	[1, 2, 6, 9] 
+c.	[9, 6, 2, 1]
+d.	[9, 9, 6, 2, 1]
+
+   16. State true or false:
+A. Serialization is saving the state of an object in a sequence of bytes.
+B. java.io.Serializable interface is a marker interface.
+a.	Both the statements are true
+b.	Both the statements are false
+c.	Statement A is true and B is false
+d.	Statement A is false and B is true
+
+   17. Predict the output of the code snippet:
+class MyThread extends Thread{
+	public void run() {
+        		System.out.print("Thread ");
+    	}
+}
+public class Test {
+	public static void main(String[] args) {
+		MyThread mt=new MyThread();
+		mt.start();
+		mt.run();		
+	}
+}
+a. Prints "Thread Thread "
+b. Prints "Thread "
+c. Compilation error
+d.  Compiles but no output
+
+   18. State true or false:
+A.The methods wait(), notify() and notifyAll() are part of java.lang.Object class.
+B. RuntimeException and its subclasses are unchecked exception.
+a.	Both the statements are true
+b.	Both the statements are false
+c.	Statement A is true and B is false
+d.  Statement A is false and B is true
+
+   19. State true or false:
+A. If a superclass is not serializable then subclass cannot be serialized.
+B. Serialization is JVM independent.
+a.	Both the statements are true
+b.	Both the statements are false
+c.	Statement A is true and B is false
+	d.  Statement A is false and B is true
+
+   20. Predict the output of the code snippet
+class MyThread extends Thread{
+	public void run() {
+       	System.out.println("Thread");
+   	}
+}
+public class Test {
+	public static void main(String[] args) {
+		MyThread mt=new MyThread();
+		mt.start();
+		mt.start();		
+	}
+}
+a. Prints "Thread" twice and terminates properly
+b. Compilation error
+c. Prints "Thread" once and then throws java.lang.IllegalThreadStateException
+d. Prints "Thread" once and terminates properly
+
+   21. Predict the output of the code snippet:
+public class Test {
+	public static void meth1() throws Exception {
+		try {
+			System.out.print(1);
+			throw new Exception();
+		} finally {
+			System.out.print(2);
+		}
+	}
+	public static void main(String[] args) {
+		try {
+			System.out.print(3);
+			meth1();
+			System.out.print(4);
+		} catch (Exception ex) {
+			System.out.print(5);
+		} finally {
+			System.out.print(6);
+		}
+	}
+}
+	a. Prints 31456
+	b. Prints 3156
+	c. Prints 31256
+	d. Prints 312456
+
+   22. State true or false:
+A. The static member fields defined in a class are ignored during serialization.
+B. An ObjectInputStream deserializes objects which were written using an ObjectOutputStream.
+a.	Both the statements are true
+b.	Both the statements are false
+c.	Statement A is true and B is false
+d.  Statement A is false and B is true
+
+   23. Class Animal has a method eat() with protected specifier.What access specifier can we use while overriding the eat() method in sub class Herbivores.
+a. protected only
+b. public only 
+c. protected or package private
+d. protected or public
+
+   24. State true or false:
+A. An abstract class cannot have concrete methods.
+B. An abstract class can have constructors defined.
+a.	Both the statements are true
+b.	Both the statements are false
+c.	Statement A is true and B is false
+d.	 Statement A is false and B is true
+
+   25. Predict the output of the code snippet:
+abstract class Shape{
+	static void color(){
+		System.out.println("Color");
+	}
+}
+public class Test {	
+	public static void main(String[] args) {
+		Shape.color();		
+	}
+}
+a.  Compilation error: An abstract class cannot have static method defined
+b.  Compiles and prints "Color"
+c.  Compiles but throws exception at runtime
+d.  Compilation error: We need an object of some concrete class extending the abstract class Shape to invoke the static method
+
+
+
