@@ -1,0 +1,52 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+ <title>First jQuery Example</title>  
+ <link href="style1.css" rel="stylesheet">
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>  
+ <script type="text/javascript" language="javascript">
+ $(document).ready(function(){
+ $(".tab-list").on("click", ".tab", function(e) {
+   // e.preventDefault();
+
+    $(".tab").removeClass("active");
+    $(".tab-content").removeClass("show");
+    $(this).addClass("active");
+    $($(this).attr("href")).addClass("show");
+});
+});
+ </script>  
+ </head>  
+<body>  
+<h1>Tabs</h1>
+
+<div class="tabs">
+	<nav class="tab-list">
+		<a class="tab active" href="#one">One</a>
+		<a class="tab" href="#two">Two</a>
+		<a class="tab" href="#three">Three</a>
+	</nav>
+
+	<div id="one" class="tab-content show">
+	Head-1<br>
+	Bootstrap, originally named Twitter Blueprint, was developed by Mark Otto and Jacob Thornton at Twitter as a framework 
+	to encourage consistency across internal tools. Before Bootstrap, various libraries were used for interface development, 
+	which led to inconsistencies and a high maintenance burden.<br>
+	<img src='logo.png' height=10% width=10%></div>
+
+	<div id="two" class="tab-content">
+	Head-2<br>
+	Bootstrap, originally named Twitter Blueprint, was developed by Mark Otto and Jacob Thornton at Twitter as a framework 
+	to encourage consistency across internal tools. Before Bootstrap, various libraries were used for interface development, 
+	which led to inconsistencies and a high maintenance burden.<br>
+	<img src='logo.png' height=10% width=10%></div>
+
+	<div id="three" class="tab-content">
+	Head-3<br>
+	Bootstrap, originally named Twitter Blueprint, was developed by Mark Otto and Jacob Thornton at Twitter as a framework 
+	to encourage consistency across internal tools. Before Bootstrap, various libraries were used for interface development, 
+	which led to inconsistencies and a high maintenance burden.<br>
+	<img src='logo.png' height=10% width=10%></div>
+</div>
+</body>  
+</html>  
