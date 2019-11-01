@@ -1,0 +1,181 @@
+Jenkins Tutorial
+************************
+Jenkin is the most popular, open source Continuous Integration tool. It has tons of plugins that enhance its functionality. 
+Jenkins is a powerful application that allows continuous integration and continuous delivery of projects, regardless of the platform you are working on. 
+It is a free source that can handle any kind of build or continuous integration. You can integrate Jenkins with a number of testing and deployment technologies.
+
+Jenkins is free and is entirely written in Java. Jenkins is a widely used application around the world that has around 300k installations and growing day by day. It is a server-based application and requires a web server like Apache Tomcat. The reason Jenkins became so popular is that of its monitoring of repeated tasks which arise during the development of a project. 
+
+
+What is Continuous Integration?
+------------------------
+In Continuous Integration after a code commit, the software is built and tested immediately. 
+In a large project with many developers, commits are made many times during a day. 
+With each commit code is built and tested. If the test is passed, build is tested for deployment. If deployment is a success, the code is pushed to production. This commit, build, test, and deploy is a continuous process and hence the name continuous integration/deployment.
+
+A Continuous Integration Pipeline is a powerful instrument that consists of a set of tools designed to host, monitor, compile and test code, or code changes.
+
+Continuous Integration Server (Jenkins, Bamboo, CruiseControl, TeamCity, and others)
+Source Control Tool (e.g., CVS, SVN, GIT, Mercurial, Perforce, ClearCase and others)
+Build tool (Make, ANT, Maven, Ivy, Gradle, and others)
+Automation testing framework (Selenium, Appium, TestComplete, UFT, and others)
+
+Jenkins Plugins
+---------
+By default, Jenkins comes with a limited set of features. 
+If you want to integrate your Jenkins installation with version control tools like Git, then you need to install plugins related to Git. 
+In fact, for integration with tools like Maven, Amazon EC2, you need to install respective plugins in your Jenkins.
+
+Advantages of using Jenkins
+------------------
+Jenkins is being managed by the community which is very open. Every month, they hold public meetings and take inputs from the public for the development of Jenkins project.
+As technology grows, so does Jenkins. So far Jenkins has around 320 plugins published in its plugins database. With plugins, Jenkins becomes even more powerful and feature rich.
+Jenkins also supports cloud-based architecture so that you can deploy Jenkins in cloud-based platforms.
+The reason why Jenkins became popular is that it was created by a developer for developers.
+
+Disadvantages of using Jenkins
+---------------
+Though Jenkins is a very powerful tool, it has its flaws.
+
+Its interface is out dated and not user friendly compared to current UI trends.
+not that easy to maintain it because Jenkins runs on a server and requires some skills as server administrator to monitor its activity.
+due to its difficulty in installing and configuring Jenkins.
+Continuous integrations regularly break due to some small setting changes. Continuous integration will be paused and therefore requires some developer attention.
+
+Install Jenkins on Windows
+----------------------------
+Got to https://jenkins.io/download/ and select the platform. In our case Windows
+Go to download location from local computer and unzip the downloaded package. Double-click on unzipped jenkins.msi & install it.
+Choose the location where you want to have the Jenkins instance installed (default location is C:\Program Files (x86)\Jenkins), then click on Next button.
+
+After completing the Jenkins installation process, a browser tab will pop-up asking for the initial Administrator password. To access Jenkins, you need to go to browse the following path in your web browser.
+
+http://localhost:8080
+
+The initial Administrator password should be found under the Jenkins installation path.
+For default installation location to C:\Program Files (x86)\Jenkins, a file called initialAdminPassword can be found under C:\Program Files (x86)\Jenkins\secrets.
+Open the highlighted file and copy the content of the initialAdminPassword file.
+Paste the password it into browser's pop-up tab (http://localhost:8080/login?form=%2F) and click on Continue button.
+
+
+Customize Jenkins
+You can also customize your Jenkins environment by below-given steps:
+
+Step 1) Click on the "Install suggested plugins button" so Jenkins will retrieve and install the essential plugins
+Jenkins will start to download and install all the necessary plugins needed to create new Jenkins Jobs.
+
+Step 2) After all suggested plugins were installed, the "Create First Admin User" panel will show up. Fill all the fields with desired account details and hit the "Save and Finish" button.
+
+Step 3) Once you have filled the above data, finally it will ask for URL information where you can configure the default instance path for Jenkins. 
+Hit the "Save and Continue" button:
+
+
+Install Git Plugin
+--------------------
+GitHub is a web-based repository of code which plays a major role in DevOps. It provides a common platform for multiple developers working on the same code/project to upload and retrieve updated code, thereby facilitating continuous integration.
+
+Jenkins needs to have GitHub plugin installed to be able to pull code from the GitHub repository.
+
+Install GIT Plugin
+Step 1: Click on the Manage Jenkins button on your Jenkins dashboard:
+Step 2: Click on Manage Plugins:
+Step 3: In the Plugins Page
+
+Select the GIT Plugin
+Click on Install without restart. The plugin will take a few moments to finish downloading depending on your internet connection, and will be installed automatically.
+You can also select the option Download now and Install after restart button. In which plugin is installed after restart
+You will be shown a "No updates available" message if you already have the Git plugin installed.
+Step 4: Once the plugins have been installed, go to Manage Jenkins on your Jenkins dashboard. You will see your plugins listed among the rest.
+
+
+Integrating Jenkins with GitHub
+---------------
+Step 1) Create a new job in Jenkins, open the Jenkins dashboard with your Jenkins URL. For example, http://localhost:8080/
+
+Click on create new jobs:
+Step 2) Enter the item name, select job type and click OK. We shall create a Freestyle project as an example.
+Step 3) Once you click OK, the page will be redirected to its project form. Here you will need to enter the project information.
+Step 4) You will see a Git option under Source Code Management if your Git plugin has been installed in Jenkins.
+Step 5) Enter the Git repository URL to pull the code from GitHub.
+Step 6) You might get an error message the first time you enter the repository URL.
+This happens if you do not have Git installed in your local machine. To install Git in your local machine, go to https://git-scm.com/downloads
+Download the appropriate Git file for your Operating System, in this case, Windows, and install it in local OS.
+Step 7) You can execute Git repositories in your Jenkins once Git has been installed on your machine. To check if it has been successfully installed onto your system, open your command prompt, type "Git" and press enter.
+Step 8) Once you have everything in place, try adding the Git URL into Jenkins. You will not see any error messages
+Git is now properly configured on your system.
+
+
+Create Users & Manage Permissions: Role Strategy Plugin
+--------------------------------------
+By default, Jenkins comes with very basic user creation options. You can create multiple users but can only assign the same global roles and privileges to them. This not ideal, especially for a large organization.
+
+How to Create/Add a User
+Step 1) Login to your Jenkins dashboard by visiting http://localhost:8080/
+Step 2) You will now see options to create new users and manage current users.'
+Step 3)
+Under Manage Jenkins, Click Create User
+Enter User details like password, name, email etc.
+Click Create User
+Step 4) User is created
+
+Install Role Strategy Plugin
+----------------------
+There are two methods for installing plugins in Jenkins:
+
+Installing it through your Jenkins dashboard
+Downloading the plugin from Jenkins website and installing it manually.
+
+Step 1)
+1. Go to Manage Jenkins
+2. Click on the Manage Plugins option
+
+Step 2)
+In available section, screen Search for "role".
+Select Role-based Authorization Strategy plugin
+Click on "Install without restart" (make sure you have an active internet connection)
+
+Step 3)
+Once the plugin is installed, a "success" status will be displayed.
+Click on Go back to the top page.
+
+Step 4) 
+Go to Manage Jenkins -> Configure Global Security -> Under Authorization, select Role Based Strategy. Click on Save.
+
+
+Create Roles
+--------------
+Step 1)
+1. Go to Manage Jenkins
+2. Select Manage and Assign Roles
+
+Step 2) Click on Manage Roles to add new roles based on your organization.
+
+Step 3) To create a new role called "developer",
+Type "developer" under "role".
+Click on "Add" to create a new role.
+Now, select the permissions you want to assign to the "Developer" role.
+Click Save
+
+Assign a Role
+-----
+Step 1) Now that you have created roles, let us assign them to specific users.
+Go to Manage Jenkins
+Select Manage and Assign Roles
+
+Step 2) We shall add the new role "developer" to user "guru99"
+Selector developer role checkbox
+Click Save
+You can assign any role to any user, as per your need.
+
+Project Roles
+------
+You can create project specific roles under Project Roles.
+
+Step 1) In Jenkin's Manage and Assign Roles
+Enter a role as "tester"
+Add a pattern to this by adding tester.*, so that any username starting with "tester" will be assigned the project role you specify.
+Click Add
+Select privileges
+Click Save
+
+https://www.guru99.com/create-builds-jenkins-freestyle-project.html
