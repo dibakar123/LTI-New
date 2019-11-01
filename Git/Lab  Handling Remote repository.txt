@@ -1,0 +1,82 @@
+Lab  Handling Remote repository
+-----------------------------
+Step.1. Cloning a repository
+
+The git clone command copies an existing Git repository. 
+This copy is a working Git repository with the complete history of the cloned repository. 
+It can be used completely isolated from the original repository.
+# switch to a new directory
+mkdir online
+cd online
+
+# clone online repository
+git clone https://github.com/dibakar123/Java-Project1.git
+
+If you clone a repository, Git implicitly creates a remote named "origin" by default. 
+
+Step.2. Check Git Status
+
+#Go to local repository folder 
+cd Java-Project
+git status
+
+Step.3. Take actions in local copies
+# do some changes
+echo "I added a remote repo" > test02
+mkdir test1
+git status
+
+Step.4. Make actions permanent
+# send to staging
+git add .
+git status
+
+# commit
+git commit -a -m "This is a test for the new remote origin"
+git status
+
+#send to remote repository
+git push origin
+
+**************************************************************************************
+
+
+
+List all of the branches in your repository. This is synonymous with :
+git branch --list
+
+To get list of all branches (local & remote)
+git branch -a -v
+
+To create a new branch, simply specify a name - and possibly a starting point
+git branch <branch>
+
+Delete the specified branch. This is a “safe” operation in that Git prevents from deleting the branch if it has unmerged changes.
+git branch <branch> -d
+
+Force delete the specified branch, even if it has unmerged changes. This is the command to use if you want to permanently throw away all of the commits associated with a particular line of development.
+git branch -D <branch>
+
+Rename the current branch to <branch>.
+git branch <oldbranch> -m <newbranch>
+
+
+To create a branch in local system:
+-----------------------
+	git branch bbb   [ here bbb is the branch name ]
+now do some new jobs in project as :
+	echo "aaaaaaa">aaaaaa.txt
+	git checkout bbb   [ to move to branch-bbb from master ]
+	git add .          [ adding new data to staging area for branch:bbb]
+	git commit -m "add in branch bbb" [ to commit in branch bbb ]
+now come out from branch-bbb
+	git branch master
+
+
+To add a new branch in remote repository:
+
+	git remote add branch1 https://github.com/dibakar123/Java-Project1.git
+# Add remote repo to local repo config
+	git push branch1 bbb
+# pushes the crazy-experiment branch to new-remote-repo
+

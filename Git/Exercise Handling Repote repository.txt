@@ -1,0 +1,84 @@
+Exercise Handling Repote repository
+-----------------------------
+Step.1. Bare repositories
+A remote repository on a server typically does not require a working tree. 
+A Git repository without a working tree is called a bare repository. 
+You can create such a repository with the --bare option. 
+
+# create a bare repository
+git init --bare
+
+Step.2. Cloning a repository
+The git clone command copies an existing Git repository. 
+This copy is a working Git repository with the complete history of the cloned repository. 
+It can be used completely isolated from the original repository.
+# switch to a new directory
+mkdir ~/online
+cd ~/online
+
+# clone online repository
+git clone git://github.com/vogella/gitbook.git
+
+# the following will clone via HTTP
+git clone http://github.com/vogella/gitbook.git
+
+Step.3. Adding remote repositories
+If you clone a repository, Git implicitly creates a remote named origin by default. 
+The origin remote links back to the cloned repository.
+
+You can push changes to this repository via git push as Git uses origin as default.
+Of course, pushing to a remote repository requires write access to this repository.
+You can add more remotes via the git remote add [name] [URL_to_Git_repo] command. 
+
+# add the HTTPS protocol
+git remote add github_http https://vogella@github.com/vogella/gitbook.git
+
+Step.4. Rename remote repositories
+To rename an existing remote repository use the git remote rename command. This is demonstrated by the following listing.
+
+# rename the existing remote repository from
+# github_http to github_testing
+git remote rename github_http github_testing
+
+Step.5. Adding a remote repository
+You add as many remotes to your repository as desired. 
+For this you use the git remote add command.
+You created a new Git repository from scratch earlier. 
+Use the following command to add a remote to your new bare repository using the origin name.
+
+# add ../remote-repository.git with the name origin
+git remote add origin ../remote-repository.gitStep
+
+Step.6. Synchronizing with remote repositories
+You can synchronize your local Git repository with remote repositories.
+
+# do some changes
+echo "I added a remote repo" > test02
+
+# commit
+git commit -a -m "This is a test for the new remote origin"
+
+# to push use the command:
+# git push [target]
+# default for [target] is origin
+git push origin
+
+Step.7. Show the existing remotes
+To see the existing definitions of the remote repositories, use the following command.
+
+# show the details of the remote repo called origin
+git remote show origin
+To see the details of the remotes, e.g., the URL use the following command.
+
+# show the existing defined remotes
+git remote
+
+# show details about the remotes
+git remote -v
+
+Step.8. Push changes to another repository
+The git push command allows you to send data to other repositories. 
+By default it sends data from your current branch to the same branch of the remote repository.
+
+Step.9. Pull changes from a remote repository
+The git pull command allows you to get the latest changes from another repository for the current branch.

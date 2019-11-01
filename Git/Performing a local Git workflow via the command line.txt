@@ -1,0 +1,84 @@
+ 
+Exercise: Performing a local Git workflow via the command line
+------------------------------
+In this exercise, you learn how to create and work with a local Git repository.
+
+Step.1 # create a directory and switch into it
+mkdir repo01
+cd repo01
+
+# create a new directory
+mkdir datafiles
+
+Step.2.create a new Git repository with a working tree.
+# you should still be in the repo01 directory
+cd ~/repo01
+
+# initialize the Git repository for the current directory
+git init
+
+All files inside the repository folder, excluding the .git folder, are the working tree for a Git repository.
+
+Step.3. Create new content
+Use the following commands to create several new files.
+
+# switch to your Git repository
+cd ~/repo01
+
+# create an empty file in a new directory
+touch datafiles/data.txt
+
+# create a few files with content
+ls > test01
+echo "bar" > test02
+echo "foo" > test03
+
+Step.4. See the current status of your repository
+git status
+
+
+Step.5. Add changes to the staging area
+Before committing changes to a Git repository, you need to mark the changes that should be committed with the git add command. This command allows adding changes in the file system to the staging area. It creates a snapshot of the affected files. 
+You can add all changes to the staging area with the . option or changes in individual files but specifying a file pattern as option.
+
+# add all files to the index of the Git repository
+git add .
+
+Step.6. Change files that are staged
+In case you change one of the staged files before committing, you need to add the changes again to the staging area, to commit the new changes. This is because Git creates a snapshot of the content of a staged file. All new changes must again be staged.
+
+# append a string to the test03 file
+echo "foo2" >> test03
+
+# see the result
+git status
+
+Add the new changes to the staging area.
+
+# add all files to the index of the Git repository
+git add .
+
+Step.7. Commit staged changes to the repository
+After adding the files to the Git staging area, you can commit them to the Git repository with the git commit command. This creates a new commit object with the staged changes in the Git repository and the HEAD reference points to the new commit. 
+
+# commit your file to the local repository
+git commit -m "Initial commit"
+
+Step.8. Viewing the Git commit history
+# show the Git log for the change
+git log
+
+Step.9. Viewing the changes of a commit
+Use the git show command to see the changes of a commit
+
+Step.10. Review the resulting directory structure
+
+Step.11. Remove files
+If you delete a file, you use the git add . command to add the deletion of a file to the staging area.
+# remove the "test03" file
+rm test03
+# add and commit the removal
+git add .
+# if you use Git version < 2.0 use: git add -A .
+git commit -m "Removes the test03 file"
+
