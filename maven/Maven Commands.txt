@@ -1,0 +1,217 @@
+Maven Commands
+---------------------
+
+General syntax of a maven command is:
+
+mvn [options]  <One or more Phases OR Goal Plugins[along with plugin options], in any order> 
+'mvn' invokes mvn.bat which is located in maven installed bin directory. The is the only part which is mandatory to start maven tasks etc.
+
+The syntax for executing a phase: mvn [phase-name]
+The syntax for executing a plugin goal: mvn [plugin-name]:[goal-name]
+
+Maven help:describe command
+------------------------
+very helpful to list information of our current Maven project. 
+Go to a maven project root directory where we have pom.xml and execute this:
+
+> mvn help:describe -Dcmd= compile
+
+
+mvn clean	Invoking clean phase of Clean LifeCycle	
+************
+Removes the files from a project's working directory, that were generated at build-time. 
+Alternatively we can execute the plugin:  mvn clean:clean 
+That will do the same thing.
+
+mvn compile	Invoking compile phase of Default Lifecycle
+*****************
+Compiles the source code of the projects. This command will do all pre compile phases which are validate, initialize, generate-sources, process-sources, generate-resources, process-resources, and finally compile. 
+Again we can do the same thing as: mvn compiler:compile
+
+
+mvn clean package	Invoking clean phase of Clean Lifecycle followed by package phase of Default Lifecycle.
+********************
+Cleans the target directory first then compiles, runs unit tests and packages the compiled code and other files into a single file.
+
+The type of final file being created depends on what we have defined in <packaging> in pom.xml. 
+The valid packaging values are jar, war, ear and pom
+
+mvn clean install	Invoking clean phase of Clean Lifecycle followed by install phase of Default Lifecycle.
+********************
+Cleans the previous build, then packages and then install the package into the local repository.
+
+mvn test	Invoking test phase of Default Lifecycle.
+*************
+Runs the unit test from compiled source and test source files. 
+This is one step above package phase. 
+If we are running some post test phase and want to skip tests then use skip optionObject.
+For example mvn install -Dmaven.test.skip=true
+
+mvn dependency:list		Invoking list goal of dependency plugin 
+**************************
+Lists all Maven dependencies from our project. 
+
+mvn help:effective-pom		Invoking effective-pom goal of help plugi
+************************
+Displays the effective POM as an XML for this build. This is also helpful to know what currently plugins are available/installed.
+
+
+Maven build Errors
+-----------------------
+If running a mvn command shows a BUILD FAILURE message, just about the end of output then some goal must have quit with an Error based on some invalid condition. 
+That will terminate the phase sequence execution at that point. 
+In that case, look for [ERROR] and try to resolve the errors. 
+One of the commonly occurring errors is compilation error, happens during compile phase. 
+
+In case if error doesn't provide enough information, try -X flag (which provides some extra DEBUG information). 
+For example mvn -X compile
+If all phases are finished successfully then we should see BUILD SUCCESS message.
+
+Lab
+-----------
+To check maven version:
+----------
+mvn --version
+
+Creating a Project:
+---------
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+
+Check project foler structure:
+------
+cd my-app
+dir
+
+**
+src/main/java directory contains the project source code
+src/test/java directory contains the test source
+pom.xml file is the project's Project Object Model, or POM.(check pom.xml file also)
+
+
+Compile the Project
+------
+Change to the directory where pom.xml is created by archetype:generate 
+and execute the following command to compile your application sources:
+
+mvn compile
+
+After successfully compiling application's sources, got some unit tests that want to compile and execute.
+Because every programmer always writes and executes their unit tests.
+
+Execute the following command:
+
+mvn test
+
+
+Build the Project (to create as a jar file for java project)
+----------
+mvn package
+
+**  check the folder : target
+[INFO] Building jar: C:\Users\Dibakar\Desktop\LTI\DevOps\maven\my-app\target\my-app-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+
+
+To install the artifact generated as JAR file in local repository (${user.home}/.m2/repository is the default location). 
+mvn install
+
+**check folder of local repository:   ${user.home}\.m2\repository\com\mycompany\app\my-app\1.0-SNAPSHOT
+
+*************************
+To test the newly compiled and packaged JAR with the following command:
+--------------------
+java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
+
+
+To cleans up artifacts 
+-----------------
+mvn clean
+
+**clean previous created folder-target
+
+mvn clean dependency:copy-dependencies package
+
+**This command will clean the project, copy dependencies, and package the project.
+
+Generating the Site
+--------------
+mvn site
+
+**This phase generates a site based upon information on the project's pom. 
+Look at the documentation generated under target/site.
+
+
+To add resources to JAR
+-------------------
+Another common use case that can be satisfied which requires no changes to the POM that we have above is packaging resources in the JAR file. 
+For this common task, Maven relies on the Standard Directory Layout, which means by using standard Maven conventions you can package resources within JARs simply by placing those resources in a standard directory structure.
+Any directories or files placed within the ${basedir}/src/main/resources directory are packaged in JAR with the exact same structure starting at the base of the JAR.
+
+For Testig, added directory ${basedir}/src/main/resources and under resources, make folder META-INF
+Under this folder , make a property file as : application.properties
+Now build the package again by:  mvn package
+check the jar and extract it to check file-folder structure.
+
+
+
+
+================
+How do I build other types of projects?
+
+we can create a simple web application:
+
+mvn archetype:generate \
+    -DarchetypeGroupId=org.apache.maven.archetypes \
+    -DarchetypeArtifactId=maven-archetype-webapp \
+    -DgroupId=com.mycompany.app \
+    -DartifactId=my-webapp
+
+Note the <packaging> element - this tells Maven to build as a WAR. Change into the webapp project's directory and try:
+
+mvn package
+get  the war file here :   target/my-webapp.war 
+
+
+
+==================Repositories
+
+A repository in Maven holds build artifacts and dependencies of varying types.
+
+There are exactly two types of repositories: local and remote. 
+
+The local repository is a directory on the computer where Maven runs. It caches remote downloads and contains temporary build artifacts that you have not yet released.
+
+Remote repositories refer to any other type of repository, accessed by a variety of protocols such as file:// and http://. 
+These repositories might be a truly remote repository set up by a third party to provide their artifacts for downloading.
+for example, repo.maven.apache.org and uk.maven.org house Maven's central repository.
+
+Other "remote" repositories may be internal repositories set up on a file or HTTP server within your company, used to share private artifacts between development teams and for releases.
+
+Local and remote repositories are structured the same way so that scripts can run on either side, or they can be synced for offline use. The layout of the repositories is completely transparent to the Maven user, however.
+
+In general, should not need to do anything with the local repository on a regular basis, except clean it out if short on disk space 
+or erase it completely if needs to download everything again.
+
+For the remote repositories, they are used for both downloading and uploading (if permission to do so).
+Downloading in Maven is triggered by a project declaring a dependency that is not present in the local repository.
+
+By default, Maven will download from the central repository.
+To override this, need/ to specify a mirror as shown in Using Mirrors for Repositories.
+set this in maven's settings.xml file to globally use a certain mirror.
+
+Building Offline : If temporarily disconnected from the internet and need to build projects offline, use offline switch on the CLI:
+
+ mvn -o package
+
+
+Common Maven Commands
+******************************
+Here is a list of common Maven commands plus a description of what they do:
+
+Maven Command	Description
+mvn clean	Clears the target directory into which Maven normally builds your project.
+mvn package	Builds the project and packages the resulting JAR file into the target directory.
+mvn install	Builds the project described by your Maven POM file and installs the resulting artifact (JAR) into your local Maven repository
+
