@@ -51,7 +51,7 @@ mvn dependency:list		Invoking list goal of dependency plugin
 **************************
 Lists all Maven dependencies from our project. 
 
-mvn help:effective-pom		Invoking effective-pom goal of help plugi
+mvn help:effective-pom		Invoking effective-pom goal of help plugin
 ************************
 Displays the effective POM as an XML for this build. This is also helpful to know what currently plugins are available/installed.
 

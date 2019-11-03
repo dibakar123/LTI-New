@@ -23,28 +23,17 @@ must have to build and deploy the project so that it may work.
 Solved problem by Maven
 ---------------------------
 Maven simplifies the above mentioned problems. 
-1. It does mainly following tasks.
-2. It makes a project easy to build.
-3. It provides uniform build process (maven project can be shared by all the maven projects).
-4. It provides project information (log document, cross referenced sources, mailing list, dependency list, unit test reports etc.).
+It does mainly following tasks.
+ It makes a project easy to build.
+ It provides uniform build process (maven project can be shared by all the maven projects).
+ It provides project information (log document, cross referenced sources, mailing list, dependency list, unit test reports etc.).
 
 
 The primary goal of Maven is to provide developer with the following −
 -----------------------------------
 a. A comprehensive model for projects, which is reusable, maintainable, and easier to comprehend.
 b. Plugins or tools that interact with this declarative model.
-c. Apache Maven helps to manage
-d. Builds
-e. Documentation
-f. Reporting
-g. Releases
-h. Distribution
-
-pom.xml
-----------------
-Maven project structure and contents are declared in an xml file, pom.xml.
-pom.xml is referred as Project Object Model (POM).
-It is the fundamental unit of the entire Maven system. 
+c. Apache Maven helps to manage : Builds , Documentation , Reporting , Releases , Distribution
 
 
 Maven project structure
@@ -106,7 +95,9 @@ Open command type & type command as :  mvn --version
 
 pom.xml
 ----------------
-POM stands for Project Object Model. It is fundamental unit of work in Maven. 
+Maven project structure and contents are declared in an xml file, pom.xml.
+pom.xml is referred as Project Object Model (POM).
+It is the fundamental unit of the entire Maven system. 
 It is an XML file that resides in the base directory of the project as pom.xml.
 The POM contains information about the project and various configuration detail used by Maven to build the project(s).
 
@@ -129,7 +120,7 @@ artifactId: sub-element of project, specifies id of artifact(project)
 </project>
 
 
-packaging: defines packaging type: jar, war etc.
+packaging: defines packaging type- jar, war etc.
 name: defines maven project name
 url: defines url of maven project
 depdendencies: define dependencies in project
@@ -169,12 +160,14 @@ It helps to avoid references to dependencies stored on remote machine every time
 
 Central Repository
 ----------------------------
-Maven central repository is repository provided by Maven community. It contains a large number of commonly used libraries.
+Maven central repository is repository provided by Maven community. 
+It contains a large number of commonly used libraries.
 When Maven does not find any dependency in local repository, it starts searching in central repository using following URL  https://repo1.maven.org/maven2/
 
 Remote Repository
 -----------------------------
-Sometimes, Maven does not find a mentioned dependency in central repository as well. It then stops the build process and output error message to console. 
+Sometimes, Maven does not find a mentioned dependency in central repository as well. 
+It then stops the build process and output error message to console. 
 To prevent such situation, Maven provides concept of Remote Repository, which is developer's own custom repository containing required libraries or other project jars.
 
 <repositories>
@@ -191,7 +184,7 @@ To prevent such situation, Maven provides concept of Remote Repository, which i
 
 Maven Archetypes
 -----------------
-Maven archetypes are project templates which can be generated for your by Maven. 
+Maven archetypes are project templates which can be generated for your project by Maven. 
 In other words, when you are starting a new project you can generate a template for that project with Maven. 
 In Maven a template is called an archetype. 
 Each Maven archetype thus corresponds to a project template that Maven can generate.
@@ -213,14 +206,14 @@ Maven Phases
 =====================
 For Maven Build, these are the most common default lifecycle phases executed.
 
-a. validate: validate the project is correct and all necessary information is available
-b. compile: compile the source code of the project
-c. test: test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed
+a. validate: validate the project is correct and all necessary information is available.
+b. compile: compile the source code of the project.
+c. test: test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed.
 d. package: take the compiled code and package it in its distributable format, such as a JAR.
-integration-test: process and deploy the package if necessary into an environment where integration tests can be run
-e. verify: run any checks to verify the package is valid and meets quality criteria
-f. install: install the package into the local repository, for use as a dependency in other projects locally
-g. deploy: done in an integration or release environment, copies the final package to the remote repository for sharing with other developers and projects.
+e. integration-test: process and deploy the package if necessary into an environment where integration tests can be run.
+f. verify: run any checks to verify the package is valid and meets quality criteria.
+g. install: install the package into the local repository, for use as a dependency in other projects locally.
+h. deploy: done in an integration or release environment, copies the final package to the remote repository for sharing with other developers and projects.
 
 There are two other Maven lifecycles of note beyond the default list above. They are
 
