@@ -1,0 +1,76 @@
+Lab for merge:
+------------
+
+make a repository in github with readme as : Test1
+
+https://github.com/dibakar123/Test1.git
+
+Make changes in Readme file and commit it.
+
+
+Now open a command window & clone this repository as :
+git clone https://github.com/dibakar123/Test1.git
+
+go to this repo folder 
+cd Test1
+git status
+
+Make a branch: mybranch where we need to make some changes.
+git branch -a
+git branch mybranch
+git branch -a
+
+Now checkout this branch as:
+git checkout mybranch
+
+In this new branch , make some update in readme file and then staged , as well as commit
+notepad Readme.md
+
+git status
+git add Readme.md
+git status
+git commit -m "update readme.md in branch-mybranch"
+
+now push this new branch to github repository as:
+git push origin mybranch
+
+Now check from github, there are 2 branch: master (with old form) and mybranch(with new form)
+
+Now click on "pull request" => "new pull request" => choose base:master <-- compare:mybranch  
+=> "create pull request"  => merge pull request => confirm merge
+At end show message as --> Pull request successfully merged and closed
+
+
+====================== Now Conflict merge -------------------------
+Now from github, add 2 lines in readme.md under master-branch and commit it.
+
+In Opposite side, under master branch, add 2 lines in readme.md for local repository.
+add these 2 lines in staging as well as commit.
+git checkout master
+notepad Readme.md
+git add Readme.md
+git commit -m "update from local gitbash"
+
+Now try to pull updated version of master copy from github under current local repository
+git pull
+** gets  message as : 
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+Check conflict as :
+git diff
+open file to check conflicts:
+notepad Readme.md
+
+To see merge conflict in file, search the file for the conflict marker <<<<<<<. 
+When open the file in text editor, see the changes from the HEAD or base branch after the line <<<<<<< HEAD. 
+Next, see =======, which divides changes from the changes in the other branch, followed by >>>>>>> BRANCH-NAME.
+
+Decide if want to keep only branch's changes, keep only the other branch's changes, or make a brand new change, which may incorporate changes from both branches. 
+Delete the conflict markers <<<<<<<, =======, >>>>>>> and make the changes in the final merge. 
+
+Now add to staging and commit as well as push to github(if required).
+git add .
+git commit -m "update readme.md"
+git push
+

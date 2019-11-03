@@ -1,0 +1,201 @@
+What is Git?
+---------------
+Git is currently the most popular implementation of a distributed version control system.
+Git originates from the Linux kernel development and was founded in 2005 by Linus Torvalds. Nowadays it is used by many popular open source projects, e.g., the Android or the Eclipse developer teams, as well as many commercial organizations.
+
+Git repository 
+-----------------------
+A Git repository contains the history of a collection of files starting from a certain directory. 
+The process of copying an existing Git repository via the Git tooling is called cloning. 
+After cloning a repository the user has the complete repository with its history on his local machine. Of course, Git also supports the creation of new repositories.
+
+Working Tree
+------------------------
+A local non-bare Git repository is typically called local repository. 
+A local repository provides at least one collection of files which originate from a certain version of the repository. This collection of files is called the working tree. It corresponds to a checkout of one version of the repository with potential changes done by the user. 
+The user can change the files in the working tree by modifying existing files and by creating and removing files. A file in the working tree of a Git repository can have different states. 
+
+These states are the following:
+•	untracked: the file is not tracked by the Git repository. This means that the file never staged nor committed.
+•	tracked: committed and not staged
+•	staged: staged to be included in the next commit
+•	dirty / modified: the file has changed but the change is not staged
+
+After doing changes in the working tree, the user can add these changes to the Git repository or revert these changes.
+After modifying your working tree you need to perform the following two steps to persist these changes in your local repository:
+•	add the selected changes to the staging area (also known as index) via the command : git add
+•	commit the staged changes into the Git repository via the command : git commit
+
+The git add command stores a snapshot of the specified files in the staging area. 
+It allows you to incrementally modify files, stage them, modify and stage them again until you are satisfied with your changes.
+
+Branching
+--------------
+Git supports branching which means that you can work on different versions of your collection of files. 
+A branch allows the user to switch between these versions so that he can work on different changes independently from each other.
+
+For example, if you want to develop a new feature, you can create a branch and make the changes in this branch. This does not affect the state of your files in other branches. 
+
+Branches in Git are local to the repository. A branch created in a local repository does not need to have a counterpart in a remote repository. 
+
+Git terminology
+--------------
+HEAD
+HEAD is a symbolic reference most often pointing to the currently checked out branch.
+
+Index
+Index is an alternative term for the staging area.
+
+Repository
+A repository contains the history, the different versions over time and all different branches and tags. In Git each copy of the repository is a complete repository. 
+
+Branch
+A branch is a named pointer to a commit. Selecting a branch in Git terminology is called to checkout a branch. 
+If you are working in a certain branch, the creation of a new commit advances this pointer to the newly created commit.
+
+Staging area
+The staging area is the place to store changes in the working tree before the commit. The staging area contains a snapshot of the changes in the working tree (changed or new files) relevant to create the next commit and stores their mode (file type, executable bit).
+
+Revision
+Represents a version of the source code. Git implements revisions as commit objects (or short commits ). 
+
+Commit
+When you commit your changes into a repository this creates a new commit object in the Git repository. This commit object uniquely identifies a new revision of the content of the repository.
+
+
+Tag
+A tag points to a commit which uniquely identifies a version of the Git repository. 
+
+URL
+A URL in Git determines the location of the repository. 
+
+Working tree
+The working tree contains the set of working files for the repository. You can modify the content and commit the changes as new commits to the repository.
+
+
+
+Basic Git commands
+*******************
+git init 
+initializes a brand new Git repository and begins tracking an existing directory. 
+It adds a hidden subfolder within the existing directory that houses the internal data structure required for version control as ".git".
+
+git clone 
+creates a local copy of a project that already exists remotely. 
+The clone includes all the project’s files, history, and branches.
+
+git add 
+stages a change. Git tracks changes to a developer’s codebase, but it’s necessary to stage and take a snapshot of the changes to include them in the project’s history.
+
+git commit 
+saves the snapshot to the project history and completes the change-tracking process. 
+In short, a commit functions like taking a photo. Anything that’s been staged with git add will become a part of the snapshot with git commit.
+
+git status 
+shows the status of changes as untracked, modified, or staged.
+
+git branch 
+shows the branches being worked on locally.
+
+git merge 
+merges lines of development together. This command is typically used to combine changes made on two distinct branches. 
+For example, a developer would merge when they want to combine changes from a feature branch into the master branch for deployment.
+
+git pull 
+updates the local line of development with updates from its remote counterpart. 
+Developers use this command if a teammate has made commits to a branch on a remote, and they would like to reflect those changes in their local environment.
+
+git push 
+updates the remote repository with any commits made locally to a branch.
+
+
+What is GitHub?
+-------------------
+GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+you need a github account under :    https://github.com/
+
+How GitHub works?
+----------------------
+GitHub builds collaboration directly into the development process. 
+Work is organized into repositories, where developers can outline requirements or direction and set expectations for team members. 
+Then, using the GitHub flow, developers simply create a branch to work on updates, commit changes to save them, open a pull request to propose and discuss changes, and merge pull requests once everyone is on the same page.
+
+GitHub flow
+------------------------
+GitHub flow is a lightweight, branch-based workflow built around core Git commands used by teams around the globe—including ours.
+
+Lab: Contribute to an existing repository
+-----------------------------------------------
+# download a repository on GitHub.com to our machine
+git clone https://github.com/me/repo.git
+
+# change into the `repo` directory
+cd repo
+
+# create a new branch to store any new changes
+git branch my-branch
+
+# switch to that branch (line of development)
+git checkout my-branch
+
+# make changes, for example, edit `file1.md` and `file2.md` using the text editor
+
+# stage the changed files
+git add file1.md file2.md
+
+# take a snapshot of the staging area (anything that's been added)
+git commit -m "my snapshot"
+
+# push changes to github
+git push --set-upstream origin my-branch
+
+
+Lab: Start a new repository and publish it to GitHub
+---------------------------
+# create a new directory, and initialize it with git-specific functions
+git init my-repo
+
+# change into the `my-repo` directory
+cd my-repo
+
+# create the first file in the project
+notepad README.md
+
+# git isn't aware of the file, stage it
+git add README.md
+
+# take a snapshot of the staging area
+git commit -m "add README to initial commit"
+
+# provide the path for the repository you created on github
+git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+
+# push changes to github
+git push --set-upstream origin master
+
+
+Lab: contribute to an existing branch on GitHub
+
+# assumption: a project called `repo` already exists on the machine, and a new branch has been pushed to GitHub.com since the last time changes were made locally
+
+# change into the `repo` directory
+cd repo
+
+# update all remote tracking branches, and the currently checked out branch
+git pull
+
+# change into the existing branch called `feature-a`
+git checkout feature-a
+
+# make changes, for example, edit `file1.md` using the text editor
+
+# stage the changed file
+git add file1.md
+
+# take a snapshot of the staging area
+git commit -m "edit file1"
+
+# push changes to github
+git push
+
+
