@@ -1,0 +1,43 @@
+under github, make a new repository and check its url
+
+Now open eclipse , go to git perspcetive,
+click on "clone a git repository" and give the url , with userid/password for github account
+now repository is created in local.
+
+Now make a maven project as webapp (may create from mvn command or from eclipse env)
+
+we can create a simple web application:(my-webapp)
+
+mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.mycompany.app -DartifactId=my-webapp
+
+now eclipse's j2ee perspective open , import maven project as :
+File => import => maven => maven existing projects => next => choose the root directory of maven project ....next.... 
+Now maven project is imported.
+We create folder:java under src/main
+
+Now need to associate this project under github repository:
+in J2ee perspective,  right click on project => Team => share project => choose repository from given repo-list => Finish.  Now local maven web app is associated to github reposiroty.
+
+Any change, we done on project and try to upload in github, just go to git perspective => It shows "unstaged changes" => make it staged using drag or ++ => give some commit message => click "Commit and push" =>close
+check github repository.
+
+==============Lab ===
+How To Add Eclipse Project To GitHub | How to Commit, Push, Pull from Eclipse to GitHub
+
+Step 1 : Create GitHub account and SignIn
+
+Step 2 : Start a Project = Create a repository
+
+Step 3 : Start Eclipse
+
+Step 4 : Goto Perspective - Git Repositories and click on Add Git Repo
+
+Step 5 : Create a project in Eclipse
+
+Step 6 : Do a right click on Project - Team - Share - Add to git repo
+
+Step 7 : Commit and Push the project to the repo
+
+Step 8 : Commit and Push every change to the repo
+
+

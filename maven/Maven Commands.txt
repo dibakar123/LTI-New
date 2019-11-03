@@ -162,11 +162,7 @@ How do I build other types of projects?
 
 we can create a simple web application:
 
-mvn archetype:generate \
-    -DarchetypeGroupId=org.apache.maven.archetypes \
-    -DarchetypeArtifactId=maven-archetype-webapp \
-    -DgroupId=com.mycompany.app \
-    -DartifactId=my-webapp
+mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.mycompany.app -DartifactId=my-webapp
 
 Note the <packaging> element - this tells Maven to build as a WAR. Change into the webapp project's directory and try:
 
