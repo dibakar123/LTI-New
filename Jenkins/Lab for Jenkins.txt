@@ -1,0 +1,22 @@
+Create your first Jenkins build job: A freestyle project
+-----------------------
+The first step to create a Jenkins build job is to click the New Item link in the top left-hand corner of the admin console.
+Now provide a name -- Jenkins Build Job Tutorial -- and then click on the option to create a Freestyle project. Finally, click the OK button.
+
+After clicking OK, the configuration page for the freestyle Jenkins job will appear. 
+
+For this Jenkins build job, we will change the description to "A simple freestyle Jenkins job." Then, click the button towards the bottom of the configuration page that says "Add build step." A drop-down list will appear, so select the first option named Execute Windows batch command.
+
+The command to add looks as follows:
+java -version
+dir
+
+click Save. This will commit your changes and take you back to the Jenkins admin console. 
+
+Run the Jenkins build job
+simply click on the Build Now option.
+
+When the build runs, a new entry will appear in the Build History box identified with the number one. Click on the drop-down box next to the number to view the console output. You will see the results
+
+-----------------------------------
+deploy to container plugin

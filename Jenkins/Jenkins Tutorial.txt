@@ -1,17 +1,19 @@
 Jenkins Tutorial
 ************************
-Jenkin is the most popular, open source Continuous Integration tool. It has tons of plugins that enhance its functionality. 
+Jenkin is the most popular, open source Continuous Integration (CI) tool, this means that it needs to check out source code from a source code repository and build code. Jenkins has outstanding support for various source code management systems like Subversion, CVS etc. 
+It has tons of plugins that enhance its functionality. 
 Jenkins is a powerful application that allows continuous integration and continuous delivery of projects, regardless of the platform you are working on. 
 It is a free source that can handle any kind of build or continuous integration. You can integrate Jenkins with a number of testing and deployment technologies.
 
-Jenkins is free and is entirely written in Java. Jenkins is a widely used application around the world that has around 300k installations and growing day by day. It is a server-based application and requires a web server like Apache Tomcat. The reason Jenkins became so popular is that of its monitoring of repeated tasks which arise during the development of a project. 
+Jenkins is free and is entirely written in Java. 
+It is a server-based application and requires a web server like Apache Tomcat. The reason Jenkins became so popular is that of its monitoring of repeated tasks which arise during the development of a project. 
 
 
 What is Continuous Integration?
 ------------------------
 In Continuous Integration after a code commit, the software is built and tested immediately. 
 In a large project with many developers, commits are made many times during a day. 
-With each commit code is built and tested. If the test is passed, build is tested for deployment. If deployment is a success, the code is pushed to production. This commit, build, test, and deploy is a continuous process and hence the name continuous integration/deployment.
+With each commit code is built and tested. If the test is passed, build is tested for deployment. If deployment is a success, the code is pushed to production. This commit, build, test, and deploy is a continuous process and hence the name continuous integration/continuous deployment(CI/CD).
 
 A Continuous Integration Pipeline is a powerful instrument that consists of a set of tools designed to host, monitor, compile and test code, or code changes.
 
@@ -28,8 +30,7 @@ In fact, for integration with tools like Maven, Amazon EC2, you need to install 
 
 Advantages of using Jenkins
 ------------------
-Jenkins is being managed by the community which is very open. Every month, they hold public meetings and take inputs from the public for the development of Jenkins project.
-As technology grows, so does Jenkins. So far Jenkins has around 320 plugins published in its plugins database. With plugins, Jenkins becomes even more powerful and feature rich.
+Jenkins is open source. Jenkins has multiple plugins. With plugins, Jenkins becomes even more powerful and feature rich.
 Jenkins also supports cloud-based architecture so that you can deploy Jenkins in cloud-based platforms.
 The reason why Jenkins became popular is that it was created by a developer for developers.
 
@@ -38,14 +39,14 @@ Disadvantages of using Jenkins
 Though Jenkins is a very powerful tool, it has its flaws.
 
 Its interface is out dated and not user friendly compared to current UI trends.
-not that easy to maintain it because Jenkins runs on a server and requires some skills as server administrator to monitor its activity.
-due to its difficulty in installing and configuring Jenkins.
+Not that easy to maintain it because Jenkins runs on a server and requires some skills as server administrator to monitor its activity.
+Due to its difficulty in installing and configuring Jenkins.
 Continuous integrations regularly break due to some small setting changes. Continuous integration will be paused and therefore requires some developer attention.
 
 Install Jenkins on Windows
 ----------------------------
-Got to https://jenkins.io/download/ and select the platform. In our case Windows
-Go to download location from local computer and unzip the downloaded package. Double-click on unzipped jenkins.msi & install it.
+Got to https://jenkins.io/download/ and select the platform. 
+For Windows, Go to download location from local computer and unzip the downloaded package. Double-click on unzipped jenkins.msi & install it.
 Choose the location where you want to have the Jenkins instance installed (default location is C:\Program Files (x86)\Jenkins), then click on Next button.
 
 After completing the Jenkins installation process, a browser tab will pop-up asking for the initial Administrator password. To access Jenkins, you need to go to browse the following path in your web browser.
@@ -59,6 +60,7 @@ Paste the password it into browser's pop-up tab (http://localhost:8080/login?for
 
 
 Customize Jenkins
+---------------------
 You can also customize your Jenkins environment by below-given steps:
 
 Step 1) Click on the "Install suggested plugins button" so Jenkins will retrieve and install the essential plugins
@@ -179,3 +181,21 @@ Select privileges
 Click Save
 
 https://www.guru99.com/create-builds-jenkins-freestyle-project.html
+
+
+Commands for Jenkins
+----------------------
+to start jenkins :
+go to folder where jenkins.war present, give command as :
+java -jar jenkins.war  ( runs on port 8080)
+run jenkins in other port:
+java -jar jenkins.war --httpPort=9090 (runs on port 9090)
+
+to restart jenkins app :
+use  :   url/restart
+
+to add plugin in jenkins, use online or download & after install in next boot.
+
+
+
+https://github.com/dibakar123/jenkin1/tree/master/app12
