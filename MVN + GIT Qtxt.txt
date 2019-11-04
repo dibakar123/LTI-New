@@ -1,0 +1,309 @@
+1. Which of the following is not type of Maven Repository?
+A. Local
+B. Remote
+C. Maven Central
+D. Maven Local
+
+
+
+2. Which of the following command removes the target directory with all the build data before starting the build process?
+A. mvn clean
+B. mvn build
+C. mvn compile
+D. mvn site
+
+
+
+3. Which of the following is not a maven goal?
+A. clean
+B. package
+C. install
+D. debug
+
+
+
+4. Which of the following is not a dependency scope in Maven?
+A. Compile
+B. Test
+C. System
+D. Export
+
+
+
+5. Which of the following phase-in maven lifecycle performs actions required after integration tests have been executed? For example, cleaning up the environment
+A. post-integration-test
+B. pre-integration-test
+C. integration-test
+D. None of the above
+
+6. How do I determine which POM contains missing transitive dependency?
+A. mvn -A
+B. mvn -M
+C. mvn -R
+D. mvn -X
+
+7. Which of the following is true about Maven Conventions?
+A. Maven uses Convention over Configuration which means developers are not required to create build process themselves
+B. Developers using maven do not have to mention each and every configuration details
+C. Both of the abovecorrect
+D. None of the above
+
+
+8.What is the sequence in which Maven looks for the resources ?
+A. Remote-> Maven Central - > Local
+B. Local -> Remote - Maven Centralcorrect
+C. Remote-> Local -> Maven Central
+D. Maven Central -> Local -> Remote
+
+
+9. What is the default location of local repository ?
+A. ~/.m2/repo
+B. ~/m2./home/repository
+C. ~/m2./repository
+D. ~/m2./home/repo
+
+
+10. Which of the Build Profile is defined in the project POM file, pom.xml?
+A. Per Project
+B. Per User
+C. Global
+D. None of the above
+
+
+11. POM stands for ...
+A. Project Object Model
+B. Project Oriented Model
+C. Prospective Object Model
+D. Prospective Objective ModelA
+
+12. What of the following is true about POM?
+A. It is fundamental Unit of Work in Maven.
+B. It is an XML file.
+C. Both of the above.
+D. None of the above.
+
+
+13. List out the build directory for POM in Maven?
+A Build = Target
+B Build = src/main/java
+C Build = src/main/test
+D None of the above
+
+
+14. List out what are the build phases in Maven?
+A Validate -> Compile ->Test -> Package -> Install -> Deploy
+B Compile -> Validate ->Test -> Package -> Install -> Deploy 
+C Validate -> Compile ->Package ->Test ->  Install -> Deploy
+B Compile -> Validate ->Test -> Package -> Deploy -> Install 
+
+
+15. To run test classes in Maven
+A mvn compile build
+B mvn compile test
+C mvn test
+D mvn build
+
+============
+1. ___________________ removes untracked files from your working directory.
+A git commit
+B git clean -f <path>
+C git clean
+D git reset
+
+
+2. Which command creates an empty Git repository in the specified directory?
+A git reset <file>
+B git log <since>..<until>
+C git init <directory>
+D git init --bare <directory>
+
+
+3.Command to download all the objects and references from a specified repository
+A git config --list
+B git help <command>
+C git fetch <remote>
+D git log -n <limit>
+
+
+4. Git command to compare two specified branches
+A git diff <first-branch>...<second-branch>
+B git merge <fetched-remote-name> <branch-name>
+C git blame -L <start>,<end> <filename>
+D git push <remote> --tags
+
+
+5.  _____________ command renames the current branch to <branch>
+A git remote rm <name>
+B git branch -m <branch>
+C git branch -D <branch> 
+D git rebase <base>
+
+
+6.  Which of the following command line environment is used for interacting with Git ?
+A Git Bash
+B GitHub
+C Git Boot
+D Git Lab
+
+
+7. Which command defines the author email to be used for all commits by the current user.
+A git clean -f <path>
+B git config --global user.email <email>
+C git merge --no-ff <email>
+D git email--amend
+
+
+8. Which Command is used to show limited number of commits?
+A git fetch <remote>
+B git log -n <limit>
+C git config <limit>
+D git status
+
+9. What's the git command that downloads your repository from GitHub to your computer?
+A git push
+B git fork
+C git clone
+D git commit
+
+
+10. What's the opposite of git clone, instead of downloading your code from GitHub, uploads your changes and code back to GitHub?
+A git push
+B git add
+C git upload
+D git status
+
+
+11. How do you check the state of your local git repository since your last commit?
+A git check
+B git status
+C git commit
+D git diff
+
+
+12. How do you stage files for a commit?
+A git stage
+B git commit
+C git add
+D git reset
+
+
+13. How do you save the current state of your code into the git version control?
+A By committing the staged changes with git commit
+B By adding all changes and staging them with git stage
+C By adding all changes and staging them with git add
+D By creating a new commit with git init
+
+
+14. What's a shortcut to staging all the changes you have?
+A git commit add .
+B git commit .
+C git add .
+D git add Message.txt
+
+
+15. How do you supply a commit message to a commit?
+A git message "I'm coding"
+B git add "I'm coding"
+C git commit "I'm coding"
+D git commit -m "I'm coding"
+
+
+16. What is the correct commit syntax for all changes with a message?
+A git message -am "I'm coding"
+B git add -a "I'm coding"
+C git commit -a "I'm coding"
+D git commit -am "I'm coding"
+
+
+17. What comes first, staging with git add . or committing with git commit?
+A Staging your commits with git add
+B Committing with git commit
+
+
+18. What is the default text editor for the Bash shell with a Windows-based Git install?
+A Emacs
+B Vim
+C Notepad++
+D Bash
+
+
+19. Before you install Git, which of the following prerequisite products must be present and configured on your local OS?
+
+A Jakarta Enterprise Edition web profile compliant server
+B Java Development Kit 1.8 or newer
+C Apache Maven
+D Nothing
+
+
+20. After you install Git and prior to issuing the first commit, which two configuration properties does the tool expect to be configured?
+
+A username and email address
+B username and password
+C email address and password
+D username and IP address
+
+
+21. Which of the following is not a Git configuration scope?
+
+A Local
+B User
+C System
+D Global
+
+** There is no user-level Git configuration scope. There are three Git configuration scopes: local, global and system.
+
+The configuration file for the local scope is stored in the .git folder of each Git repository.
+The configuration file for the system scope is stored in a subfolder of the Git installation.
+The configuration file for the global scope is stored in the user's home directory
+
+22. Who is attributed with inventing Git?
+
+A Junio C. Hamano
+B James Gosling
+C Kohsuke Kawaguchi
+D Linus Torvalds
+
+
+23. After you initialize a new Git repository and create a file named git-quiz.html, which of the following commands will not work if issued?
+
+A git add git-quiz.html
+B git status
+C git add .
+D git commit -m "git quiz web file added"
+
+
+24. Under which circumstance should you use a single dash within a Git command, as opposed to a double dash?
+
+A When using a single-character option
+B When using a multicharacter option
+C When issuing Git commands with multiple options
+D When referencing a Git alias
+
+** git commit -m "new git quiz commit"
+git commit --message "another git quiz commit"
+
+25. Which vendor acquired GitHub for $7.5 billion in June 2018?
+
+A Oracle
+B Microsoft
+C IBM
+D Google
+
+
+26. Which command should you use to initialize a new Git repository?
+
+A git bash
+B git install
+C git init
+D git start
+
+
+27. Which file can you configure to ensure that certain file types are never committed to the local Git repository?
+
+A ignore.git
+B .gitignore
+C gitignore.txt
+D git.ignore
+
+
+

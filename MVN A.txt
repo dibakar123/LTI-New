@@ -1,0 +1,107 @@
+1. Which of the following is not type of Maven Repository?
+A. Local
+B. Remote
+C. Maven Central
+D. Maven Local
+
+D
+
+2. Which of the following command removes the target directory with all the build data before starting the build process?
+A. mvn clean
+B. mvn build
+C. mvn compile
+D. mvn site
+
+A
+
+3. Which of the following is not a maven goal?
+A. clean
+B. package
+C. install
+D. debug
+
+D
+
+4. Which of the following is not a dependency scope in Maven?
+A. Compile
+B. Test
+C. System
+D. Export
+
+D
+
+5. Which of the following phase-in maven lifecycle performs actions required after integration tests have been executed? For example, cleaning up the environment
+A. post-integration-test
+B. pre-integration-test
+C. integration-test
+D. None of the above
+
+6. How do I determine which POM contains missing transitive dependency?
+A. mvn -A
+B. mvn -M
+C. mvn -R
+D. mvn -X
+
+7. Which of the following is true about Maven Conventions?
+A. Maven uses Convention over Configuration which means developers are not required to create build process themselves
+B. Developers using maven do not have to mention each and every configuration details
+C. Both of the abovecorrect
+D. None of the above
+C
+
+8.What is the sequence in which Maven looks for the resources ?
+A. Remote-> Maven Central - > Local
+B. Local -> Remote - Maven Centralcorrect
+C. Remote-> Local -> Maven Central
+D. Maven Central -> Local -> Remote
+B
+
+9. What is the default location of local repository ?
+A. ~/.m2/repo
+B. ~/m2./home/repository
+C. ~/m2./repository
+D. ~/m2./home/repo
+C
+
+10. Which of the Build Profile is defined in the project POM file, pom.xml?
+A. Per Project
+B. Per User
+C. Global
+D. None of the above
+A
+
+11. POM stands for ...
+A. Project Object Model
+B. Project Oriented Model
+C. Prospective Object Model
+D. Prospective Objective Model
+A
+
+12. What of the following is true about POM?
+A. It is fundamental Unit of Work in Maven.
+B. It is an XML file.
+C. Both of the above.
+D. None of the above.
+C
+
+13. List out the build directory for POM in Maven?
+A Build = Target
+B Build = src/main/java
+C Build = src/main/test
+D None of the above
+A
+
+14. List out what are the build phases in Maven?
+A Validate -> Compile ->Test -> Package -> Install -> Deploy
+B Compile -> Validate ->Test -> Package -> Install -> Deploy 
+C Validate -> Compile ->Package ->Test ->  Install -> Deploy
+B Compile -> Validate ->Test -> Package -> Deploy -> Install 
+A
+
+15. To run test classes in Maven
+A mvn compile build
+B mvn compile test
+C mvn test
+D mvn build
+
+

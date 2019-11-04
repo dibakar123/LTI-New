@@ -1,0 +1,105 @@
+Explain what is Maven? How does it work?
+
+Maven is a project management tool. It provides the developer a complete build lifecycle framework. 
+
+How does it work?
+
+On executing Maven commands, it will look for POM file in Maven; it will run the command on the resources described in the POM.
+
+List out what are the aspects does Maven Manages?
+
+Maven handles following activities of a developer
+
+• Build
+• Documentation
+• Reporting
+• Dependencies
+• SCMs
+• Releases
+• Distribution
+• Mailing list
+
+Mention the three build lifecycle of Maven?
+
+• Clean: Cleans up artifacts that are created by prior builds
+• Default (build): Used to create the application
+• Site: For the project generates site documentation
+
+Explain what is POM?
+
+In Maven, POM (Project Object Model) is the fundamental unit of work. 
+It is an XML file which holds the information about the project and configuration details used to build a project by Maven.
+
+Explain what is Maven artifact?
+
+Usually an artifact is a JAR file which gets arrayed to a Maven repository. 
+One or more artifacts a maven build produces such as compiled JAR and a sources JAR.
+Each artifact includes a group ID, an artifact ID and a version string.
+
+Explain what is Maven Repository? What are their types?
+
+A Maven repository is a location where all the project jars, library jars, plugins or any other particular project related artifacts are stored and can be easily used by Maven.
+Their types are local, central and .
+
+Why Maven Plugins are used?
+
+Maven plugins are used to
+• Create a jar file
+• Create war file
+• Compile code files
+• Unit testing of code
+• Documenting projects
+• Reporting
+
+List out the dependency scope in Maven?
+
+The various dependency scope used in Maven are:
+• Compile: It is the default scope, and it indicates what dependency is available in the classpath of the project
+• Provided: It indicates that the dependency is provided by JDK or web server or container at runtime
+• Runtime: This tells that the dependency is not needed for compilation but is required during execution
+• Test: It says dependency is available only for the test compilation and execution phases
+• System: It indicates you have to provide the system path
+• Import: This indicates that the identified or specified POM should be replaced with the dependencies in that POM’s section
+
+Mention the difference between Apache Ant and Maven?
+
+Apache Ant 					Maven
+Ant is a toolbox 				Maven is a framework
+Ant does not have formal conventions like 	Maven has conventions
+project directory structure 
+Ant is procedural, have to tell to compile, 	Maven is declarative ( information on what to make & how to build)
+copy and compress
+Ant does not have lifecycle			Maven has a lifecycle
+Ant scripts are not reusable			Maven plugins are reusable
+
+
+In Maven what are the two setting files called and what are their location?
+
+In Maven, the setting files are called settings.xml, and the two setting files are located at
+• Maven installation directory: $M2_Home/conf/settings.xml
+• User’s home directory: ${ user.home }/ .m2 / settings.xml
+
+List out what are the build phases in Maven?
+
+Build phases in Maven are
+• Validate
+• Compile
+• Test
+• Package
+• Install
+• Deploy
+
+List out the build, source and test source directory for POM in Maven?
+• Build = Target
+• Source = src/main/java
+• Test = src/main/test
+
+For POM what are the minimum required elements?
+
+The minimum required elements for POM are project root, modelVersion, groupID, artifactID and version
+
+
+Explain how to run test classes in Maven?
+
+To run test classes in Maven, you need surefire plugin, check and configure your settings in setting.xml and pom.xml for a property named “test.”
+
