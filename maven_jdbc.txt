@@ -1,0 +1,23 @@
+Step 1: Download the required ojdbc jar
+
+Step 2:  Install the jar in the maven local repository
+
+To include ojdbc jar into maven local repository:
+
+mvn install:install-file -Dfile=C:\Users\lntinfotech\Desktop\ojdbc14.jar -DgroupId=com.oracle 
+	-DartifactId=ojdbc14 -Dversion=14 -Dpackaging=jar
+
+Eg: mvn install:install-file -Dfile=C:\Users\lntinfotech\Desktop\ojdbc14.jar -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=14 -Dpackaging=jar
+
+
+Step 3: To add dependency in pom.xml:
+
+Eg: For ojdbc version 14
+<dependency>
+    <groupId>com.oracle</groupId>
+    <artifactId>ojdbc14</artifactId>
+    <version>14</version>
+</dependency>
+
+Step 4: Run the maven project
+

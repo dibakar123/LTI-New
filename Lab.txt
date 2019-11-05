@@ -1,0 +1,160 @@
+`open a command window with admistrative permission:
+ 
+to check git installed or not?
+>git
+
+to check version of git
+>git --version
+
+to configure git env for our local system
+---------------
+
+User credential configuration
+# configure the user which will be used by Git
+git config --global user.name "Firstname Lastname"
+# configure the email address
+git config --global user.email "your.email@example.org"
+
+To get your configuration list for GIT:
+git config --list
+
+
+How can you create a local repo?
+> mkdir repo1
+> cd repo1
+> git init
+
+Take some action (manipulate resources ) under this repository
+----------------------
+make a folder - pack under repo1
+	mkdir pack
+make a file under foloder: pack
+	cd pack
+	notepad Main.java
+now come out from the folder : pack
+	cd ..
+
+---- to check the status of git
+git status
+( it shows me : folder pack in red color === untracked)
+
+to send it in staging :
+git add .
+git status
+
+to send it in repo :
+ git commit -m "added pack folder"
+
+To check the git logs :
+ git log
+
+-------------- To access remote repository -----
+make a new folder in current os to respresent remote repository
+mkdir repo2
+cd repo2
+
+url :  https://github.com/dibakar123/Java-Project1.git
+
+to make a clone of online repository
+git clone https://github.com/dibakar123/Java-Project1.git
+
+
+check git status
+git status
+
+adding some new folder and files 
+cd Java-Project1
+mkdir pack3
+notepad pack3/abc.java
+git status
+
+add to staging :   git add .
+make it commit:    git commit -m "added pack3 folder"
+check the log:     git log
+
+======================================================
+
+create a git hub account :
+
+check google : git hub login
+
+make github account
+explore your git hub account
+make a new repository
+upload file in repository , commit it with message 
+download repository from github as clone
+
+=====================
+
+https://github.com/dibakar123/javarepo_sample.git
+
+git remote add branch2 https://github.com/dibakar123/javarepo_sample.git
+
+
+=========== Make branching lab===
+
+make a repository from github :
+URL :  https://github.com/dibakar123/testbranching.git
+
+Now make a folder and clone this repository here as remote
+git clone https://github.com/dibakar123/testbranching.git
+
+Create some files under current local repo , add them and commit them.
+echo "aaaaaaa">aa.txt
+echo "bbbbbbb">bb.txt
+
+git add .
+git status
+git commit -m "added aa.txt bb.txt"
+git status
+git log
+
+updating in local , but not in remote repo. to make it in github , then...
+#send to remote repository
+git push origin
+
+now check from git hub account.
+
+List all of the branches in your repository. This is synonymous with :
+
+git branch --list
+
+To get list of all branches (local & remote)
+
+git branch -a -v
+
+To create a new branch, simply specify a name - and possibly a starting point
+To create a branch in local system:
+
+git branch branch1
+
+Delete the specified branch. This is a “safe” operation in that Git prevents from deleting the branch if it has unmerged changes.
+
+git branch branch1 -d
+
+Force delete the specified branch, even if it has unmerged changes. This is the command to use if you want to permanently throw away all of the commits associated with a particular line of development.
+
+git branch -D branch1
+
+Rename the current branch to <branch>.
+git branch branch1
+git branch branch1 -m newbranch1
+
+Now do some jobs under new branch:
+echo "cccccc">cc.txt
+git checkout newbranch1   [ to move to branch-newbranch1 from master ]
+git add .          [ adding new data to staging area for branch]
+git commit -m "add in branch newbranch1" [ to commit in branch  ]
+git log
+
+now come out from branch
+	git checkout master
+
+To add a new newbranch in remote repository:
+git remote add newbranch https://github.com/dibakar123/testbranching.git
+
+Add remote repo to local repo config
+git push newbranch  newbranch1
+
+
+
